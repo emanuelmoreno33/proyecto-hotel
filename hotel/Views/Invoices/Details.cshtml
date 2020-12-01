@@ -1,0 +1,74 @@
+﻿@model hotel.Models.Invoice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Invoice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.dateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.subtotal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.subtotal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tax)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tax)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalDue)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalDue)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Guest.name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Guest.name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservation.reservationID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.invoiceID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

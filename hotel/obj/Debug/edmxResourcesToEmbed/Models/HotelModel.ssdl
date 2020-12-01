@@ -1,0 +1,809 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="proyecto_hotelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AmenityComplaint">
+    <Key>
+      <PropertyRef Name="complaintID" />
+    </Key>
+    <Property Name="complaintID" Type="int" Nullable="false" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="dateComplaint" Type="datetime" Nullable="false" />
+    <Property Name="amenityID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AmenityReview">
+    <Key>
+      <PropertyRef Name="reviewID" />
+    </Key>
+    <Property Name="reviewID" Type="int" Nullable="false" />
+    <Property Name="reviewAmenity" Type="int" Nullable="false" />
+    <Property Name="dataReview" Type="datetime" Nullable="false" />
+    <Property Name="amenityID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Bonification">
+    <Key>
+      <PropertyRef Name="bonificationID" />
+    </Key>
+    <Property Name="bonificationID" Type="int" Nullable="false" />
+    <Property Name="employeeID" Type="int" Nullable="false" />
+    <Property Name="typeOfBonificationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="cityID" />
+    </Key>
+    <Property Name="cityID" Type="int" Nullable="false" />
+    <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="stateID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departament">
+    <Key>
+      <PropertyRef Name="departamentID" />
+    </Key>
+    <Property Name="departamentID" Type="int" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="admin" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="employeeID" />
+    </Key>
+    <Property Name="employeeID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="salary" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="placeOfOrigin" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="cityID" Type="int" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="departamentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Guest">
+    <Key>
+      <PropertyRef Name="guestID" />
+    </Key>
+    <Property Name="guestID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="sex" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="housePhone" Type="varchar" MaxLength="13" />
+    <Property Name="cellPhone" Type="varchar" MaxLength="13" />
+    <Property Name="email" Type="varchar" MaxLength="50" />
+    <Property Name="RFC" Type="varchar" MaxLength="13" />
+    <Property Name="placeOfOrigin" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="cityID" Type="int" />
+  </EntityType>
+  <EntityType Name="GuestCompanion">
+    <Key>
+      <PropertyRef Name="companionID" />
+    </Key>
+    <Property Name="companionID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="DOB" Type="date" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="invoiceID" />
+    </Key>
+    <Property Name="invoiceID" Type="int" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="guestID" Type="int" Nullable="false" />
+    <Property Name="dateTime" Type="date" Nullable="false" />
+    <Property Name="subtotal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="discount" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="tax" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="totalDue" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlaceOfOrigin">
+    <Key>
+      <PropertyRef Name="placeOfOrigin" />
+    </Key>
+    <Property Name="placeOfOrigin" Type="varchar" MaxLength="3" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Promo">
+    <Key>
+      <PropertyRef Name="promoID" />
+    </Key>
+    <Property Name="promoID" Type="int" Nullable="false" />
+    <Property Name="promoName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="description" Type="text" Nullable="false" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reservation">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="guestID" Type="int" Nullable="false" />
+    <Property Name="roomID" Type="int" Nullable="false" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+    <Property Name="endDate" Type="datetime" Nullable="false" />
+    <Property Name="reservationStatusID" Type="int" Nullable="false" />
+    <Property Name="reservedFromID" Type="int" Nullable="false" />
+    <Property Name="employeeID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReservationComplaint">
+    <Key>
+      <PropertyRef Name="reservationID" />
+    </Key>
+    <Property Name="complaintID" Type="int" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="dateComplaint" Type="datetime" Nullable="false" />
+    <Property Name="departamentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReservationReview">
+    <Key>
+      <PropertyRef Name="reviewID" />
+    </Key>
+    <Property Name="reviewID" Type="int" Nullable="false" />
+    <Property Name="reviewRoom" Type="int" Nullable="false" />
+    <Property Name="dateReview" Type="datetime" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="departamentID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReservationStatus">
+    <Key>
+      <PropertyRef Name="reservationStatusID" />
+    </Key>
+    <Property Name="reservationStatusID" Type="int" Nullable="false" />
+    <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ReservedFrom">
+    <Key>
+      <PropertyRef Name="reservedFromID" />
+    </Key>
+    <Property Name="reservedFromID" Type="int" Nullable="false" />
+    <Property Name="reservationMethod" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Room">
+    <Key>
+      <PropertyRef Name="roomID" />
+    </Key>
+    <Property Name="roomID" Type="int" Nullable="false" />
+    <Property Name="roomNumber" Type="int" Nullable="false" />
+    <Property Name="roomTypeID" Type="int" Nullable="false" />
+    <Property Name="roomStatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomAmenity">
+    <Key>
+      <PropertyRef Name="amenityID" />
+    </Key>
+    <Property Name="amenityID" Type="int" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="serviceID" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomPackage">
+    <Key>
+      <PropertyRef Name="roomPackageID" />
+    </Key>
+    <Property Name="roomPackageID" Type="int" Nullable="false" />
+    <Property Name="namePackage" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="roomTypeID" Type="int" Nullable="false" />
+    <Property Name="frecuency" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomPromo">
+    <Key>
+      <PropertyRef Name="roomPromoID" />
+    </Key>
+    <Property Name="roomPromoID" Type="int" Nullable="false" />
+    <Property Name="promoID" Type="int" Nullable="false" />
+    <Property Name="roomTypeID" Type="int" Nullable="false" />
+    <Property Name="discount" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomServicePackage">
+    <Key>
+      <PropertyRef Name="roomServicePackageID" />
+    </Key>
+    <Property Name="roomServicePackageID" Type="int" Nullable="false" />
+    <Property Name="roomPackageID" Type="int" Nullable="false" />
+    <Property Name="serviceID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomStatus">
+    <Key>
+      <PropertyRef Name="roomStatusID" />
+    </Key>
+    <Property Name="roomStatusID" Type="int" Nullable="false" />
+    <Property Name="statusName" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="RoomType">
+    <Key>
+      <PropertyRef Name="roomTypeID" />
+    </Key>
+    <Property Name="roomTypeID" Type="int" Nullable="false" />
+    <Property Name="typeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Service">
+    <Key>
+      <PropertyRef Name="serviceID" />
+    </Key>
+    <Property Name="serviceID" Type="int" Nullable="false" />
+    <Property Name="serviceTypeID" Type="int" Nullable="false" />
+    <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ServiceType">
+    <Key>
+      <PropertyRef Name="serviceTypeID" />
+    </Key>
+    <Property Name="serviceTypeID" Type="int" Nullable="false" />
+    <Property Name="serviceType" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="State">
+    <Key>
+      <PropertyRef Name="stateID" />
+    </Key>
+    <Property Name="stateID" Type="int" Nullable="false" />
+    <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="placeOfOrigin" Type="varchar" MaxLength="3" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TypeOfBonification">
+    <Key>
+      <PropertyRef Name="typeOfBonificationID" />
+    </Key>
+    <Property Name="typeOfBonificationID" Type="int" Nullable="false" />
+    <Property Name="daysLodging" Type="int" Nullable="false" />
+    <Property Name="bonus" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_AmenityComplaint_RoomAmenity">
+    <End Role="RoomAmenity" Type="Self.RoomAmenity" Multiplicity="1" />
+    <End Role="AmenityComplaint" Type="Self.AmenityComplaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomAmenity">
+        <PropertyRef Name="amenityID" />
+      </Principal>
+      <Dependent Role="AmenityComplaint">
+        <PropertyRef Name="amenityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AmenityReview_RoomAmenity">
+    <End Role="RoomAmenity" Type="Self.RoomAmenity" Multiplicity="1" />
+    <End Role="AmenityReview" Type="Self.AmenityReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomAmenity">
+        <PropertyRef Name="amenityID" />
+      </Principal>
+      <Dependent Role="AmenityReview">
+        <PropertyRef Name="amenityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bonification_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Bonification" Type="Self.Bonification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="Bonification">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Bonification_TypeOfBonification">
+    <End Role="TypeOfBonification" Type="Self.TypeOfBonification" Multiplicity="1" />
+    <End Role="Bonification" Type="Self.Bonification" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TypeOfBonification">
+        <PropertyRef Name="typeOfBonificationID" />
+      </Principal>
+      <Dependent Role="Bonification">
+        <PropertyRef Name="typeOfBonificationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_City_State">
+    <End Role="State" Type="Self.State" Multiplicity="1" />
+    <End Role="City" Type="Self.City" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="State">
+        <PropertyRef Name="stateID" />
+      </Principal>
+      <Dependent Role="City">
+        <PropertyRef Name="stateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="cityID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="cityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Employee_Departament">
+    <End Role="Departament" Type="Self.Departament" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departament">
+        <PropertyRef Name="departamentID" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="departamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guest_City">
+    <End Role="City" Type="Self.City" Multiplicity="0..1" />
+    <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="cityID" />
+      </Principal>
+      <Dependent Role="Guest">
+        <PropertyRef Name="cityID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Guest_PlaceOfOrigin">
+    <End Role="PlaceOfOrigin" Type="Self.PlaceOfOrigin" Multiplicity="1" />
+    <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlaceOfOrigin">
+        <PropertyRef Name="placeOfOrigin" />
+      </Principal>
+      <Dependent Role="Guest">
+        <PropertyRef Name="placeOfOrigin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GuestCompanion_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="GuestCompanion" Type="Self.GuestCompanion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="reservationID" />
+      </Principal>
+      <Dependent Role="GuestCompanion">
+        <PropertyRef Name="reservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="guestID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="guestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Invoice_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="reservationID" />
+      </Principal>
+      <Dependent Role="Invoice">
+        <PropertyRef Name="reservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="employeeID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="employeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Guest">
+    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Guest">
+        <PropertyRef Name="guestID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="guestID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_ReservationStatus">
+    <End Role="ReservationStatus" Type="Self.ReservationStatus" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReservationStatus">
+        <PropertyRef Name="reservationStatusID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="reservationStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_ReservedFrom">
+    <End Role="ReservedFrom" Type="Self.ReservedFrom" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReservedFrom">
+        <PropertyRef Name="reservedFromID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="reservedFromID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_Room">
+    <End Role="Room" Type="Self.Room" Multiplicity="1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Room">
+        <PropertyRef Name="roomID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="roomID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReservationComplaint_Departament">
+    <End Role="Departament" Type="Self.Departament" Multiplicity="1" />
+    <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departament">
+        <PropertyRef Name="departamentID" />
+      </Principal>
+      <Dependent Role="ReservationComplaint">
+        <PropertyRef Name="departamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReservationComplaint_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="reservationID" />
+      </Principal>
+      <Dependent Role="ReservationComplaint">
+        <PropertyRef Name="reservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReservationReview_Departament">
+    <End Role="Departament" Type="Self.Departament" Multiplicity="1" />
+    <End Role="ReservationReview" Type="Self.ReservationReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departament">
+        <PropertyRef Name="departamentID" />
+      </Principal>
+      <Dependent Role="ReservationReview">
+        <PropertyRef Name="departamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ReservationReview_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="ReservationReview" Type="Self.ReservationReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="reservationID" />
+      </Principal>
+      <Dependent Role="ReservationReview">
+        <PropertyRef Name="reservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Room_RoomStatus">
+    <End Role="RoomStatus" Type="Self.RoomStatus" Multiplicity="1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomStatus">
+        <PropertyRef Name="roomStatusID" />
+      </Principal>
+      <Dependent Role="Room">
+        <PropertyRef Name="roomStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Room_RoomType">
+    <End Role="RoomType" Type="Self.RoomType" Multiplicity="1" />
+    <End Role="Room" Type="Self.Room" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomType">
+        <PropertyRef Name="roomTypeID" />
+      </Principal>
+      <Dependent Role="Room">
+        <PropertyRef Name="roomTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomAmenity_Reservation">
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
+    <End Role="RoomAmenity" Type="Self.RoomAmenity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Reservation">
+        <PropertyRef Name="reservationID" />
+      </Principal>
+      <Dependent Role="RoomAmenity">
+        <PropertyRef Name="reservationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomAmenity_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="RoomAmenity" Type="Self.RoomAmenity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="serviceID" />
+      </Principal>
+      <Dependent Role="RoomAmenity">
+        <PropertyRef Name="serviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomPackage_RoomType">
+    <End Role="RoomType" Type="Self.RoomType" Multiplicity="1" />
+    <End Role="RoomPackage" Type="Self.RoomPackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomType">
+        <PropertyRef Name="roomTypeID" />
+      </Principal>
+      <Dependent Role="RoomPackage">
+        <PropertyRef Name="roomTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomPromo_Promo">
+    <End Role="Promo" Type="Self.Promo" Multiplicity="1" />
+    <End Role="RoomPromo" Type="Self.RoomPromo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Promo">
+        <PropertyRef Name="promoID" />
+      </Principal>
+      <Dependent Role="RoomPromo">
+        <PropertyRef Name="promoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomPromo_RoomType">
+    <End Role="RoomType" Type="Self.RoomType" Multiplicity="1" />
+    <End Role="RoomPromo" Type="Self.RoomPromo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomType">
+        <PropertyRef Name="roomTypeID" />
+      </Principal>
+      <Dependent Role="RoomPromo">
+        <PropertyRef Name="roomTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomServicePackage_RoomPackage">
+    <End Role="RoomPackage" Type="Self.RoomPackage" Multiplicity="1" />
+    <End Role="RoomServicePackage" Type="Self.RoomServicePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomPackage">
+        <PropertyRef Name="roomPackageID" />
+      </Principal>
+      <Dependent Role="RoomServicePackage">
+        <PropertyRef Name="roomPackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RoomServicePackage_Service">
+    <End Role="Service" Type="Self.Service" Multiplicity="1" />
+    <End Role="RoomServicePackage" Type="Self.RoomServicePackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Service">
+        <PropertyRef Name="serviceID" />
+      </Principal>
+      <Dependent Role="RoomServicePackage">
+        <PropertyRef Name="serviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Service_ServiceType">
+    <End Role="ServiceType" Type="Self.ServiceType" Multiplicity="1" />
+    <End Role="Service" Type="Self.Service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ServiceType">
+        <PropertyRef Name="serviceTypeID" />
+      </Principal>
+      <Dependent Role="Service">
+        <PropertyRef Name="serviceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_State_PlaceOfOrigin">
+    <End Role="PlaceOfOrigin" Type="Self.PlaceOfOrigin" Multiplicity="1" />
+    <End Role="State" Type="Self.State" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlaceOfOrigin">
+        <PropertyRef Name="placeOfOrigin" />
+      </Principal>
+      <Dependent Role="State">
+        <PropertyRef Name="placeOfOrigin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="proyecto_hotelModelStoreContainer">
+    <EntitySet Name="AmenityComplaint" EntityType="Self.AmenityComplaint" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AmenityReview" EntityType="Self.AmenityReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bonification" EntityType="Self.Bonification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departament" EntityType="Self.Departament" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Guest" EntityType="Self.Guest" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GuestCompanion" EntityType="Self.GuestCompanion" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceOfOrigin" EntityType="Self.PlaceOfOrigin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Promo" EntityType="Self.Promo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reservation" EntityType="Self.Reservation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationComplaint" EntityType="Self.ReservationComplaint" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationReview" EntityType="Self.ReservationReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservationStatus" EntityType="Self.ReservationStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReservedFrom" EntityType="Self.ReservedFrom" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Room" EntityType="Self.Room" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomAmenity" EntityType="Self.RoomAmenity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomPackage" EntityType="Self.RoomPackage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomPromo" EntityType="Self.RoomPromo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomServicePackage" EntityType="Self.RoomServicePackage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomStatus" EntityType="Self.RoomStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RoomType" EntityType="Self.RoomType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Service" EntityType="Self.Service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServiceType" EntityType="Self.ServiceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TypeOfBonification" EntityType="Self.TypeOfBonification" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_AmenityComplaint_RoomAmenity" Association="Self.FK_AmenityComplaint_RoomAmenity">
+      <End Role="RoomAmenity" EntitySet="RoomAmenity" />
+      <End Role="AmenityComplaint" EntitySet="AmenityComplaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AmenityReview_RoomAmenity" Association="Self.FK_AmenityReview_RoomAmenity">
+      <End Role="RoomAmenity" EntitySet="RoomAmenity" />
+      <End Role="AmenityReview" EntitySet="AmenityReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bonification_Employee" Association="Self.FK_Bonification_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Bonification" EntitySet="Bonification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Bonification_TypeOfBonification" Association="Self.FK_Bonification_TypeOfBonification">
+      <End Role="TypeOfBonification" EntitySet="TypeOfBonification" />
+      <End Role="Bonification" EntitySet="Bonification" />
+    </AssociationSet>
+    <AssociationSet Name="FK_City_State" Association="Self.FK_City_State">
+      <End Role="State" EntitySet="State" />
+      <End Role="City" EntitySet="City" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_City" Association="Self.FK_Employee_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_Departament" Association="Self.FK_Employee_Departament">
+      <End Role="Departament" EntitySet="Departament" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guest_City" Association="Self.FK_Guest_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Guest" EntitySet="Guest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Guest_PlaceOfOrigin" Association="Self.FK_Guest_PlaceOfOrigin">
+      <End Role="PlaceOfOrigin" EntitySet="PlaceOfOrigin" />
+      <End Role="Guest" EntitySet="Guest" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GuestCompanion_Reservation" Association="Self.FK_GuestCompanion_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="GuestCompanion" EntitySet="GuestCompanion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Guest" Association="Self.FK_Invoice_Guest">
+      <End Role="Guest" EntitySet="Guest" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Invoice_Reservation" Association="Self.FK_Invoice_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="Invoice" EntitySet="Invoice" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Employee" Association="Self.FK_Reservation_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Guest" Association="Self.FK_Reservation_Guest">
+      <End Role="Guest" EntitySet="Guest" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_ReservationStatus" Association="Self.FK_Reservation_ReservationStatus">
+      <End Role="ReservationStatus" EntitySet="ReservationStatus" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_ReservedFrom" Association="Self.FK_Reservation_ReservedFrom">
+      <End Role="ReservedFrom" EntitySet="ReservedFrom" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
+      <End Role="Room" EntitySet="Room" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReservationComplaint_Departament" Association="Self.FK_ReservationComplaint_Departament">
+      <End Role="Departament" EntitySet="Departament" />
+      <End Role="ReservationComplaint" EntitySet="ReservationComplaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReservationComplaint_Reservation" Association="Self.FK_ReservationComplaint_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="ReservationComplaint" EntitySet="ReservationComplaint" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReservationReview_Departament" Association="Self.FK_ReservationReview_Departament">
+      <End Role="Departament" EntitySet="Departament" />
+      <End Role="ReservationReview" EntitySet="ReservationReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ReservationReview_Reservation" Association="Self.FK_ReservationReview_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="ReservationReview" EntitySet="ReservationReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Room_RoomStatus" Association="Self.FK_Room_RoomStatus">
+      <End Role="RoomStatus" EntitySet="RoomStatus" />
+      <End Role="Room" EntitySet="Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Room_RoomType" Association="Self.FK_Room_RoomType">
+      <End Role="RoomType" EntitySet="RoomType" />
+      <End Role="Room" EntitySet="Room" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomAmenity_Reservation" Association="Self.FK_RoomAmenity_Reservation">
+      <End Role="Reservation" EntitySet="Reservation" />
+      <End Role="RoomAmenity" EntitySet="RoomAmenity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomAmenity_Service" Association="Self.FK_RoomAmenity_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="RoomAmenity" EntitySet="RoomAmenity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomPackage_RoomType" Association="Self.FK_RoomPackage_RoomType">
+      <End Role="RoomType" EntitySet="RoomType" />
+      <End Role="RoomPackage" EntitySet="RoomPackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomPromo_Promo" Association="Self.FK_RoomPromo_Promo">
+      <End Role="Promo" EntitySet="Promo" />
+      <End Role="RoomPromo" EntitySet="RoomPromo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomPromo_RoomType" Association="Self.FK_RoomPromo_RoomType">
+      <End Role="RoomType" EntitySet="RoomType" />
+      <End Role="RoomPromo" EntitySet="RoomPromo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomServicePackage_RoomPackage" Association="Self.FK_RoomServicePackage_RoomPackage">
+      <End Role="RoomPackage" EntitySet="RoomPackage" />
+      <End Role="RoomServicePackage" EntitySet="RoomServicePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RoomServicePackage_Service" Association="Self.FK_RoomServicePackage_Service">
+      <End Role="Service" EntitySet="Service" />
+      <End Role="RoomServicePackage" EntitySet="RoomServicePackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Service_ServiceType" Association="Self.FK_Service_ServiceType">
+      <End Role="ServiceType" EntitySet="ServiceType" />
+      <End Role="Service" EntitySet="Service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_State_PlaceOfOrigin" Association="Self.FK_State_PlaceOfOrigin">
+      <End Role="PlaceOfOrigin" EntitySet="PlaceOfOrigin" />
+      <End Role="State" EntitySet="State" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

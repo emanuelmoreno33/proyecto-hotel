@@ -1,0 +1,42 @@
+﻿@model hotel.Models.RoomPromo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomPromo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.discount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Promo.promoName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Promo.promoName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType.typeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType.typeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.roomPromoID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

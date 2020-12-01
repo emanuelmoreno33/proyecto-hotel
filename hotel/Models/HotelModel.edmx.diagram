@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="0fc89774093f405ba165f973f5fdab56" Name="Diagram1">
+        <EntityTypeShape EntityType="proyecto_hotelModel.AmenityComplaint" Width="1.5" PointX="15.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.AmenityReview" Width="1.5" PointX="15.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Bonification" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.City" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Departament" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Employee" Width="1.5" PointX="3" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Guest" Width="1.5" PointX="6" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.GuestCompanion" Width="1.5" PointX="10.5" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Invoice" Width="1.5" PointX="13.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.PlaceOfOrigin" Width="1.5" PointX="1.5" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Promo" Width="1.5" PointX="6.75" PointY="27" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Reservation" Width="1.5" PointX="8.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.ReservationComplaint" Width="1.5" PointX="10.5" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.ReservationReview" Width="1.5" PointX="10.5" PointY="14.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.ReservationStatus" Width="1.5" PointX="6" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.ReservedFrom" Width="1.5" PointX="6" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Room" Width="1.5" PointX="6" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.RoomAmenity" Width="1.5" PointX="13.5" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.RoomPackage" Width="1.5" PointX="6" PointY="22.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.RoomPromo" Width="1.5" PointX="9" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.RoomServicePackage" Width="1.5" PointX="13.5" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.RoomStatus" Width="1.5" PointX="3.75" PointY="18.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.RoomType" Width="1.5" PointX="3.75" PointY="21" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.Service" Width="1.5" PointX="11.25" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.ServiceType" Width="1.5" PointX="9" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.State" Width="1.5" PointX="1.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.sysdiagrams" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.TypeOfBonification" Width="1.5" PointX="3" PointY="15.25" IsExpanded="true" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_AmenityComplaint_RoomAmenity" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_AmenityReview_RoomAmenity" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Bonification_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Bonification_TypeOfBonification" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_City_State" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Employee_City" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Guest_City" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Employee_Departament" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_ReservationComplaint_Departament" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_ReservationReview_Departament" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Reservation_Employee" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Guest_PlaceOfOrigin" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Invoice_Guest" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Reservation_Guest" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_GuestCompanion_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Invoice_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_State_PlaceOfOrigin" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomPromo_Promo" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Reservation_ReservationStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Reservation_ReservedFrom" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Reservation_Room" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_ReservationComplaint_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_ReservationReview_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomAmenity_Reservation" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Room_RoomStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Room_RoomType" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomAmenity_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomPackage_RoomType" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomServicePackage_RoomPackage" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomPromo_RoomType" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_RoomServicePackage_Service" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Service_ServiceType" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

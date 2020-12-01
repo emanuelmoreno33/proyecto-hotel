@@ -1,0 +1,42 @@
+﻿@model hotel.Models.AmenityComplaint
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AmenityComplaint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateComplaint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateComplaint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomAmenity.amenityID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomAmenity.amenityID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.complaintID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

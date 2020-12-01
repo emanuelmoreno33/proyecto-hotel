@@ -1,0 +1,50 @@
+﻿@model hotel.Models.ReservationReview
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReservationReview</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.reviewRoom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reviewRoom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateReview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateReview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departament.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departament.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservation.reservationID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.reviewID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

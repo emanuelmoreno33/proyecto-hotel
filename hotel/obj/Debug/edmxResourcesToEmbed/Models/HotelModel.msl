@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="proyecto_hotelModelStoreContainer" CdmEntityContainer="proyecto_hotelEntities">
+    <EntitySetMapping Name="AmenityComplaint">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.AmenityComplaint">
+        <MappingFragment StoreEntitySet="AmenityComplaint">
+          <ScalarProperty Name="complaintID" ColumnName="complaintID" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="dateComplaint" ColumnName="dateComplaint" />
+          <ScalarProperty Name="amenityID" ColumnName="amenityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AmenityReview">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.AmenityReview">
+        <MappingFragment StoreEntitySet="AmenityReview">
+          <ScalarProperty Name="reviewID" ColumnName="reviewID" />
+          <ScalarProperty Name="reviewAmenity" ColumnName="reviewAmenity" />
+          <ScalarProperty Name="dataReview" ColumnName="dataReview" />
+          <ScalarProperty Name="amenityID" ColumnName="amenityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bonification">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Bonification">
+        <MappingFragment StoreEntitySet="Bonification">
+          <ScalarProperty Name="bonificationID" ColumnName="bonificationID" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="typeOfBonificationID" ColumnName="typeOfBonificationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="City">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.City">
+        <MappingFragment StoreEntitySet="City">
+          <ScalarProperty Name="cityID" ColumnName="cityID" />
+          <ScalarProperty Name="city1" ColumnName="city" />
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departament">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Departament">
+        <MappingFragment StoreEntitySet="Departament">
+          <ScalarProperty Name="departamentID" ColumnName="departamentID" />
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="admin" ColumnName="admin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employee">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="salary" ColumnName="salary" />
+          <ScalarProperty Name="placeOfOrigin" ColumnName="placeOfOrigin" />
+          <ScalarProperty Name="cityID" ColumnName="cityID" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="departamentID" ColumnName="departamentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Guest">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Guest">
+        <MappingFragment StoreEntitySet="Guest">
+          <ScalarProperty Name="guestID" ColumnName="guestID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="address" ColumnName="address" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="sex" ColumnName="sex" />
+          <ScalarProperty Name="housePhone" ColumnName="housePhone" />
+          <ScalarProperty Name="cellPhone" ColumnName="cellPhone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="RFC" ColumnName="RFC" />
+          <ScalarProperty Name="placeOfOrigin" ColumnName="placeOfOrigin" />
+          <ScalarProperty Name="cityID" ColumnName="cityID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GuestCompanion">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.GuestCompanion">
+        <MappingFragment StoreEntitySet="GuestCompanion">
+          <ScalarProperty Name="companionID" ColumnName="companionID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoice">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="guestID" ColumnName="guestID" />
+          <ScalarProperty Name="dateTime" ColumnName="dateTime" />
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+          <ScalarProperty Name="tax" ColumnName="tax" />
+          <ScalarProperty Name="totalDue" ColumnName="totalDue" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlaceOfOrigin">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.PlaceOfOrigin">
+        <MappingFragment StoreEntitySet="PlaceOfOrigin">
+          <ScalarProperty Name="placeOfOrigin1" ColumnName="placeOfOrigin" />
+          <ScalarProperty Name="country" ColumnName="country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Promo">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Promo">
+        <MappingFragment StoreEntitySet="Promo">
+          <ScalarProperty Name="promoID" ColumnName="promoID" />
+          <ScalarProperty Name="promoName" ColumnName="promoName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reservation">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Reservation">
+        <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="guestID" ColumnName="guestID" />
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="reservationStatusID" ColumnName="reservationStatusID" />
+          <ScalarProperty Name="reservedFromID" ColumnName="reservedFromID" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationComplaint">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.ReservationComplaint">
+        <MappingFragment StoreEntitySet="ReservationComplaint">
+          <ScalarProperty Name="complaintID" ColumnName="complaintID" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="dateComplaint" ColumnName="dateComplaint" />
+          <ScalarProperty Name="departamentID" ColumnName="departamentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationReview">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.ReservationReview">
+        <MappingFragment StoreEntitySet="ReservationReview">
+          <ScalarProperty Name="reviewID" ColumnName="reviewID" />
+          <ScalarProperty Name="reviewRoom" ColumnName="reviewRoom" />
+          <ScalarProperty Name="dateReview" ColumnName="dateReview" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="departamentID" ColumnName="departamentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservationStatus">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.ReservationStatus">
+        <MappingFragment StoreEntitySet="ReservationStatus">
+          <ScalarProperty Name="reservationStatusID" ColumnName="reservationStatusID" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReservedFrom">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.ReservedFrom">
+        <MappingFragment StoreEntitySet="ReservedFrom">
+          <ScalarProperty Name="reservedFromID" ColumnName="reservedFromID" />
+          <ScalarProperty Name="reservationMethod" ColumnName="reservationMethod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Room">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Room">
+        <MappingFragment StoreEntitySet="Room">
+          <ScalarProperty Name="roomID" ColumnName="roomID" />
+          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
+          <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
+          <ScalarProperty Name="roomStatusID" ColumnName="roomStatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomAmenity">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.RoomAmenity">
+        <MappingFragment StoreEntitySet="RoomAmenity">
+          <ScalarProperty Name="amenityID" ColumnName="amenityID" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomPackage">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.RoomPackage">
+        <MappingFragment StoreEntitySet="RoomPackage">
+          <ScalarProperty Name="roomPackageID" ColumnName="roomPackageID" />
+          <ScalarProperty Name="namePackage" ColumnName="namePackage" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
+          <ScalarProperty Name="frecuency" ColumnName="frecuency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomPromo">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.RoomPromo">
+        <MappingFragment StoreEntitySet="RoomPromo">
+          <ScalarProperty Name="roomPromoID" ColumnName="roomPromoID" />
+          <ScalarProperty Name="promoID" ColumnName="promoID" />
+          <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
+          <ScalarProperty Name="discount" ColumnName="discount" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomServicePackage">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.RoomServicePackage">
+        <MappingFragment StoreEntitySet="RoomServicePackage">
+          <ScalarProperty Name="roomServicePackageID" ColumnName="roomServicePackageID" />
+          <ScalarProperty Name="roomPackageID" ColumnName="roomPackageID" />
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomStatus">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.RoomStatus">
+        <MappingFragment StoreEntitySet="RoomStatus">
+          <ScalarProperty Name="roomStatusID" ColumnName="roomStatusID" />
+          <ScalarProperty Name="statusName" ColumnName="statusName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RoomType">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.RoomType">
+        <MappingFragment StoreEntitySet="RoomType">
+          <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Service">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.Service">
+        <MappingFragment StoreEntitySet="Service">
+          <ScalarProperty Name="serviceID" ColumnName="serviceID" />
+          <ScalarProperty Name="serviceTypeID" ColumnName="serviceTypeID" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="price" ColumnName="price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServiceType">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.ServiceType">
+        <MappingFragment StoreEntitySet="ServiceType">
+          <ScalarProperty Name="serviceTypeID" ColumnName="serviceTypeID" />
+          <ScalarProperty Name="serviceType1" ColumnName="serviceType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="State">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.State">
+        <MappingFragment StoreEntitySet="State">
+          <ScalarProperty Name="stateID" ColumnName="stateID" />
+          <ScalarProperty Name="state1" ColumnName="state" />
+          <ScalarProperty Name="placeOfOrigin" ColumnName="placeOfOrigin" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TypeOfBonification">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.TypeOfBonification">
+        <MappingFragment StoreEntitySet="TypeOfBonification">
+          <ScalarProperty Name="typeOfBonificationID" ColumnName="typeOfBonificationID" />
+          <ScalarProperty Name="daysLodging" ColumnName="daysLodging" />
+          <ScalarProperty Name="bonus" ColumnName="bonus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,64 @@
+﻿@model hotel.Models.ReservationComplaint
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>ReservationComplaint</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.complaintID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.complaintID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.comment)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.comment)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateComplaint)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateComplaint)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Departament.type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departament.type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Reservation.reservationID)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,50 @@
+﻿@model hotel.Models.RoomPackage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>RoomPackage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.namePackage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.namePackage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.price)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.price)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.frecuency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.frecuency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType.typeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType.typeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.roomPackageID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

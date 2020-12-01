@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -45,10 +46,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -120,11 +129,136 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AmenityComplaintsController.cs" />
+    <Compile Include="Controllers\AmenityReviewsController.cs" />
+    <Compile Include="Controllers\BonificationsController.cs" />
+    <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\DepartamentsController.cs" />
+    <Compile Include="Controllers\EmployeesController.cs" />
+    <Compile Include="Controllers\GuestCompanionsController.cs" />
+    <Compile Include="Controllers\GuestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\PlaceOfOriginsController.cs" />
+    <Compile Include="Controllers\PromoesController.cs" />
+    <Compile Include="Controllers\ReservationComplaintsController.cs" />
+    <Compile Include="Controllers\ReservationReviewsController.cs" />
+    <Compile Include="Controllers\ReservationsController.cs" />
+    <Compile Include="Controllers\ReservationStatusController.cs" />
+    <Compile Include="Controllers\ReservedFromsController.cs" />
+    <Compile Include="Controllers\RoomAmenitiesController.cs" />
+    <Compile Include="Controllers\RoomPackagesController.cs" />
+    <Compile Include="Controllers\RoomPromoesController.cs" />
+    <Compile Include="Controllers\RoomsController.cs" />
+    <Compile Include="Controllers\RoomServicePackagesController.cs" />
+    <Compile Include="Controllers\RoomStatusController.cs" />
+    <Compile Include="Controllers\RoomTypesController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
+    <Compile Include="Controllers\ServiceTypesController.cs" />
+    <Compile Include="Controllers\StatesController.cs" />
+    <Compile Include="Controllers\TypeOfBonificationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Hotel_general.cs" />
+    <Compile Include="Models\AmenityComplaint.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AmenityReview.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Bonification.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\City.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Departament.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Guest.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\GuestCompanion.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HotelModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HotelModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HotelModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HotelModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Invoice.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PlaceOfOrigin.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promo.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Reservation.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationComplaint.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationReview.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservationStatus.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ReservedFrom.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Room.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomAmenity.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomPackage.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomPromo.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomServicePackage.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomStatus.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RoomType.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Service.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ServiceType.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\State.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TypeOfBonification.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -136,8 +270,25 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\HotelModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelModel.edmx</DependentUpon>
+      <LastGenOutput>HotelModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\HotelModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>HotelModel.edmx</DependentUpon>
+      <LastGenOutput>HotelModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\HotelModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>HotelModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\HotelModel.edmx.diagram">
+      <DependentUpon>HotelModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -163,6 +314,141 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\PlaceOfOrigins\Create.cshtml" />
+    <Content Include="Views\PlaceOfOrigins\Delete.cshtml" />
+    <Content Include="Views\PlaceOfOrigins\Details.cshtml" />
+    <Content Include="Views\PlaceOfOrigins\Edit.cshtml" />
+    <Content Include="Views\PlaceOfOrigins\Index.cshtml" />
+    <Content Include="Views\States\Create.cshtml" />
+    <Content Include="Views\States\Delete.cshtml" />
+    <Content Include="Views\States\Details.cshtml" />
+    <Content Include="Views\States\Edit.cshtml" />
+    <Content Include="Views\States\Index.cshtml" />
+    <Content Include="Views\Cities\Create.cshtml" />
+    <Content Include="Views\Cities\Delete.cshtml" />
+    <Content Include="Views\Cities\Details.cshtml" />
+    <Content Include="Views\Cities\Edit.cshtml" />
+    <Content Include="Views\Cities\Index.cshtml" />
+    <Content Include="Views\Promoes\Create.cshtml" />
+    <Content Include="Views\Promoes\Delete.cshtml" />
+    <Content Include="Views\Promoes\Details.cshtml" />
+    <Content Include="Views\Promoes\Edit.cshtml" />
+    <Content Include="Views\Promoes\Index.cshtml" />
+    <Content Include="Views\RoomStatus\Create.cshtml" />
+    <Content Include="Views\RoomStatus\Delete.cshtml" />
+    <Content Include="Views\RoomStatus\Details.cshtml" />
+    <Content Include="Views\RoomStatus\Edit.cshtml" />
+    <Content Include="Views\RoomStatus\Index.cshtml" />
+    <Content Include="Views\RoomTypes\Create.cshtml" />
+    <Content Include="Views\RoomTypes\Delete.cshtml" />
+    <Content Include="Views\RoomTypes\Details.cshtml" />
+    <Content Include="Views\RoomTypes\Edit.cshtml" />
+    <Content Include="Views\RoomTypes\Index.cshtml" />
+    <Content Include="Views\RoomPromoes\Create.cshtml" />
+    <Content Include="Views\RoomPromoes\Delete.cshtml" />
+    <Content Include="Views\RoomPromoes\Details.cshtml" />
+    <Content Include="Views\RoomPromoes\Edit.cshtml" />
+    <Content Include="Views\RoomPromoes\Index.cshtml" />
+    <Content Include="Views\Rooms\Create.cshtml" />
+    <Content Include="Views\Rooms\Delete.cshtml" />
+    <Content Include="Views\Rooms\Details.cshtml" />
+    <Content Include="Views\Rooms\Edit.cshtml" />
+    <Content Include="Views\Rooms\Index.cshtml" />
+    <Content Include="Views\Guests\Create.cshtml" />
+    <Content Include="Views\Guests\Delete.cshtml" />
+    <Content Include="Views\Guests\Details.cshtml" />
+    <Content Include="Views\Guests\Edit.cshtml" />
+    <Content Include="Views\Guests\Index.cshtml" />
+    <Content Include="Views\RoomPackages\Create.cshtml" />
+    <Content Include="Views\RoomPackages\Delete.cshtml" />
+    <Content Include="Views\RoomPackages\Details.cshtml" />
+    <Content Include="Views\RoomPackages\Edit.cshtml" />
+    <Content Include="Views\RoomPackages\Index.cshtml" />
+    <Content Include="Views\ReservationStatus\Create.cshtml" />
+    <Content Include="Views\ReservationStatus\Delete.cshtml" />
+    <Content Include="Views\ReservationStatus\Details.cshtml" />
+    <Content Include="Views\ReservationStatus\Edit.cshtml" />
+    <Content Include="Views\ReservationStatus\Index.cshtml" />
+    <Content Include="Views\ReservedFroms\Create.cshtml" />
+    <Content Include="Views\ReservedFroms\Delete.cshtml" />
+    <Content Include="Views\ReservedFroms\Details.cshtml" />
+    <Content Include="Views\ReservedFroms\Edit.cshtml" />
+    <Content Include="Views\ReservedFroms\Index.cshtml" />
+    <Content Include="Views\TypeOfBonifications\Create.cshtml" />
+    <Content Include="Views\TypeOfBonifications\Delete.cshtml" />
+    <Content Include="Views\TypeOfBonifications\Details.cshtml" />
+    <Content Include="Views\TypeOfBonifications\Edit.cshtml" />
+    <Content Include="Views\TypeOfBonifications\Index.cshtml" />
+    <Content Include="Views\Departaments\Create.cshtml" />
+    <Content Include="Views\Departaments\Delete.cshtml" />
+    <Content Include="Views\Departaments\Details.cshtml" />
+    <Content Include="Views\Departaments\Edit.cshtml" />
+    <Content Include="Views\Departaments\Index.cshtml" />
+    <Content Include="Views\ServiceTypes\Create.cshtml" />
+    <Content Include="Views\ServiceTypes\Delete.cshtml" />
+    <Content Include="Views\ServiceTypes\Details.cshtml" />
+    <Content Include="Views\ServiceTypes\Edit.cshtml" />
+    <Content Include="Views\ServiceTypes\Index.cshtml" />
+    <Content Include="Views\Services\Create.cshtml" />
+    <Content Include="Views\Services\Delete.cshtml" />
+    <Content Include="Views\Services\Details.cshtml" />
+    <Content Include="Views\Services\Edit.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
+    <Content Include="Views\Employees\Create.cshtml" />
+    <Content Include="Views\Employees\Delete.cshtml" />
+    <Content Include="Views\Employees\Details.cshtml" />
+    <Content Include="Views\Employees\Edit.cshtml" />
+    <Content Include="Views\Employees\Index.cshtml" />
+    <Content Include="Views\Bonifications\Create.cshtml" />
+    <Content Include="Views\Bonifications\Delete.cshtml" />
+    <Content Include="Views\Bonifications\Details.cshtml" />
+    <Content Include="Views\Bonifications\Edit.cshtml" />
+    <Content Include="Views\Bonifications\Index.cshtml" />
+    <Content Include="Views\RoomServicePackages\Create.cshtml" />
+    <Content Include="Views\RoomServicePackages\Delete.cshtml" />
+    <Content Include="Views\RoomServicePackages\Details.cshtml" />
+    <Content Include="Views\RoomServicePackages\Edit.cshtml" />
+    <Content Include="Views\RoomServicePackages\Index.cshtml" />
+    <Content Include="Views\ReservationComplaints\Create.cshtml" />
+    <Content Include="Views\ReservationComplaints\Delete.cshtml" />
+    <Content Include="Views\ReservationComplaints\Details.cshtml" />
+    <Content Include="Views\ReservationComplaints\Edit.cshtml" />
+    <Content Include="Views\ReservationComplaints\Index.cshtml" />
+    <Content Include="Views\Reservations\Create.cshtml" />
+    <Content Include="Views\Reservations\Delete.cshtml" />
+    <Content Include="Views\Reservations\Details.cshtml" />
+    <Content Include="Views\Reservations\Edit.cshtml" />
+    <Content Include="Views\Reservations\Index.cshtml" />
+    <Content Include="Views\Invoices\Create.cshtml" />
+    <Content Include="Views\Invoices\Delete.cshtml" />
+    <Content Include="Views\Invoices\Details.cshtml" />
+    <Content Include="Views\Invoices\Edit.cshtml" />
+    <Content Include="Views\Invoices\Index.cshtml" />
+    <Content Include="Views\ReservationReviews\Create.cshtml" />
+    <Content Include="Views\ReservationReviews\Delete.cshtml" />
+    <Content Include="Views\ReservationReviews\Details.cshtml" />
+    <Content Include="Views\ReservationReviews\Edit.cshtml" />
+    <Content Include="Views\ReservationReviews\Index.cshtml" />
+    <Content Include="Views\RoomAmenities\Create.cshtml" />
+    <Content Include="Views\RoomAmenities\Delete.cshtml" />
+    <Content Include="Views\RoomAmenities\Details.cshtml" />
+    <Content Include="Views\RoomAmenities\Edit.cshtml" />
+    <Content Include="Views\RoomAmenities\Index.cshtml" />
+    <Content Include="Views\GuestCompanions\Create.cshtml" />
+    <Content Include="Views\GuestCompanions\Delete.cshtml" />
+    <Content Include="Views\GuestCompanions\Details.cshtml" />
+    <Content Include="Views\GuestCompanions\Edit.cshtml" />
+    <Content Include="Views\GuestCompanions\Index.cshtml" />
+    <Content Include="Views\AmenityComplaints\Create.cshtml" />
+    <Content Include="Views\AmenityComplaints\Delete.cshtml" />
+    <Content Include="Views\AmenityComplaints\Details.cshtml" />
+    <Content Include="Views\AmenityComplaints\Edit.cshtml" />
+    <Content Include="Views\AmenityComplaints\Index.cshtml" />
+    <Content Include="Views\AmenityReviews\Create.cshtml" />
+    <Content Include="Views\AmenityReviews\Delete.cshtml" />
+    <Content Include="Views\AmenityReviews\Details.cshtml" />
+    <Content Include="Views\AmenityReviews\Edit.cshtml" />
+    <Content Include="Views\AmenityReviews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -179,6 +465,9 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -213,7 +502,10 @@
       <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
     </PropertyGroup>
     <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

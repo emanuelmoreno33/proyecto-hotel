@@ -1,0 +1,42 @@
+﻿@model hotel.Models.AmenityReview
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>AmenityReview</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.reviewAmenity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.reviewAmenity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataReview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataReview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomAmenity.amenityID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomAmenity.amenityID)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.reviewID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

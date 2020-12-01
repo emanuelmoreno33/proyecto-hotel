@@ -170,3 +170,7 @@ D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\obj\Debug\hotel.cspro
 D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\obj\Debug\hotel.csproj.CopyComplete
 D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\obj\Debug\hotel.dll
 D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\obj\Debug\hotel.pdb
+D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\bin\EntityFramework.dll
+D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\bin\EntityFramework.SqlServer.dll
+D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\bin\EntityFramework.xml
+D:\Usuarios\Emanuel\Documentos\github\proyecto-hotel\hotel\bin\EntityFramework.SqlServer.xml

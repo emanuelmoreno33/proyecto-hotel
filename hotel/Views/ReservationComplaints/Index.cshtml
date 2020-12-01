@@ -1,0 +1,57 @@
+﻿@model IEnumerable<hotel.Models.ReservationComplaint>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.complaintID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.comment)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateComplaint)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Departament.type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.complaintID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateComplaint)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departament.type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Reservation.reservationID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.reservationID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.reservationID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.reservationID })
+        </td>
+    </tr>
+}
+
+</table>

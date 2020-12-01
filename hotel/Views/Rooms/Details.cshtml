@@ -1,0 +1,42 @@
+﻿@model hotel.Models.Room
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Room</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.roomNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.roomNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomStatus.statusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomStatus.statusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RoomType.typeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RoomType.typeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.roomID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
