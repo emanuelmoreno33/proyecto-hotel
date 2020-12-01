@@ -17,7 +17,7 @@ namespace hotel.Controllers
         // GET: Employees
         public ActionResult Index()
         {
-            var employee = db.Employee.Include(e => e.City).Include(e => e.Departament);
+            var employee = db.Employee.Include(e => e.City).Include(e => e.Departament).Include(e => e.PlaceOfOrigin1);
             return View(employee.ToList());
         }
 
@@ -41,6 +41,7 @@ namespace hotel.Controllers
         {
             ViewBag.cityID = new SelectList(db.City, "cityID", "city1");
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type");
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country");
             return View();
         }
 
@@ -60,6 +61,7 @@ namespace hotel.Controllers
 
             ViewBag.cityID = new SelectList(db.City, "cityID", "city1", employee.cityID);
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type", employee.departamentID);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", employee.placeOfOrigin);
             return View(employee);
         }
 
@@ -77,6 +79,7 @@ namespace hotel.Controllers
             }
             ViewBag.cityID = new SelectList(db.City, "cityID", "city1", employee.cityID);
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type", employee.departamentID);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", employee.placeOfOrigin);
             return View(employee);
         }
 
@@ -95,6 +98,7 @@ namespace hotel.Controllers
             }
             ViewBag.cityID = new SelectList(db.City, "cityID", "city1", employee.cityID);
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type", employee.departamentID);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", employee.placeOfOrigin);
             return View(employee);
         }
 

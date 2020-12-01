@@ -65,6 +65,7 @@
         <AssociationConnector Association="proyecto_hotelModel.FK_RoomPromo_RoomType" ManuallyRouted="false" />
         <AssociationConnector Association="proyecto_hotelModel.FK_RoomServicePackage_Service" ManuallyRouted="false" />
         <AssociationConnector Association="proyecto_hotelModel.FK_Service_ServiceType" ManuallyRouted="false" />
+        <AssociationConnector Association="proyecto_hotelModel.FK_Employee_PlaceOfOrigin" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

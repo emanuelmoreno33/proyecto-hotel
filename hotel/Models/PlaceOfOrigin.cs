@@ -19,6 +19,7 @@ namespace hotel.Models
         {
             this.Guest = new HashSet<Guest>();
             this.State = new HashSet<State>();
+            this.Employee = new HashSet<Employee>();
         }
     
         public string placeOfOrigin1 { get; set; }
@@ -28,5 +29,7 @@ namespace hotel.Models
         public virtual ICollection<Guest> Guest { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<State> State { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Employee> Employee { get; set; }
     }
 }

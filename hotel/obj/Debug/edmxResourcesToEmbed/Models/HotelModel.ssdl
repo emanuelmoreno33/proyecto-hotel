@@ -348,6 +348,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Employee_PlaceOfOrigin">
+    <End Role="PlaceOfOrigin" Type="Self.PlaceOfOrigin" Multiplicity="1" />
+    <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlaceOfOrigin">
+        <PropertyRef Name="placeOfOrigin" />
+      </Principal>
+      <Dependent Role="Employee">
+        <PropertyRef Name="placeOfOrigin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_Guest_City">
     <End Role="City" Type="Self.City" Multiplicity="0..1" />
     <End Role="Guest" Type="Self.Guest" Multiplicity="*" />
@@ -703,6 +715,10 @@
     </AssociationSet>
     <AssociationSet Name="FK_Employee_Departament" Association="Self.FK_Employee_Departament">
       <End Role="Departament" EntitySet="Departament" />
+      <End Role="Employee" EntitySet="Employee" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Employee_PlaceOfOrigin" Association="Self.FK_Employee_PlaceOfOrigin">
+      <End Role="PlaceOfOrigin" EntitySet="PlaceOfOrigin" />
       <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
     <AssociationSet Name="FK_Guest_City" Association="Self.FK_Guest_City">
