@@ -48,7 +48,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "stateID,state1,placeOfOrigin")] State state)
+        public ActionResult Create([Bind(Include = "state1,placeOfOrigin")] State state)
         {
             if (ModelState.IsValid)
             {

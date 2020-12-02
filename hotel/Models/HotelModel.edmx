@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="complaintID" />
           </Key>
-          <Property Name="complaintID" Type="int" Nullable="false" />
+          <Property Name="complaintID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="comment" Type="text" Nullable="false" />
           <Property Name="dateComplaint" Type="datetime" Nullable="false" />
           <Property Name="amenityID" Type="int" Nullable="false" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="reviewID" />
           </Key>
-          <Property Name="reviewID" Type="int" Nullable="false" />
+          <Property Name="reviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reviewAmenity" Type="int" Nullable="false" />
           <Property Name="dataReview" Type="datetime" Nullable="false" />
           <Property Name="amenityID" Type="int" Nullable="false" />
@@ -27,7 +27,7 @@
           <Key>
             <PropertyRef Name="bonificationID" />
           </Key>
-          <Property Name="bonificationID" Type="int" Nullable="false" />
+          <Property Name="bonificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employeeID" Type="int" Nullable="false" />
           <Property Name="typeOfBonificationID" Type="int" Nullable="false" />
         </EntityType>
@@ -35,7 +35,7 @@
           <Key>
             <PropertyRef Name="cityID" />
           </Key>
-          <Property Name="cityID" Type="int" Nullable="false" />
+          <Property Name="cityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="city" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="stateID" Type="int" Nullable="false" />
         </EntityType>
@@ -43,7 +43,7 @@
           <Key>
             <PropertyRef Name="departamentID" />
           </Key>
-          <Property Name="departamentID" Type="int" Nullable="false" />
+          <Property Name="departamentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="admin" Type="char" MaxLength="1" Nullable="false" />
         </EntityType>
@@ -51,7 +51,7 @@
           <Key>
             <PropertyRef Name="employeeID" />
           </Key>
-          <Property Name="employeeID" Type="int" Nullable="false" />
+          <Property Name="employeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DOB" Type="date" Nullable="false" />
@@ -66,7 +66,7 @@
           <Key>
             <PropertyRef Name="guestID" />
           </Key>
-          <Property Name="guestID" Type="int" Nullable="false" />
+          <Property Name="guestID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="address" Type="varchar" MaxLength="200" Nullable="false" />
@@ -83,7 +83,7 @@
           <Key>
             <PropertyRef Name="companionID" />
           </Key>
-          <Property Name="companionID" Type="int" Nullable="false" />
+          <Property Name="companionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="lastName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DOB" Type="date" Nullable="false" />
@@ -94,7 +94,7 @@
           <Key>
             <PropertyRef Name="invoiceID" />
           </Key>
-          <Property Name="invoiceID" Type="int" Nullable="false" />
+          <Property Name="invoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reservationID" Type="int" Nullable="false" />
           <Property Name="guestID" Type="int" Nullable="false" />
           <Property Name="dateTime" Type="date" Nullable="false" />
@@ -114,7 +114,7 @@
           <Key>
             <PropertyRef Name="promoID" />
           </Key>
-          <Property Name="promoID" Type="int" Nullable="false" />
+          <Property Name="promoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="promoName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="description" Type="text" Nullable="false" />
           <Property Name="startDate" Type="date" Nullable="false" />
@@ -124,7 +124,7 @@
           <Key>
             <PropertyRef Name="reservationID" />
           </Key>
-          <Property Name="reservationID" Type="int" Nullable="false" />
+          <Property Name="reservationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="guestID" Type="int" Nullable="false" />
           <Property Name="roomID" Type="int" Nullable="false" />
           <Property Name="startDate" Type="datetime" Nullable="false" />
@@ -137,7 +137,7 @@
           <Key>
             <PropertyRef Name="reservationID" />
           </Key>
-          <Property Name="complaintID" Type="int" Nullable="false" />
+          <Property Name="complaintID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reservationID" Type="int" Nullable="false" />
           <Property Name="comment" Type="text" Nullable="false" />
           <Property Name="dateComplaint" Type="datetime" Nullable="false" />
@@ -147,7 +147,7 @@
           <Key>
             <PropertyRef Name="reviewID" />
           </Key>
-          <Property Name="reviewID" Type="int" Nullable="false" />
+          <Property Name="reviewID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reviewRoom" Type="int" Nullable="false" />
           <Property Name="dateReview" Type="datetime" Nullable="false" />
           <Property Name="reservationID" Type="int" Nullable="false" />
@@ -157,21 +157,21 @@
           <Key>
             <PropertyRef Name="reservationStatusID" />
           </Key>
-          <Property Name="reservationStatusID" Type="int" Nullable="false" />
+          <Property Name="reservationStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="status" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="ReservedFrom">
           <Key>
             <PropertyRef Name="reservedFromID" />
           </Key>
-          <Property Name="reservedFromID" Type="int" Nullable="false" />
+          <Property Name="reservedFromID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reservationMethod" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Room">
           <Key>
             <PropertyRef Name="roomID" />
           </Key>
-          <Property Name="roomID" Type="int" Nullable="false" />
+          <Property Name="roomID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="roomNumber" Type="int" Nullable="false" />
           <Property Name="roomTypeID" Type="int" Nullable="false" />
           <Property Name="roomStatusID" Type="int" Nullable="false" />
@@ -180,7 +180,7 @@
           <Key>
             <PropertyRef Name="amenityID" />
           </Key>
-          <Property Name="amenityID" Type="int" Nullable="false" />
+          <Property Name="amenityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="reservationID" Type="int" Nullable="false" />
           <Property Name="serviceID" Type="int" Nullable="false" />
           <Property Name="date" Type="datetime" Nullable="false" />
@@ -189,7 +189,7 @@
           <Key>
             <PropertyRef Name="roomPackageID" />
           </Key>
-          <Property Name="roomPackageID" Type="int" Nullable="false" />
+          <Property Name="roomPackageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="namePackage" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
           <Property Name="roomTypeID" Type="int" Nullable="false" />
@@ -199,7 +199,7 @@
           <Key>
             <PropertyRef Name="roomPromoID" />
           </Key>
-          <Property Name="roomPromoID" Type="int" Nullable="false" />
+          <Property Name="roomPromoID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="promoID" Type="int" Nullable="false" />
           <Property Name="roomTypeID" Type="int" Nullable="false" />
           <Property Name="discount" Type="float" Nullable="false" />
@@ -208,7 +208,7 @@
           <Key>
             <PropertyRef Name="roomServicePackageID" />
           </Key>
-          <Property Name="roomServicePackageID" Type="int" Nullable="false" />
+          <Property Name="roomServicePackageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="roomPackageID" Type="int" Nullable="false" />
           <Property Name="serviceID" Type="int" Nullable="false" />
         </EntityType>
@@ -216,14 +216,14 @@
           <Key>
             <PropertyRef Name="roomStatusID" />
           </Key>
-          <Property Name="roomStatusID" Type="int" Nullable="false" />
+          <Property Name="roomStatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="statusName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="RoomType">
           <Key>
             <PropertyRef Name="roomTypeID" />
           </Key>
-          <Property Name="roomTypeID" Type="int" Nullable="false" />
+          <Property Name="roomTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="typeName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
         </EntityType>
@@ -231,7 +231,7 @@
           <Key>
             <PropertyRef Name="serviceID" />
           </Key>
-          <Property Name="serviceID" Type="int" Nullable="false" />
+          <Property Name="serviceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="serviceTypeID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
@@ -240,14 +240,14 @@
           <Key>
             <PropertyRef Name="serviceTypeID" />
           </Key>
-          <Property Name="serviceTypeID" Type="int" Nullable="false" />
+          <Property Name="serviceTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="serviceType" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="State">
           <Key>
             <PropertyRef Name="stateID" />
           </Key>
-          <Property Name="stateID" Type="int" Nullable="false" />
+          <Property Name="stateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="state" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="placeOfOrigin" Type="varchar" MaxLength="3" Nullable="false" />
         </EntityType>
@@ -265,7 +265,7 @@
           <Key>
             <PropertyRef Name="typeOfBonificationID" />
           </Key>
-          <Property Name="typeOfBonificationID" Type="int" Nullable="false" />
+          <Property Name="typeOfBonificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="daysLodging" Type="int" Nullable="false" />
           <Property Name="bonus" Type="decimal" Precision="12" Scale="2" Nullable="false" />
         </EntityType>

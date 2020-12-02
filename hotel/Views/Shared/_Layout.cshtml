@@ -22,16 +22,62 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Paises <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("List of students", "Index", "PlaceOfOrigins",null,new {id="item 1"})</li>
+                            <li>@Html.ActionLink("Lista de Paises", "Index", "PlaceOfOrigins")</li>
+                            <li>@Html.ActionLink("Lista de Estados", "Index", "States")</li>
+                            <li>@Html.ActionLink("Lista de Ciudades", "Index", "Cities")</li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Clientes <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Reservacion", "Index", "Reservations")</li>
+                            <li>@Html.ActionLink("Clientes", "Index", "Guests")</li>
+                            <li>@Html.ActionLink("Acompañantes", "Index", "GuestCompanions")</li>
+                            <li>@Html.ActionLink("Facturas", "Index", "Invoices")</li>
+                            <li>@Html.ActionLink("Calificacion", "Index", "ReservationReviews")</li>
+                            <li>@Html.ActionLink("Quejas y sugerencias", "Index", "ReservationComplaints")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Cuartos <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Cuartos", "Index", "Rooms")</li>
+                            <li>@Html.ActionLink("Tipo de cuartos", "Index", "RoomTypes")</li>
+                            <li>@Html.ActionLink("Estatus del cuarto", "Index", "RoomStatus")</li>
+                            <li>@Html.ActionLink("Promociones", "Index", "Promoes")</li>
+                            <li>@Html.ActionLink("Promocion por cuarto", "Index", "RoomPromoes")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Amenidades <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Reservar amenidad", "Index", "RoomAmenities")</li>
+                            <li>@Html.ActionLink("Amenidad", "Index", "Services")</li>
+                            <li>@Html.ActionLink("Calificación", "Index", "AmenityReviews")</li>
+                            <li>@Html.ActionLink("Quejas y sugerencias", "Index", "AmenityComplaints")</li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Administrador <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Empleados", "Index", "Employees")</li>
+                            <li>@Html.ActionLink("Departamento", "Index", "Departaments")</li>
+                            <li>@Html.ActionLink("Bonifiaciones", "Index", "Bonifications")</li>
+                            <li>@Html.ActionLink("Tipo de bonificaciones", "Index", "TypeOfBonifications")</li>
+                            <li>@Html.ActionLink("Paquetes de habitacion", "Index", "RoomPackages")</li>
+                            <li>@Html.ActionLink("Paquetes con servicio incluido", "Index", "RoomServicePackages")</li>
+                            <li>@Html.ActionLink("Tipo de servicio", "Index", "ServiceTypes")</li>
+                            <li>@Html.ActionLink("Estatus de reservación", "Index", "ReservationStatus")</li>
+                            <li>@Html.ActionLink("Tipo de reservacion", "Index", "ReservedFroms")</li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                 </ul>
-            </div>
+</div>
         </div>
     </div>
     <div class="container body-content">
