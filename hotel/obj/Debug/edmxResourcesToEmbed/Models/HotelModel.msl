@@ -130,6 +130,8 @@
     <EntitySetMapping Name="Reservation">
       <EntityTypeMapping TypeName="proyecto_hotelModel.Reservation">
         <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="roomPromoID" ColumnName="roomPromoID" />
+          <ScalarProperty Name="roomPackageID" ColumnName="roomPackageID" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
           <ScalarProperty Name="guestID" ColumnName="guestID" />
           <ScalarProperty Name="roomID" ColumnName="roomID" />

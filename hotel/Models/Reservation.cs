@@ -31,6 +31,8 @@ namespace hotel.Models
         public int reservationStatusID { get; set; }
         public int reservedFromID { get; set; }
         public int employeeID { get; set; }
+        public Nullable<int> roomPackageID { get; set; }
+        public Nullable<int> roomPromoID { get; set; }
     
         public virtual Employee Employee { get; set; }
         public virtual Guest Guest { get; set; }
@@ -46,5 +48,7 @@ namespace hotel.Models
         public virtual ICollection<ReservationReview> ReservationReview { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoomAmenity> RoomAmenity { get; set; }
+        public virtual RoomPackage RoomPackage { get; set; }
+        public virtual RoomPromo RoomPromo { get; set; }
     }
 }
