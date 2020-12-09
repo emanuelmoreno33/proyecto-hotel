@@ -18,16 +18,19 @@ namespace hotel.Models
         public RoomPackage()
         {
             this.RoomServicePackage = new HashSet<RoomServicePackage>();
+            this.Reservation = new HashSet<Reservation>();
         }
     
         public int roomPackageID { get; set; }
         public string namePackage { get; set; }
         public decimal price { get; set; }
         public int roomTypeID { get; set; }
-        public int frecuency { get; set; }
+        public int frequency { get; set; }
     
         public virtual RoomType RoomType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<RoomServicePackage> RoomServicePackage { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Reservation> Reservation { get; set; }
     }
 }

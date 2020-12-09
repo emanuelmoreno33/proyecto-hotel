@@ -163,6 +163,10 @@
     <NavigationProperty Name="ReservationComplaint" Relationship="Self.FK_ReservationComplaint_Reservation" FromRole="Reservation" ToRole="ReservationComplaint" />
     <NavigationProperty Name="ReservationReview" Relationship="Self.FK_ReservationReview_Reservation" FromRole="Reservation" ToRole="ReservationReview" />
     <NavigationProperty Name="RoomAmenity" Relationship="Self.FK_RoomAmenity_Reservation" FromRole="Reservation" ToRole="RoomAmenity" />
+    <Property Name="roomPackageID" Type="Int32" />
+    <Property Name="roomPromoID" Type="Int32" />
+    <NavigationProperty Name="RoomPackage" Relationship="proyecto_hotelModel.FK_Reservation_RoomPackage" FromRole="Reservation" ToRole="RoomPackage" />
+    <NavigationProperty Name="RoomPromo" Relationship="proyecto_hotelModel.FK_Reservation_RoomPromo" FromRole="Reservation" ToRole="RoomPromo" />
   </EntityType>
   <EntityType Name="ReservationComplaint">
     <Key>
@@ -237,9 +241,10 @@
     <Property Name="namePackage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="price" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="roomTypeID" Type="Int32" Nullable="false" />
-    <Property Name="frecuency" Type="Int32" Nullable="false" />
     <NavigationProperty Name="RoomType" Relationship="Self.FK_RoomPackage_RoomType" FromRole="RoomPackage" ToRole="RoomType" />
     <NavigationProperty Name="RoomServicePackage" Relationship="Self.FK_RoomServicePackage_RoomPackage" FromRole="RoomPackage" ToRole="RoomServicePackage" />
+    <NavigationProperty Name="Reservation" Relationship="proyecto_hotelModel.FK_Reservation_RoomPackage" FromRole="RoomPackage" ToRole="Reservation" />
+    <Property Name="frequency" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="RoomPromo">
     <Key>
@@ -251,6 +256,7 @@
     <Property Name="discount" Type="Double" Nullable="false" />
     <NavigationProperty Name="Promo" Relationship="Self.FK_RoomPromo_Promo" FromRole="RoomPromo" ToRole="Promo" />
     <NavigationProperty Name="RoomType" Relationship="Self.FK_RoomPromo_RoomType" FromRole="RoomPromo" ToRole="RoomType" />
+    <NavigationProperty Name="Reservation" Relationship="proyecto_hotelModel.FK_Reservation_RoomPromo" FromRole="RoomPromo" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="RoomServicePackage">
     <Key>
@@ -875,6 +881,14 @@
       <End Role="PlaceOfOrigin" EntitySet="PlaceOfOrigin" />
       <End Role="Employee" EntitySet="Employee" />
     </AssociationSet>
+    <AssociationSet Name="FK_Reservation_RoomPackage" Association="proyecto_hotelModel.FK_Reservation_RoomPackage">
+      <End Role="RoomPackage" EntitySet="RoomPackage" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_RoomPromo" Association="proyecto_hotelModel.FK_Reservation_RoomPromo">
+      <End Role="RoomPromo" EntitySet="RoomPromo" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
   </EntityContainer>
   <Association Name="FK_Employee_PlaceOfOrigin">
     <End Type="proyecto_hotelModel.PlaceOfOrigin" Role="PlaceOfOrigin" Multiplicity="1" />
@@ -885,6 +899,30 @@
       </Principal>
       <Dependent Role="Employee">
         <PropertyRef Name="placeOfOrigin" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_RoomPackage">
+    <End Type="proyecto_hotelModel.RoomPackage" Role="RoomPackage" Multiplicity="0..1" />
+    <End Type="proyecto_hotelModel.Reservation" Role="Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomPackage">
+        <PropertyRef Name="roomPackageID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="roomPackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_RoomPromo">
+    <End Type="proyecto_hotelModel.RoomPromo" Role="RoomPromo" Multiplicity="0..1" />
+    <End Type="proyecto_hotelModel.Reservation" Role="Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomPromo">
+        <PropertyRef Name="roomPromoID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="roomPromoID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

@@ -130,6 +130,8 @@
     <EntitySetMapping Name="Reservation">
       <EntityTypeMapping TypeName="proyecto_hotelModel.Reservation">
         <MappingFragment StoreEntitySet="Reservation">
+          <ScalarProperty Name="roomPromoID" ColumnName="roomPromoID" />
+          <ScalarProperty Name="roomPackageID" ColumnName="roomPackageID" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
           <ScalarProperty Name="guestID" ColumnName="guestID" />
           <ScalarProperty Name="roomID" ColumnName="roomID" />
@@ -202,11 +204,11 @@
     <EntitySetMapping Name="RoomPackage">
       <EntityTypeMapping TypeName="proyecto_hotelModel.RoomPackage">
         <MappingFragment StoreEntitySet="RoomPackage">
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
           <ScalarProperty Name="roomPackageID" ColumnName="roomPackageID" />
           <ScalarProperty Name="namePackage" ColumnName="namePackage" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
-          <ScalarProperty Name="frecuency" ColumnName="frecuency" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

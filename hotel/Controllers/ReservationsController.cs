@@ -17,7 +17,7 @@ namespace hotel.Controllers
         // GET: Reservations
         public ActionResult Index()
         {
-            var reservation = db.Reservation.Include(r => r.Employee).Include(r => r.Guest).Include(r => r.ReservationStatus).Include(r => r.ReservedFrom).Include(r => r.Room).Include(r => r.ReservationComplaint);
+            var reservation = db.Reservation.Include(r => r.Employee).Include(r => r.Guest).Include(r => r.ReservationStatus).Include(r => r.ReservedFrom).Include(r => r.Room).Include(r => r.ReservationComplaint).Include(r => r.RoomPackage).Include(r => r.RoomPromo);
             return View(reservation.ToList());
         }
 
@@ -45,6 +45,8 @@ namespace hotel.Controllers
             ViewBag.reservedFromID = new SelectList(db.ReservedFrom, "reservedFromID", "reservationMethod");
             ViewBag.roomID = new SelectList(db.Room, "roomID", "roomID");
             ViewBag.reservationID = new SelectList(db.ReservationComplaint, "reservationID", "comment");
+            ViewBag.roomPackageID = new SelectList(db.RoomPackage, "roomPackageID", "namePackage");
+            ViewBag.roomPromoID = new SelectList(db.RoomPromo, "roomPromoID", "roomPromoID");
             return View();
         }
 
@@ -53,7 +55,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "reservationID,guestID,roomID,startDate,endDate,reservationStatusID,reservedFromID,employeeID")] Reservation reservation)
+        public ActionResult Create([Bind(Include = "reservationID,guestID,roomID,startDate,endDate,reservationStatusID,reservedFromID,employeeID,roomPackageID,roomPromoID")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
@@ -68,6 +70,8 @@ namespace hotel.Controllers
             ViewBag.reservedFromID = new SelectList(db.ReservedFrom, "reservedFromID", "reservationMethod", reservation.reservedFromID);
             ViewBag.roomID = new SelectList(db.Room, "roomID", "roomID", reservation.roomID);
             ViewBag.reservationID = new SelectList(db.ReservationComplaint, "reservationID", "comment", reservation.reservationID);
+            ViewBag.roomPackageID = new SelectList(db.RoomPackage, "roomPackageID", "namePackage", reservation.roomPackageID);
+            ViewBag.roomPromoID = new SelectList(db.RoomPromo, "roomPromoID", "roomPromoID", reservation.roomPromoID);
             return View(reservation);
         }
 
@@ -89,6 +93,8 @@ namespace hotel.Controllers
             ViewBag.reservedFromID = new SelectList(db.ReservedFrom, "reservedFromID", "reservationMethod", reservation.reservedFromID);
             ViewBag.roomID = new SelectList(db.Room, "roomID", "roomID", reservation.roomID);
             ViewBag.reservationID = new SelectList(db.ReservationComplaint, "reservationID", "comment", reservation.reservationID);
+            ViewBag.roomPackageID = new SelectList(db.RoomPackage, "roomPackageID", "namePackage", reservation.roomPackageID);
+            ViewBag.roomPromoID = new SelectList(db.RoomPromo, "roomPromoID", "roomPromoID", reservation.roomPromoID);
             return View(reservation);
         }
 
@@ -97,7 +103,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "reservationID,guestID,roomID,startDate,endDate,reservationStatusID,reservedFromID,employeeID")] Reservation reservation)
+        public ActionResult Edit([Bind(Include = "reservationID,guestID,roomID,startDate,endDate,reservationStatusID,reservedFromID,employeeID,roomPackageID,roomPromoID")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
@@ -111,6 +117,8 @@ namespace hotel.Controllers
             ViewBag.reservedFromID = new SelectList(db.ReservedFrom, "reservedFromID", "reservationMethod", reservation.reservedFromID);
             ViewBag.roomID = new SelectList(db.Room, "roomID", "roomID", reservation.roomID);
             ViewBag.reservationID = new SelectList(db.ReservationComplaint, "reservationID", "comment", reservation.reservationID);
+            ViewBag.roomPackageID = new SelectList(db.RoomPackage, "roomPackageID", "namePackage", reservation.roomPackageID);
+            ViewBag.roomPromoID = new SelectList(db.RoomPromo, "roomPromoID", "roomPromoID", reservation.roomPromoID);
             return View(reservation);
         }
 

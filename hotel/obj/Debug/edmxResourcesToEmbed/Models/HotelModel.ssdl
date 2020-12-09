@@ -127,6 +127,8 @@
     <Property Name="reservationStatusID" Type="int" Nullable="false" />
     <Property Name="reservedFromID" Type="int" Nullable="false" />
     <Property Name="employeeID" Type="int" Nullable="false" />
+    <Property Name="roomPackageID" Type="int" />
+    <Property Name="roomPromoID" Type="int" />
   </EntityType>
   <EntityType Name="ReservationComplaint">
     <Key>
@@ -188,7 +190,7 @@
     <Property Name="namePackage" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="roomTypeID" Type="int" Nullable="false" />
-    <Property Name="frecuency" Type="int" Nullable="false" />
+    <Property Name="frequency" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RoomPromo">
     <Key>
@@ -480,6 +482,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_Reservation_RoomPackage">
+    <End Role="RoomPackage" Type="Self.RoomPackage" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomPackage">
+        <PropertyRef Name="roomPackageID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="roomPackageID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Reservation_RoomPromo">
+    <End Role="RoomPromo" Type="Self.RoomPromo" Multiplicity="0..1" />
+    <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RoomPromo">
+        <PropertyRef Name="roomPromoID" />
+      </Principal>
+      <Dependent Role="Reservation">
+        <PropertyRef Name="roomPromoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_ReservationComplaint_Departament">
     <End Role="Departament" Type="Self.Departament" Multiplicity="1" />
     <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="*" />
@@ -759,6 +785,14 @@
     </AssociationSet>
     <AssociationSet Name="FK_Reservation_Room" Association="Self.FK_Reservation_Room">
       <End Role="Room" EntitySet="Room" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_RoomPackage" Association="Self.FK_Reservation_RoomPackage">
+      <End Role="RoomPackage" EntitySet="RoomPackage" />
+      <End Role="Reservation" EntitySet="Reservation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Reservation_RoomPromo" Association="Self.FK_Reservation_RoomPromo">
+      <End Role="RoomPromo" EntitySet="RoomPromo" />
       <End Role="Reservation" EntitySet="Reservation" />
     </AssociationSet>
     <AssociationSet Name="FK_ReservationComplaint_Departament" Association="Self.FK_ReservationComplaint_Departament">

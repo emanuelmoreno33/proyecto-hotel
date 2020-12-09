@@ -35,6 +35,12 @@
         <th>
             @Html.DisplayNameFor(model => model.ReservationComplaint.comment)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomPackage.namePackage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomPromo.roomPromoID)
+        </th>
         <th></th>
     </tr>
 
@@ -63,6 +69,12 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.ReservationComplaint.comment)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomPackage.namePackage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomPromo.roomPromoID)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.reservationID }) |
