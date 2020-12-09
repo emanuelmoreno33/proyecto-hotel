@@ -190,7 +190,7 @@
     <Property Name="namePackage" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="roomTypeID" Type="int" Nullable="false" />
-    <Property Name="frecuency" Type="int" Nullable="false" />
+    <Property Name="frequency" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="RoomPromo">
     <Key>

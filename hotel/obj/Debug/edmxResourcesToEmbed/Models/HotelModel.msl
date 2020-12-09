@@ -204,11 +204,11 @@
     <EntitySetMapping Name="RoomPackage">
       <EntityTypeMapping TypeName="proyecto_hotelModel.RoomPackage">
         <MappingFragment StoreEntitySet="RoomPackage">
+          <ScalarProperty Name="frequency" ColumnName="frequency" />
           <ScalarProperty Name="roomPackageID" ColumnName="roomPackageID" />
           <ScalarProperty Name="namePackage" ColumnName="namePackage" />
           <ScalarProperty Name="price" ColumnName="price" />
           <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
-          <ScalarProperty Name="frecuency" ColumnName="frecuency" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

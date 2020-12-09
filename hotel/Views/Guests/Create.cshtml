@@ -126,3 +126,26 @@
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
+
+<script>
+    $.ready(function () {
+        if ($("#placeOfOrigin").val() == "MEX") {
+            $("#cityID").prop("disabled", false)
+            $("#cityID").val("1")
+        }
+        else {
+            $("#cityID").prop("disabled", true)
+            $("#cityID").val(null)
+        }
+    })
+    $("#placeOfOrigin").on("change", function () {
+        if ($("#placeOfOrigin").val() == "MEX") {
+            $("#cityID").prop("disabled", false)
+            $("#cityID").val("1")
+        }
+        else {
+            $("#cityID").prop("disabled", true)
+            $("#cityID").val(null)
+        }
+    })
+</script>

@@ -241,10 +241,10 @@
     <Property Name="namePackage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="price" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="roomTypeID" Type="Int32" Nullable="false" />
-    <Property Name="frecuency" Type="Int32" Nullable="false" />
     <NavigationProperty Name="RoomType" Relationship="Self.FK_RoomPackage_RoomType" FromRole="RoomPackage" ToRole="RoomType" />
     <NavigationProperty Name="RoomServicePackage" Relationship="Self.FK_RoomServicePackage_RoomPackage" FromRole="RoomPackage" ToRole="RoomServicePackage" />
     <NavigationProperty Name="Reservation" Relationship="proyecto_hotelModel.FK_Reservation_RoomPackage" FromRole="RoomPackage" ToRole="Reservation" />
+    <Property Name="frequency" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="RoomPromo">
     <Key>

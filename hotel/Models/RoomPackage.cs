@@ -25,7 +25,7 @@ namespace hotel.Models
         public string namePackage { get; set; }
         public decimal price { get; set; }
         public int roomTypeID { get; set; }
-        public int frecuency { get; set; }
+        public int frequency { get; set; }
     
         public virtual RoomType RoomType { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
