@@ -223,6 +223,7 @@
     <Property Name="roomTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="typeName" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="capacity" Type="int" />
   </EntityType>
   <EntityType Name="Service">
     <Key>

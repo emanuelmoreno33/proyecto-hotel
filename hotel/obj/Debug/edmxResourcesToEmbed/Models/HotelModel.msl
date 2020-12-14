@@ -242,6 +242,7 @@
     <EntitySetMapping Name="RoomType">
       <EntityTypeMapping TypeName="proyecto_hotelModel.RoomType">
         <MappingFragment StoreEntitySet="RoomType">
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
           <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
           <ScalarProperty Name="typeName" ColumnName="typeName" />
           <ScalarProperty Name="price" ColumnName="price" />

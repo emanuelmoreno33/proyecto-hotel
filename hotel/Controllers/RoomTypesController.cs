@@ -46,7 +46,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "roomTypeID,typeName,price")] RoomType roomType)
+        public ActionResult Create([Bind(Include = "roomTypeID,typeName,price,capacity")] RoomType roomType)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "roomTypeID,typeName,price")] RoomType roomType)
+        public ActionResult Edit([Bind(Include = "roomTypeID,typeName,price,capacity")] RoomType roomType)
         {
             if (ModelState.IsValid)
             {

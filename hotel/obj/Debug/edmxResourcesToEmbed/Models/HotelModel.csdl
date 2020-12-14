@@ -286,6 +286,7 @@
     <NavigationProperty Name="Room" Relationship="Self.FK_Room_RoomType" FromRole="RoomType" ToRole="Room" />
     <NavigationProperty Name="RoomPackage" Relationship="Self.FK_RoomPackage_RoomType" FromRole="RoomType" ToRole="RoomPackage" />
     <NavigationProperty Name="RoomPromo" Relationship="Self.FK_RoomPromo_RoomType" FromRole="RoomType" ToRole="RoomPromo" />
+    <Property Name="capacity" Type="Int32" />
   </EntityType>
   <EntityType Name="Service">
     <Key>

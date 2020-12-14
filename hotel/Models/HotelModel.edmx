@@ -228,6 +228,7 @@
           <Property Name="roomTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="typeName" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+          <Property Name="capacity" Type="int" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -1151,6 +1152,7 @@
           <NavigationProperty Name="Room" Relationship="Self.FK_Room_RoomType" FromRole="RoomType" ToRole="Room" />
           <NavigationProperty Name="RoomPackage" Relationship="Self.FK_RoomPackage_RoomType" FromRole="RoomType" ToRole="RoomPackage" />
           <NavigationProperty Name="RoomPromo" Relationship="Self.FK_RoomPromo_RoomType" FromRole="RoomType" ToRole="RoomPromo" />
+          <Property Name="capacity" Type="Int32" />
         </EntityType>
         <EntityType Name="Service">
           <Key>
@@ -2038,6 +2040,7 @@
           <EntitySetMapping Name="RoomType">
             <EntityTypeMapping TypeName="proyecto_hotelModel.RoomType">
               <MappingFragment StoreEntitySet="RoomType">
+                <ScalarProperty Name="capacity" ColumnName="capacity" />
                 <ScalarProperty Name="roomTypeID" ColumnName="roomTypeID" />
                 <ScalarProperty Name="typeName" ColumnName="typeName" />
                 <ScalarProperty Name="price" ColumnName="price" />

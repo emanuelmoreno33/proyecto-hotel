@@ -25,6 +25,7 @@ namespace hotel.Models
         public int roomTypeID { get; set; }
         public string typeName { get; set; }
         public decimal price { get; set; }
+        public Nullable<int> capacity { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Room> Room { get; set; }
