@@ -278,6 +278,9 @@
     <Compile Include="Models\State.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+ <Compile Include="Models\sysdiagrams.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TypeOfBonification.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
