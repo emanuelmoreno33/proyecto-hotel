@@ -1,93 +1,81 @@
 ﻿@model IEnumerable<hotel.Models.Guest>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Clientes";
 }
 
-<h2>Index</h2>
+<h2>Clientes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            Nombre(s)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lastName)
+            Apellidos
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.address)
+            Dirección
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DOB)
+            Telefono de casa
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.sex)
+            Telefono celular
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.housePhone)
+            Correo electronico
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cellPhone)
+            RFC
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.email)
+            Pais
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RFC)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.City.city1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlaceOfOrigin1.country)
+            Ciudad
         </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.address)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DOB)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.sex)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.housePhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cellPhone)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RFC)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.City.city1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.guestID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.guestID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.guestID })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.lastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.housePhone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.cellPhone)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.email)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.RFC)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.City.city1)
+    </td>
+    <td>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.guestID })'">Editar</button>
+        <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = item.guestID })'">Detalles</button>
+        <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.guestID })'">Eliminar</button>
+    </td>
+</tr>
 }
 
 </table>

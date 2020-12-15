@@ -1,7 +1,7 @@
 ﻿@model hotel.Models.Guest
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles del cliente";
 }
 
 <h2>Details</h2>
@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.name)
+            Nombre(s):
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.lastName)
+            Apellidos:
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.address)
+            Dirección:
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DOB)
+            Fecha de nacimiento:
         </dt>
 
         <dd>
@@ -43,15 +43,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.sex)
+            Sexo:
         </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.sex)
-        </dd>
+        @if (Model.sex == "H")
+        {
+            <dd>Hombre</dd>
+        }
+        else if (Model.sex == "M")
+        {
+            <dd>Mujer</dd>
+        }
+        else
+        {
+            <dd>Otro</dd>
+        }
 
         <dt>
-            @Html.DisplayNameFor(model => model.housePhone)
+            Telefono de casa:
         </dt>
 
         <dd>
@@ -59,7 +68,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cellPhone)
+            Telefono celular:
         </dt>
 
         <dd>
@@ -67,7 +76,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+            Correo electronico:
         </dt>
 
         <dd>
@@ -75,7 +84,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RFC)
+            RFC:
         </dt>
 
         <dd>
@@ -83,24 +92,23 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.City.city1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.City.city1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.PlaceOfOrigin1.country)
+            Pais:
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.PlaceOfOrigin1.country)
         </dd>
 
+        <dt>
+            Ciudad:
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.City.city1)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.guestID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </p>

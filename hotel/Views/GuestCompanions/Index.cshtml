@@ -12,19 +12,13 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.name)
+            Nombre
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.lastName)
+            Apellido
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.DOB)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.email)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+            Reservación
         </th>
         <th></th>
     </tr>
@@ -38,18 +32,12 @@
             @Html.DisplayFor(modelItem => item.lastName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DOB)
+            @Html.DisplayFor(modelItem => item.reservationID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reservation.reservationID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.companionID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.companionID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.companionID })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.companionID })'">Editar</button>
+            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = item.companionID })'">Detalles</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.companionID })'">Eliminar</button>
         </td>
     </tr>
 }
