@@ -1,21 +1,18 @@
 ﻿@model IEnumerable<hotel.Models.State>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Estados Mexicanos";
 }
 
-<h2>Index</h2>
+<h2>Estados Mexicanos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar nuevo Estado</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.state1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PlaceOfOrigin1.country)
+            Estado de la Republica Mexicana
         </th>
         <th></th>
     </tr>
@@ -26,12 +23,8 @@
             @Html.DisplayFor(modelItem => item.state1)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.stateID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.stateID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.stateID })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.stateID })'">Editar</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.stateID })'">Eliminar</button>
         </td>
     </tr>
 }

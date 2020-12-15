@@ -11,7 +11,7 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.startDate)
+            Fecha de llegada:
         </dt>
 
         <dd>
@@ -19,7 +19,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.endDate)
+            Fecha de salida:
         </dt>
 
         <dd>
@@ -27,7 +27,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Employee.name)
+            Nombre del empleado:
         </dt>
 
         <dd>
@@ -35,7 +35,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Guest.name)
+            Nombre del Huesped
         </dt>
 
         <dd>
@@ -43,7 +43,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ReservationStatus.status)
+            Estatus de la reservación:
         </dt>
 
         <dd>
@@ -51,7 +51,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.ReservedFrom.reservationMethod)
+            Metodo de reservación:
         </dt>
 
         <dd>
@@ -59,23 +59,22 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Room.roomID)
+            Numero de cuarto:
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.Room.roomID)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.ReservationComplaint.comment)
+            Tipo de cuarto:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.ReservationComplaint.comment)
+            @Html.DisplayFor(model => model.Room.RoomType.typeName)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RoomPackage.namePackage)
+            Paquete de cuarto
         </dt>
 
         <dd>
@@ -83,7 +82,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.RoomPromo.roomPromoID)
+            Promoción de habitación:
         </dt>
 
         <dd>
@@ -93,6 +92,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.reservationID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </p>

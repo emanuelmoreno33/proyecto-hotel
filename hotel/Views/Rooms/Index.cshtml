@@ -4,21 +4,21 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista de Habitaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar nueva habitación</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.roomNumber)
+            Numero de Habitación
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoomStatus.statusName)
+            Estatus
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoomType.typeName)
+            Tipo de habitación
         </th>
         <th></th>
     </tr>
@@ -35,9 +35,9 @@
             @Html.DisplayFor(modelItem => item.RoomType.typeName)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.roomID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.roomID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.roomID })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.roomID })'">Editar</button>
+    
+         
         </td>
     </tr>
 }

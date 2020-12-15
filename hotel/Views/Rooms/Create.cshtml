@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.Room
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Agregar Habitación";
 }
 
-<h2>Create</h2>
+<h2>Agregar Habitación</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,45 +12,48 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Room</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
 
         <div class="form-group">
-            @Html.LabelFor(model => model.roomNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+           
             <div class="col-md-10">
+                <label>Número de cuarto</label>  
                 @Html.EditorFor(model => model.roomNumber, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.roomNumber, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.roomTypeID, "roomTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            
             <div class="col-md-10">
+                <label>Tipo de cuarto</label>
                 @Html.DropDownList("roomTypeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomTypeID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.roomStatusID, "roomStatusID", htmlAttributes: new { @class = "control-label col-md-2" })
+           
             <div class="col-md-10">
+                <label>Estatus del cuarto</label>
                 @Html.DropDownList("roomStatusID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomStatusID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class=" col-md-10">
+                <input type="submit" value="Agregar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

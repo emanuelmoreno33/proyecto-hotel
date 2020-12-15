@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.Reservation
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Agregar Reservación";
 }
 
-<h2>Create</h2>
+<h2>Ingrese los datos de la reservación</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,99 +12,86 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Reservation</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.reservationID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.reservationID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.reservationID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
 
         <div class="form-group">
-            @Html.LabelFor(model => model.guestID, "guestID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("guestID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.guestID, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.roomID, "roomID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                <label>Numero de cuarto</label>
                 @Html.DropDownList("roomID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.startDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            
             <div class="col-md-10">
-                @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control" } })
+                <label>Fecha de llegada</label>
+                @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.startDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.endDate, htmlAttributes: new { @class = "control-label col-md-2" })
+           
             <div class="col-md-10">
-                @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control" } })
+                <label>Fecha de Salida</label>
+                @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control", @type = "date" } })
                 @Html.ValidationMessageFor(model => model.endDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.reservationStatusID, "reservationStatusID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <label>Estatus de reservación</label>
                 @Html.DropDownList("reservationStatusID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.reservationStatusID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.reservedFromID, "reservedFromID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <label>Forma de reservación</label>
                 @Html.DropDownList("reservedFromID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.reservedFromID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.employeeID, "employeeID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <label>Empleado que lo registra</label>
                 @Html.DropDownList("employeeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.employeeID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.roomPackageID, "roomPackageID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <label>Paquete de cuarto</label>
                 @Html.DropDownList("roomPackageID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomPackageID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.roomPromoID, "roomPromoID", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
+                <label>Promocion aplicada</label>
                 @Html.DropDownList("roomPromoID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomPromoID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class=" col-md-10">
+                <input type="submit" value="Registrar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

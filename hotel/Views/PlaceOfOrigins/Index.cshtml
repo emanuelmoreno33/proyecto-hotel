@@ -7,7 +7,7 @@
 <h2>Países</h2>
 
 <p>
-    @Html.ActionLink("Agregar Nuevo Pais", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar Pais</button>
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,8 @@
             @Html.DisplayFor(modelItem => item.country)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.placeOfOrigin1 }) |
-            @Html.ActionLink("Detalles", "Details", new { id=item.placeOfOrigin1 }) |
-            @Html.ActionLink("Borrar", "Delete", new { id=item.placeOfOrigin1 })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.placeOfOrigin1 })'">Editar</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.placeOfOrigin1 })'">Eliminar</button>
         </td>
     </tr>
 }

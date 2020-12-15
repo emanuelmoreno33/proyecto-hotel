@@ -1,45 +1,33 @@
 ﻿@model IEnumerable<hotel.Models.Reservation>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Reservaciones";
 }
 
-<h2>Index</h2>
+<h2>Lista de reservaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar Nuevo</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.startDate)
+            Fecha de llegada
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.endDate)
+            Fecha de salida
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Employee.name)
+            Nombre del cliente
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Guest.name)
+            Estatus
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReservationStatus.status)
+           Metodo de reservacion
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReservedFrom.reservationMethod)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Room.roomID)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ReservationComplaint.comment)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomPackage.namePackage)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.RoomPromo.roomPromoID)
+            No. de Cuarto
         </th>
         <th></th>
     </tr>
@@ -47,13 +35,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.startDate)
+            @item.startDate.ToString("dd 'de' MMMM 'del' yyyy")
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.endDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Employee.name)
+           @item.endDate.ToString("dd 'de' MMMM 'del' yyyy")
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Guest.name)
@@ -65,21 +50,13 @@
             @Html.DisplayFor(modelItem => item.ReservedFrom.reservationMethod)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Room.roomID)
+            @Html.DisplayFor(modelItem => item.Room.roomID) (@Html.DisplayFor(modelItem => item.Room.RoomType.typeName))
         </td>
+
         <td>
-            @Html.DisplayFor(modelItem => item.ReservationComplaint.comment)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomPackage.namePackage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomPromo.roomPromoID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.reservationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.reservationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.reservationID })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.reservationID })'">Editar</button>
+            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = item.reservationID })'">Detalles</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.reservationID })'">Eliminar</button>
         </td>
     </tr>
 }

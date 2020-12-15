@@ -1,3 +1,5 @@
+use proyecto_hotel;
+go
 -- ROOM PACKAGE SUGGESTION INSERT TRIGGER
 CREATE OR ALTER TRIGGER TRG_RESERVATION_BI01
 ON Reservation
@@ -21,7 +23,7 @@ ON Reservation
 FOR UPDATE
 AS
 BEGIN
-	DECLARE @cancelledStatus INT = 1;
+	DECLARE @cancelledStatus INT = 5;
 
 	DECLARE @days INT;
 	DECLARE @employeeID INT;
@@ -103,7 +105,7 @@ BEGIN
 	DECLARE @days INT;
 	DECLARE @employeeID INT;
 
-	SET @days = (SELECT DATEDIFF(DAY, endDate, startDate) FROM inserted);
+	SET @days = (SELECT DATEDIFF(DAY,startDate,endDate) FROM inserted);
 	SET @employeeID = (SELECT employeeID FROM inserted);
 
 	INSERT INTO Bonification(employeeID, typeOfBonificationID)
@@ -113,7 +115,7 @@ BEGIN
 			typeOfBonificationID AS typeOfBonificationID, 
 			MAX(daysLodging) AS maxDaysLodging
 		FROM TypeOfBonification
-		WHERE @days > daysLodging
+		WHERE @days >= daysLodging
 		GROUP BY typeOfBonificationID
 	) T;
 END;
