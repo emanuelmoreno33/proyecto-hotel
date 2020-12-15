@@ -163,6 +163,7 @@
     <Compile Include="Controllers\GuestsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InvoicesController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PlaceOfOriginsController.cs" />
     <Compile Include="Controllers\PromoesController.cs" />
     <Compile Include="Controllers\ReservationComplaintsController.cs" />
@@ -277,9 +278,6 @@
     <Compile Include="Models\State.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\sysdiagrams.cs">
-      <DependentUpon>HotelModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\TypeOfBonification.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
@@ -287,6 +285,68 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\default-css.css" />
+    <Content Include="Assets\css\font-awesome.min.css" />
+    <Content Include="Assets\css\metisMenu.css" />
+    <Content Include="Assets\css\owl.carousel.min.css" />
+    <Content Include="Assets\css\responsive.css" />
+    <Content Include="Assets\css\slicknav.min.css" />
+    <Content Include="Assets\css\styles.css" />
+    <Content Include="Assets\css\themify-icons.css" />
+    <Content Include="Assets\css\typography.css" />
+    <Content Include="Assets\fonts\fontawesome-webfont.svg" />
+    <Content Include="Assets\fonts\themify.svg" />
+    <Content Include="Assets\images\author\author-img1.jpg" />
+    <Content Include="Assets\images\author\author-img2.jpg" />
+    <Content Include="Assets\images\author\author-img3.jpg" />
+    <Content Include="Assets\images\author\author-img4.jpg" />
+    <Content Include="Assets\images\author\avatar.png" />
+    <Content Include="Assets\images\bg\singin-bg.jpg" />
+    <Content Include="Assets\images\blog\post-thumb1.jpg" />
+    <Content Include="Assets\images\blog\post-thumb2.jpg" />
+    <Content Include="Assets\images\card\card-img1.jpg" />
+    <Content Include="Assets\images\card\card-img10.jpg" />
+    <Content Include="Assets\images\card\card-img2.jpg" />
+    <Content Include="Assets\images\card\card-img3.jpg" />
+    <Content Include="Assets\images\card\card-img4.jpg" />
+    <Content Include="Assets\images\card\card-img5.jpg" />
+    <Content Include="Assets\images\card\card-img6.jpg" />
+    <Content Include="Assets\images\card\card-img7.jpg" />
+    <Content Include="Assets\images\card\card-img8.jpg" />
+    <Content Include="Assets\images\card\card-img9.jpg" />
+    <Content Include="Assets\images\icon\loader.gif" />
+    <Content Include="Assets\images\icon\logo.png" />
+    <Content Include="Assets\images\icon\logo2.png" />
+    <Content Include="Assets\images\icon\market-value\icon1.png" />
+    <Content Include="Assets\images\icon\market-value\icon2.png" />
+    <Content Include="Assets\images\icon\market-value\icon3.png" />
+    <Content Include="Assets\images\icon\market-value\icon4.png" />
+    <Content Include="Assets\images\icon\market-value\trends-down-icon.png" />
+    <Content Include="Assets\images\icon\market-value\trends-up-icon.png" />
+    <Content Include="Assets\images\icon\market-value\triangle-down.png" />
+    <Content Include="Assets\images\icon\market-value\triangle-up.png" />
+    <Content Include="Assets\images\media\media1.jpg" />
+    <Content Include="Assets\images\media\media2.jpg" />
+    <Content Include="Assets\images\team\team-author1.jpg" />
+    <Content Include="Assets\images\team\team-author2.jpg" />
+    <Content Include="Assets\images\team\team-author3.jpg" />
+    <Content Include="Assets\images\team\team-author4.jpg" />
+    <Content Include="Assets\images\team\team-author5.jpg" />
+    <Content Include="Assets\js\bar-chart.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Assets\js\jquery.slicknav.min.js" />
+    <Content Include="Assets\js\jquery.slimscroll.min.js" />
+    <Content Include="Assets\js\line-chart.js" />
+    <Content Include="Assets\js\maps.js" />
+    <Content Include="Assets\js\metisMenu.min.js" />
+    <Content Include="Assets\js\owl.carousel.min.js" />
+    <Content Include="Assets\js\pie-chart.js" />
+    <Content Include="Assets\js\plugins.js" />
+    <Content Include="Assets\js\popper.min.js" />
+    <Content Include="Assets\js\scripts.js" />
+    <Content Include="Assets\js\vendor\jquery-2.2.4.min.js" />
+    <Content Include="Assets\js\vendor\modernizr-2.8.3.min.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -314,6 +374,16 @@
     <Content Include="Models\HotelModel.edmx.diagram">
       <DependentUpon>HotelModel.edmx</DependentUpon>
     </Content>
+    <Content Include="Assets\fonts\fontawesome-webfont.eot" />
+    <Content Include="Assets\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff" />
+    <Content Include="Assets\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Assets\fonts\FontAwesome.otf" />
+    <Content Include="Assets\fonts\themify.eot" />
+    <Content Include="Assets\fonts\themify.ttf" />
+    <Content Include="Assets\fonts\themify.woff" />
+    <Content Include="Assets\images\icon\market-value\Thumbs.db" />
+    <Content Include="Assets\images\icon\Thumbs.db" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -474,6 +544,7 @@
     <Content Include="Views\Reservations\Details.cshtml" />
     <Content Include="Views\Reservations\Edit.cshtml" />
     <Content Include="Views\Reservations\Index.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
