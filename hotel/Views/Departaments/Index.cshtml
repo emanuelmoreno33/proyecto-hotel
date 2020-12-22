@@ -4,34 +4,34 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Departementos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Departamento", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.type)
+            Tipo:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.admin)
+            Administrador:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var department in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.type)
+            @Html.DisplayFor(modeldepartment => department.type)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.admin)
+            @Html.DisplayFor(modeldepartment => department.admin)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.departamentID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.departamentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.departamentID })
+            @Html.ActionLink("Edit", "Edit", new { id=department.departamentID }) |
+            @Html.ActionLink("Details", "Details", new { id=department.departamentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=department.departamentID })
         </td>
     </tr>
 }

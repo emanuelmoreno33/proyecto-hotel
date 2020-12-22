@@ -4,44 +4,44 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Acompañantes</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Acompañante", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Nombre
+            Nombre(s):
         </th>
         <th>
-            Apellido
+            Apellido(s):
         </th>
         <th>
-            Reservación
+            Reservación:
         </th>
         <th>
-            Acciones
+            Acciones:
         </th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.reservationID)
-        </td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.companionID })'">Editar</button>
-            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = item.companionID })'">Detalles</button>
-            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.companionID })'">Eliminar</button>
-        </td>
-    </tr>
-}
-
+    @foreach (var companion in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelcompanion => companion.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelcompanion => companion.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelcompanion => companion.reservationID)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = companion.companionID })'">Editar</button>
+                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = companion.companionID })'">Detalles</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = companion.companionID })'">Eliminar</button>
+            </td>
+        </tr>
+    }
 </table>

@@ -4,42 +4,43 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Reseña de comodidates</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva reseña", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.reviewAmenity)
+            Comodidad:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dataReview)
+            Reseña:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoomAmenity.amenityID)
+            ID de Comodidad:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.reviewAmenity)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataReview)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomAmenity.amenityID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.reviewID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.reviewID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.reviewID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.reviewAmenity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataReview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoomAmenity.amenityID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.reviewID }) |
+                @Html.ActionLink("Details", "Details", new { id = item.reviewID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.reviewID })
+            </td>
+        </tr>
+    }
 
 </table>

@@ -12,70 +12,70 @@
 <table class="table">
     <tr>
         <th>
-            Nombre(s)
+            Nombre(s):
         </th>
         <th>
-            Apellidos
+            Apellido(s):
         </th>
         <th>
-            Dirección
+            Dirección:
         </th>
         <th>
-            Telefono de casa
+            Telefono de casa:
         </th>
         <th>
-            Telefono celular
+            Telefono celular:
         </th>
         <th>
-            Correo electronico
+            Correo electronico:
         </th>
         <th>
-            RFC
+            RFC:
         </th>
         <th>
-            Pais
+            Pais:
         </th>
         <th>
-            Ciudad
+            Ciudad:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.lastName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.address)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.housePhone)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.cellPhone)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.email)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.RFC)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.City.city1)
-    </td>
-    <td>
-        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.guestID })'">Editar</button>
-        <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = item.guestID })'">Detalles</button>
-        <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.guestID })'">Eliminar</button>
-    </td>
-</tr>
-}
-
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.lastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.housePhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cellPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RFC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City.city1)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { client = item.guestclient })'">Editar</button>
+                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { client = item.guestclient })'">Detalles</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { client = item.guestclient })'">Eliminar</button>
+            </td>
+        </tr>
+    }
 </table>

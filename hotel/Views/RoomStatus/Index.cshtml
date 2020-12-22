@@ -4,30 +4,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Estatus de Habitaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Estatus", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.statusName)
+            Nombre del Estatus:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.statusName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.roomStatusID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.roomStatusID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.roomStatusID })
-        </td>
-    </tr>
-}
-
+    @foreach (var status in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelstatus => status.statusName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = status.roomStatusID }) |
+                @Html.ActionLink("Details", "Details", new { id = status.roomStatusID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = status.roomStatusID })
+            </td>
+        </tr>
+    }
 </table>

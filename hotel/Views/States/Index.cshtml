@@ -12,21 +12,21 @@
 <table class="table">
     <tr>
         <th>
-            Estado de la Republica Mexicana
+            Estado de la Republica Mexicana:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.state1)
-        </td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.stateID })'">Editar</button>
-            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.stateID })'">Eliminar</button>
-        </td>
-    </tr>
-}
-
+    @foreach (var state in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelstate => state.state1)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = state.stateID })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = state.stateID })'">Eliminar</button>
+            </td>
+        </tr>
+    }
 </table>

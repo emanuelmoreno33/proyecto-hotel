@@ -4,66 +4,66 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Facturas</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva Factura", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.dateTime)
+            Fecha:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.subtotal)
+            Subtotal:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.discount)
+            Descuento:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tax)
+            Impuesto:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.totalDue)
+            Total:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Guest.name)
+            Nombre del cliente:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+            ID de reservación:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.dateTime)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.subtotal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.discount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tax)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.totalDue)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Guest.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reservation.reservationID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.invoiceID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.invoiceID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.invoiceID })
-        </td>
-    </tr>
-}
-
+    @foreach (var invoice in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.dateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.subtotal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.tax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.totalDue)
+            </td>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.Guest.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelinvoice => invoice.Reservation.reservationID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = invoice.invoiceID }) |
+                @Html.ActionLink("Details", "Details", new { id = invoice.invoiceID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = invoice.invoiceID })
+            </td>
+        </tr>
+    }
 </table>

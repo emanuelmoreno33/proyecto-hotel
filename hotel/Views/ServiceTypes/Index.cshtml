@@ -4,30 +4,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tipo de Servicios</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo tipo de Servicio", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.serviceType1)
+            Tipo de servicio:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.serviceType1)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.serviceTypeID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.serviceTypeID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.serviceTypeID })
-        </td>
-    </tr>
-}
-
+    @foreach (var serviceType in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelserviceType => serviceType.serviceType1)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = serviceType.serviceTypeID }) |
+                @Html.ActionLink("Details", "Details", new { id = serviceType.serviceTypeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = serviceType.serviceTypeID })
+            </td>
+        </tr>
+    }
 </table>

@@ -12,27 +12,27 @@
 <table class="table">
     <tr>
         <th>
-            Codigo de país
+            Codigo de país:
         </th>
         <th>
-            Nombre del pais
+            Nombre del pais:
         </th>
         <th>Acciones</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.placeOfOrigin1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.country)
-        </td>
-        <td>
-            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.placeOfOrigin1 })'">Editar</button>
-            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.placeOfOrigin1 })'">Eliminar</button>
-        </td>
-    </tr>
-}
-
+    @foreach (var origin in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelorigin => origin.placeOfOrigin1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelorigin => origin.country)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = origin.placeOfOrigin1 })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = origin.placeOfOrigin1 })'">Eliminar</button>
+            </td>
+        </tr>
+    }
 </table>

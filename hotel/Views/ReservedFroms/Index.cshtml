@@ -4,30 +4,30 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Opciones para reservar</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Metodo", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.reservationMethod)
+            Opción de reservación:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.reservationMethod)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.reservedFromID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.reservedFromID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.reservedFromID })
-        </td>
-    </tr>
-}
-
+    @foreach (var option in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modeloption => option.reservationMethod)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = option.reservedFromID }) |
+                @Html.ActionLink("Details", "Details", new { id = option.reservedFromID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = option.reservedFromID })
+            </td>
+        </tr>
+    }
 </table>

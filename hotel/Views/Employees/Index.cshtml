@@ -4,74 +4,74 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Empleados</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Empleado", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Nombre(s)
+            Nombre(s):
         </th>
         <th>
-            Apellidos
+            Apellido(s):
         </th>
         <th>
-            Fecha de nacimiento
+            Fecha de nacimiento:
         </th>
         <th>
-            Salario
+            Salario:
         </th>
         <th>
-            Usuario
+            Usuario:
         </th>
         <th>
-            Pais de origen
+            Pais de origen:
         </th>
         <th>
-            Ciudad de nacimiento
+            Ciudad de nacimiento:
         </th>
         <th>
-            Departamento
+            Departamento:
         </th>
-
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.lastName)
-    </td>
-    <td>
-        @item.DOB.ToString("dd 'de' MMMM 'del' yyyy")
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.salary)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.username)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.City.city1)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Departament.type)
-    </td>
+    @foreach (var employee in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.lastName)
+            </td>
+            <td>
+                @employee.DOB.ToString("dd 'de' MMMM 'del' yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.salary)
+            </td>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.PlaceOfOrigin1.country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.City.city1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelemployee => employee.Departament.type)
+            </td>
 
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.employeeID }) |
-        @Html.ActionLink("Details", "Details", new { id = item.employeeID }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.employeeID })
-    </td>
-</tr>
-}
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = employee.employeeID }) |
+                @Html.ActionLink("Details", "Details", new { id = employee.employeeID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = employee.employeeID })
+            </td>
+        </tr>
+    }
 
 </table>

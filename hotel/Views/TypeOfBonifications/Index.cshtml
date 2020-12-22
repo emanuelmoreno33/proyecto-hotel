@@ -4,36 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Tipo de bonificaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo tipod e bonificación", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.daysLodging)
+            Dias de alojamiento:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.bonus)
+            Bono:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.daysLodging)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.bonus)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.typeOfBonificationID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.typeOfBonificationID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.typeOfBonificationID })
-        </td>
-    </tr>
-}
-
+    @foreach (var bonusType in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelbonusType => bonusType.daysLodging)
+            </td>
+            <td>
+                @Html.DisplayFor(modelbonusType => bonusType.bonus)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = bonusType.typeOfBonificationID }) |
+                @Html.ActionLink("Details", "Details", new { id = bonusType.typeOfBonificationID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = bonusType.typeOfBonificationID })
+            </td>
+        </tr>
+    }
 </table>

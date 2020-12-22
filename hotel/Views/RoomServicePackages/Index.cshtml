@@ -4,36 +4,36 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Paquetes de servicio a la habitación</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo Paquete", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.RoomPackage.namePackage)
+            Nombre del paquete:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Service.name)
+            Nombre del servicio:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomPackage.namePackage)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Service.name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.roomServicePackageID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.roomServicePackageID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.roomServicePackageID })
-        </td>
-    </tr>
-}
-
+    @foreach (var package in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelpackage => package.RoomPackage.namePackage)
+            </td>
+            <td>
+                @Html.DisplayFor(modelpackage => package.Service.name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = package.roomServicePackageID }) |
+                @Html.ActionLink("Details", "Details", new { id = package.roomServicePackageID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = package.roomServicePackageID })
+            </td>
+        </tr>
+    }
 </table>

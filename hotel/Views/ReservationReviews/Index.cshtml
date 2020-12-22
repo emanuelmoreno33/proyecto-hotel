@@ -4,48 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Reseñas de reservaciones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva reseña", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.reviewRoom)
+            Habitación:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dateReview)
+            Fecha de reseña:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Departament.type)
+            Tipo de Departamento:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+            *ID de reservación:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.reviewRoom)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dateReview)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Departament.type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Reservation.reservationID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.reviewID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.reviewID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.reviewID })
-        </td>
-    </tr>
-}
-
+    @foreach (var review in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelreview => review.reviewRoom)
+            </td>
+            <td>
+                @Html.DisplayFor(modelreview => review.dateReview)
+            </td>
+            <td>
+                @Html.DisplayFor(modelreview => review.Departament.type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelreview => review.Reservation.reservationID)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = review.reviewID }) |
+                @Html.ActionLink("Details", "Details", new { id = review.reviewID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = review.reviewID })
+            </td>
+        </tr>
+    }
 </table>

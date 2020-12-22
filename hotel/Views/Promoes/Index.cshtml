@@ -4,48 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Promociones</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva Promoción", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.promoName)
+            Nombre de la promoción:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.description)
+            Descripción:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.startDate)
+            Fecha de Inicio:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.endDate)
+            Fecha de Terminación:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.promoName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @item.startDate.ToString("dd 'de' MMMM 'del' yyyy")
-        </td>
-        <td>
-            @item.endDate.ToString("dd 'de' MMMM 'del' yyyy")
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.promoID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.promoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.promoID })
-        </td>
-    </tr>
-}
-
+    @foreach (var promo in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelpromo => promo.promoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelpromo => promo.description)
+            </td>
+            <td>
+                @promo.startDate.ToString("dd 'de' MMMM 'del' yyyy")
+            </td>
+            <td>
+                @promo.endDate.ToString("dd 'de' MMMM 'del' yyyy")
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = promo.promoID }) |
+                @Html.ActionLink("Details", "Details", new { id = promo.promoID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = promo.promoID })
+            </td>
+        </tr>
+    }
 </table>

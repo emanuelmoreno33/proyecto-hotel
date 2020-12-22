@@ -12,53 +12,53 @@
 <table class="table">
     <tr>
         <th>
-            Fecha de llegada
+            Fecha de llegada:
         </th>
         <th>
-            Fecha de salida
+            Fecha de salida:
         </th>
         <th>
-            Nombre del cliente
+            Nombre del cliente:
         </th>
         <th>
-            Estatus
+            Estatus:
         </th>
         <th>
-           Metodo de reservacion
+            Metodo de reservación:
         </th>
         <th>
-            No. de Cuarto
+            No. de Habitació:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @item.startDate.ToString("dd 'de' MMMM 'del' yyyy")
-        </td>
-        <td>
-           @item.endDate.ToString("dd 'de' MMMM 'del' yyyy")
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Guest.name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReservationStatus.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ReservedFrom.reservationMethod)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Room.roomID) (@Html.DisplayFor(modelItem => item.Room.RoomType.typeName))
-        </td>
+    @foreach (var reservation in Model)
+    {
+        <tr>
+            <td>
+                @reservation.startDate.ToString("dd 'de' MMMM 'del' yyyy")
+            </td>
+            <td>
+                @reservation.endDate.ToString("dd 'de' MMMM 'del' yyyy")
+            </td>
+            <td>
+                @Html.DisplayFor(modelreservation => reservation.Guest.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelreservation => reservation.ReservationStatus.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelreservation => reservation.ReservedFrom.reservationMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelreservation => reservation.Room.roomID) (@Html.DisplayFor(modelreservation => reservation.Room.RoomType.typeName))
+            </td>
 
-        <td>
-            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.reservationID })'">Editar</button>
-            <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = item.reservationID })'">Detalles</button>
-            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.reservationID })'">Eliminar</button>
-        </td>
-    </tr>
-}
-
+            <td>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = reservation.reservationID })'">Editar</button>
+                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = reservation.reservationID })'">Detalles</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = reservation.reservationID })'">Eliminar</button>
+            </td>
+        </tr>
+    }
 </table>

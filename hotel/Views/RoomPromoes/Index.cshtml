@@ -4,42 +4,42 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Promoción de habitación</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva Promoción", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            Descuento
+            Descuento:
         </th>
         <th>
-           Promoción
+            Promoción:
         </th>
         <th>
-           Tipo de habitación
+            Tipo de habitación:
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.discount)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Promo.promoName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.RoomType.typeName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.roomPromoID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.roomPromoID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.roomPromoID })
-        </td>
-    </tr>
-}
-
+    @foreach (var promo in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelpromo => promo.discount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelpromo => promo.Promo.promoName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelpromo => promo.RoomType.typeName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = promo.roomPromoID }) |
+                @Html.ActionLink("Details", "Details", new { id = promo.roomPromoID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = promo.roomPromoID })
+            </td>
+        </tr>
+    }
 </table>
