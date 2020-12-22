@@ -41,40 +41,40 @@
         <th></th>
     </tr>
 
-    @foreach (var item in Model)
+    @foreach (var companion in Model)
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.name)
+                @Html.DisplayFor(modelcompanion => companion.name)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.lastName)
+                @Html.DisplayFor(modelcompanion => companion.lastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.address)
+                @Html.DisplayFor(modelcompanion => companion.address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.housePhone)
+                @Html.DisplayFor(modelcompanion => companion.housePhone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.cellPhone)
+                @Html.DisplayFor(modelcompanion => companion.cellPhone)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.email)
+                @Html.DisplayFor(modelcompanion => companion.email)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RFC)
+                @Html.DisplayFor(modelcompanion => companion.RFC)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PlaceOfOrigin1.country)
+                @Html.DisplayFor(modelcompanion => companion.PlaceOfOrigin1.country)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.City.city1)
+                @Html.DisplayFor(modelcompanion => companion.City.city1)
             </td>
             <td>
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { client = item.guestclient })'">Editar</button>
-                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { client = item.guestclient })'">Detalles</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { client = item.guestclient })'">Eliminar</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { client = companion.guestID })'">Editar</button>
+                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { client = companion.guestID })'">Detalles</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { client = companion.guestID })'">Eliminar</button>
             </td>
         </tr>
     }
