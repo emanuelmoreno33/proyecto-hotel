@@ -39,8 +39,8 @@ namespace hotel.Controllers
         // GET: Guests/Create
         public ActionResult Create()
         {
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1");
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country");
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1");
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country");
             return View();
         }
 
@@ -58,8 +58,8 @@ namespace hotel.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1", guest.cityID);
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", guest.placeOfOrigin);
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1", guest.cityID);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country", guest.placeOfOrigin);
             return View(guest);
         }
 
@@ -75,8 +75,8 @@ namespace hotel.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1", guest.cityID);
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", guest.placeOfOrigin);
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1", guest.cityID);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country", guest.placeOfOrigin);
             return View(guest);
         }
 
@@ -93,8 +93,8 @@ namespace hotel.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1", guest.cityID);
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", guest.placeOfOrigin);
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1", guest.cityID);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country", guest.placeOfOrigin);
             return View(guest);
         }
 

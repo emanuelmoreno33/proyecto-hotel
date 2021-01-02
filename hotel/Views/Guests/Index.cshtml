@@ -72,9 +72,9 @@
                 @Html.DisplayFor(modelcompanion => companion.City.city1)
             </td>
             <td>
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { client = companion.guestID })'">Editar</button>
-                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { client = companion.guestID })'">Detalles</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { client = companion.guestID })'">Eliminar</button>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = companion.guestID })'">Editar</button>
+                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = companion.guestID })'">Detalles</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = companion.guestID })'">Eliminar</button>
             </td>
         </tr>
     }

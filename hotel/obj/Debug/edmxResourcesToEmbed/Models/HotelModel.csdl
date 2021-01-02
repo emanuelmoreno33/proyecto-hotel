@@ -170,7 +170,7 @@
   </EntityType>
   <EntityType Name="ReservationComplaint">
     <Key>
-      <PropertyRef Name="reservationID" />
+      <PropertyRef Name="complaintID" />
     </Key>
     <Property Name="complaintID" Type="Int32" Nullable="false" />
     <Property Name="reservationID" Type="Int32" Nullable="false" />
@@ -591,7 +591,7 @@
   </Association>
   <Association Name="FK_ReservationComplaint_Reservation">
     <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
-    <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="0..1" />
+    <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Reservation">
         <PropertyRef Name="reservationID" />
@@ -890,6 +890,13 @@
       <End Role="RoomPromo" EntitySet="RoomPromo" />
       <End Role="Reservation" EntitySet="Reservation" />
     </AssociationSet>
+    <EntitySet Name="consulta1" EntityType="proyecto_hotelModel.consulta1" />
+    <EntitySet Name="consulta2" EntityType="proyecto_hotelModel.consulta2" />
+    <EntitySet Name="reporte10" EntityType="proyecto_hotelModel.reporte10" />
+    <EntitySet Name="reporte3" EntityType="proyecto_hotelModel.reporte3" />
+    <EntitySet Name="reporte4" EntityType="proyecto_hotelModel.reporte4" />
+    <EntitySet Name="reporte5" EntityType="proyecto_hotelModel.reporte5" />
+    <EntitySet Name="reporte6" EntityType="proyecto_hotelModel.reporte6" />
   </EntityContainer>
   <Association Name="FK_Employee_PlaceOfOrigin">
     <End Type="proyecto_hotelModel.PlaceOfOrigin" Role="PlaceOfOrigin" Multiplicity="1" />
@@ -927,4 +934,72 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="consulta1">
+    <Key>
+      <PropertyRef Name="typeName" />
+    </Key>
+    <Property Name="typeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr1" Type="Int32" />
+  </EntityType>
+  <EntityType Name="consulta2">
+    <Key>
+      <PropertyRef Name="reservationID" />
+      <PropertyRef Name="startDate" />
+    </Key>
+    <Property Name="reservationID" Type="Int32" Nullable="false" />
+    <Property Name="companion" Type="Int32" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="reporte10">
+    <Key>
+      <PropertyRef Name="dateComplaint" />
+      <PropertyRef Name="comment" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="dateComplaint" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="comment" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="type" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="reporte3">
+    <Key>
+      <PropertyRef Name="promoName" />
+      <PropertyRef Name="startDate" />
+      <PropertyRef Name="endDate" />
+    </Key>
+    <Property Name="promoName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Expr2" Type="Int32" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="reporte4">
+    <Key>
+      <PropertyRef Name="typeName" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="roomNumber" />
+    </Key>
+    <Property Name="typeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="price" Type="Decimal" Nullable="false" Precision="14" Scale="2" />
+    <Property Name="capacity" Type="Int32" />
+    <Property Name="roomNumber" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="reporte5">
+    <Key>
+      <PropertyRef Name="reservationID" />
+      <PropertyRef Name="startDate" />
+      <PropertyRef Name="endDate" />
+    </Key>
+    <Property Name="reservationID" Type="Int32" Nullable="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="diff" Type="Int32" />
+  </EntityType>
+  <EntityType Name="reporte6">
+    <Key>
+      <PropertyRef Name="departamentID" />
+      <PropertyRef Name="Departamento" />
+    </Key>
+    <Property Name="departamentID" Type="Int32" Nullable="false" />
+    <Property Name="Departamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cantidad" Type="Int32" />
+  </EntityType>
 </Schema>

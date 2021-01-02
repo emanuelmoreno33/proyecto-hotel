@@ -21,6 +21,12 @@ namespace hotel.Controllers
             return View(reservation.ToList());
         }
 
+        public ActionResult Grafico()
+        {
+            var reservation = db.Reservation.Include(r => r.ReservedFrom).GroupBy(e => e.ReservedFrom.reservationMethod);
+            return View(reservation.ToList());
+        }
+
         // GET: Reservations/Details/5
         public ActionResult Details(int? id)
         {

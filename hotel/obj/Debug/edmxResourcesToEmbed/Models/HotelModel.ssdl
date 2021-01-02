@@ -132,7 +132,7 @@
   </EntityType>
   <EntityType Name="ReservationComplaint">
     <Key>
-      <PropertyRef Name="reservationID" />
+      <PropertyRef Name="complaintID" />
     </Key>
     <Property Name="complaintID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="reservationID" Type="int" Nullable="false" />
@@ -266,6 +266,88 @@
     <Property Name="typeOfBonificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="daysLodging" Type="int" Nullable="false" />
     <Property Name="bonus" Type="decimal" Precision="12" Scale="2" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta1' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="consulta1">
+    <Key>
+      <PropertyRef Name="typeName" />
+    </Key>
+    <Property Name="typeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expr1" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta2' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="consulta2">
+    <Key>
+      <PropertyRef Name="reservationID" />
+      <PropertyRef Name="startDate" />
+    </Key>
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="companion" Type="int" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte10' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="reporte10">
+    <Key>
+      <PropertyRef Name="dateComplaint" />
+      <PropertyRef Name="comment" />
+      <PropertyRef Name="type" />
+    </Key>
+    <Property Name="dateComplaint" Type="datetime" Nullable="false" />
+    <Property Name="comment" Type="text" Nullable="false" />
+    <Property Name="type" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte3' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="reporte3">
+    <Key>
+      <PropertyRef Name="promoName" />
+      <PropertyRef Name="startDate" />
+      <PropertyRef Name="endDate" />
+    </Key>
+    <Property Name="promoName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Expr2" Type="int" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+    <Property Name="endDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte4' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="reporte4">
+    <Key>
+      <PropertyRef Name="typeName" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="roomNumber" />
+    </Key>
+    <Property Name="typeName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="price" Type="decimal" Precision="14" Scale="2" Nullable="false" />
+    <Property Name="capacity" Type="int" />
+    <Property Name="roomNumber" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte5' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="reporte5">
+    <Key>
+      <PropertyRef Name="reservationID" />
+      <PropertyRef Name="startDate" />
+      <PropertyRef Name="endDate" />
+    </Key>
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+    <Property Name="endDate" Type="datetime" Nullable="false" />
+    <Property Name="diff" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="reporte6">
+    <Key>
+      <PropertyRef Name="departamentID" />
+      <PropertyRef Name="Departamento" />
+    </Key>
+    <Property Name="departamentID" Type="int" Nullable="false" />
+    <Property Name="Departamento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="cantidad" Type="int" />
   </EntityType>
   <Association Name="FK_AmenityComplaint_RoomAmenity">
     <End Role="RoomAmenity" Type="Self.RoomAmenity" Multiplicity="1" />
@@ -519,9 +601,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ReservationComplaint_Reservation">
+  <Association Name="FK_ReservationComplaint_Reservation1">
     <End Role="Reservation" Type="Self.Reservation" Multiplicity="1" />
-    <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="0..1" />
+    <End Role="ReservationComplaint" Type="Self.ReservationComplaint" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Reservation">
         <PropertyRef Name="reservationID" />
@@ -716,6 +798,57 @@
     <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TypeOfBonification" EntityType="Self.TypeOfBonification" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="consulta1" EntityType="Self.consulta1" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [consulta1].[typeName] AS [typeName], 
+    [consulta1].[Expr1] AS [Expr1]
+    FROM [dbo].[consulta1] AS [consulta1]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="consulta2" EntityType="Self.consulta2" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [consulta2].[reservationID] AS [reservationID], 
+    [consulta2].[companion] AS [companion], 
+    [consulta2].[startDate] AS [startDate]
+    FROM [dbo].[consulta2] AS [consulta2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reporte10" EntityType="Self.reporte10" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reporte10].[dateComplaint] AS [dateComplaint], 
+    [reporte10].[comment] AS [comment], 
+    [reporte10].[type] AS [type]
+    FROM [dbo].[reporte10] AS [reporte10]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reporte3" EntityType="Self.reporte3" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reporte3].[promoName] AS [promoName], 
+    [reporte3].[Expr2] AS [Expr2], 
+    [reporte3].[startDate] AS [startDate], 
+    [reporte3].[endDate] AS [endDate]
+    FROM [dbo].[reporte3] AS [reporte3]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reporte4" EntityType="Self.reporte4" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reporte4].[typeName] AS [typeName], 
+    [reporte4].[price] AS [price], 
+    [reporte4].[capacity] AS [capacity], 
+    [reporte4].[roomNumber] AS [roomNumber]
+    FROM [dbo].[reporte4] AS [reporte4]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reporte5" EntityType="Self.reporte5" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reporte5].[reservationID] AS [reservationID], 
+    [reporte5].[startDate] AS [startDate], 
+    [reporte5].[endDate] AS [endDate], 
+    [reporte5].[diff] AS [diff]
+    FROM [dbo].[reporte5] AS [reporte5]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reporte6" EntityType="Self.reporte6" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reporte6].[departamentID] AS [departamentID], 
+    [reporte6].[Departamento] AS [Departamento], 
+    [reporte6].[cantidad] AS [cantidad]
+    FROM [dbo].[reporte6] AS [reporte6]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_AmenityComplaint_RoomAmenity" Association="Self.FK_AmenityComplaint_RoomAmenity">
       <End Role="RoomAmenity" EntitySet="RoomAmenity" />
       <End Role="AmenityComplaint" EntitySet="AmenityComplaint" />
@@ -800,7 +933,7 @@
       <End Role="Departament" EntitySet="Departament" />
       <End Role="ReservationComplaint" EntitySet="ReservationComplaint" />
     </AssociationSet>
-    <AssociationSet Name="FK_ReservationComplaint_Reservation" Association="Self.FK_ReservationComplaint_Reservation">
+    <AssociationSet Name="FK_ReservationComplaint_Reservation1" Association="Self.FK_ReservationComplaint_Reservation1">
       <End Role="Reservation" EntitySet="Reservation" />
       <End Role="ReservationComplaint" EntitySet="ReservationComplaint" />
     </AssociationSet>

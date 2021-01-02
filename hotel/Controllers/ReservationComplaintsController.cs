@@ -49,7 +49,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "complaintID,reservationID,comment,dateComplaint,departamentID")] ReservationComplaint reservationComplaint)
+        public ActionResult Create([Bind(Include = "reservationID,comment,dateComplaint,departamentID")] ReservationComplaint reservationComplaint)
         {
             if (ModelState.IsValid)
             {

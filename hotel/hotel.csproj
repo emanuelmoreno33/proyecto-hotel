@@ -157,6 +157,7 @@
     <Compile Include="Controllers\AmenityReviewsController.cs" />
     <Compile Include="Controllers\BonificationsController.cs" />
     <Compile Include="Controllers\CitiesController.cs" />
+    <Compile Include="Controllers\consulta1Controller.cs" />
     <Compile Include="Controllers\DepartamentsController.cs" />
     <Compile Include="Controllers\EmployeesController.cs" />
     <Compile Include="Controllers\GuestCompanionsController.cs" />
@@ -197,6 +198,12 @@
     <Compile Include="Models\City.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\consulta1.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\consulta2.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Departament.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
@@ -231,6 +238,21 @@
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Promo.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reporte10.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reporte3.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reporte4.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reporte5.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\reporte6.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Reservation.cs">
@@ -278,7 +300,7 @@
     <Compile Include="Models\State.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
- <Compile Include="Models\sysdiagrams.cs">
+    <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TypeOfBonification.cs">
@@ -502,11 +524,6 @@
     <Content Include="Views\RoomServicePackages\Details.cshtml" />
     <Content Include="Views\RoomServicePackages\Edit.cshtml" />
     <Content Include="Views\RoomServicePackages\Index.cshtml" />
-    <Content Include="Views\ReservationComplaints\Create.cshtml" />
-    <Content Include="Views\ReservationComplaints\Delete.cshtml" />
-    <Content Include="Views\ReservationComplaints\Details.cshtml" />
-    <Content Include="Views\ReservationComplaints\Edit.cshtml" />
-    <Content Include="Views\ReservationComplaints\Index.cshtml" />
     <Content Include="Views\Invoices\Create.cshtml" />
     <Content Include="Views\Invoices\Delete.cshtml" />
     <Content Include="Views\Invoices\Details.cshtml" />
@@ -548,6 +565,18 @@
     <Content Include="Views\Reservations\Edit.cshtml" />
     <Content Include="Views\Reservations\Index.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Rooms\Roomavailable.cshtml" />
+    <Content Include="Views\consulta1\Create.cshtml" />
+    <Content Include="Views\consulta1\Delete.cshtml" />
+    <Content Include="Views\consulta1\Details.cshtml" />
+    <Content Include="Views\consulta1\Edit.cshtml" />
+    <Content Include="Views\consulta1\Index.cshtml" />
+    <Content Include="Views\ReservationComplaints\Create.cshtml" />
+    <Content Include="Views\ReservationComplaints\Delete.cshtml" />
+    <Content Include="Views\ReservationComplaints\Details.cshtml" />
+    <Content Include="Views\ReservationComplaints\Edit.cshtml" />
+    <Content Include="Views\ReservationComplaints\Index.cshtml" />
+    <Content Include="Views\Reservations\Grafico.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

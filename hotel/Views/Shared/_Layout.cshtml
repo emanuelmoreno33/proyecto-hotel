@@ -77,6 +77,13 @@
                             <li>@Html.ActionLink("Tipo de reservacion", "Index", "ReservedFroms")</li>
                         </ul>
                     </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Consultas <span class="caret"></span></a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>@Html.ActionLink("Consulta 1", "Index", "Consulta1")</li>
+                            <li>@Html.ActionLink("Grafico", "Grafico", "Reservations")</li>
+                        </ul>
+                    </li>
                     <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
                     <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
                 </ul>

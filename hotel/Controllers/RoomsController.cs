@@ -21,6 +21,12 @@ namespace hotel.Controllers
             return View(room.ToList());
         }
 
+        public ActionResult Roomavailable()
+        {
+            var room = db.Room.Where(d => d.roomStatusID == 1).GroupBy(s => s.roomTypeID).Select(g => g.Count());
+            return View(room.ToList());
+        }
+
         // GET: Rooms/Details/5
         public ActionResult Details(int? id)
         {

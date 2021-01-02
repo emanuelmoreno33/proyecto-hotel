@@ -296,5 +296,70 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="consulta1">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.consulta1">
+        <MappingFragment StoreEntitySet="consulta1">
+          <ScalarProperty Name="Expr1" ColumnName="Expr1" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consulta2">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.consulta2">
+        <MappingFragment StoreEntitySet="consulta2">
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="companion" ColumnName="companion" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reporte10">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.reporte10">
+        <MappingFragment StoreEntitySet="reporte10">
+          <ScalarProperty Name="type" ColumnName="type" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="dateComplaint" ColumnName="dateComplaint" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reporte3">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.reporte3">
+        <MappingFragment StoreEntitySet="reporte3">
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
+          <ScalarProperty Name="promoName" ColumnName="promoName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reporte4">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.reporte4">
+        <MappingFragment StoreEntitySet="reporte4">
+          <ScalarProperty Name="roomNumber" ColumnName="roomNumber" />
+          <ScalarProperty Name="capacity" ColumnName="capacity" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reporte5">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.reporte5">
+        <MappingFragment StoreEntitySet="reporte5">
+          <ScalarProperty Name="diff" ColumnName="diff" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="reporte6">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.reporte6">
+        <MappingFragment StoreEntitySet="reporte6">
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="Departamento" ColumnName="Departamento" />
+          <ScalarProperty Name="departamentID" ColumnName="departamentID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

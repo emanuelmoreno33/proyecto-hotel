@@ -39,9 +39,9 @@ namespace hotel.Controllers
         // GET: Employees/Create
         public ActionResult Create()
         {
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1");
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s =>s.city1), "cityID", "city1");
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type");
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country");
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s=>s.country), "placeOfOrigin1", "country");
             return View();
         }
 
@@ -59,9 +59,9 @@ namespace hotel.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1", employee.cityID);
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1", employee.cityID);
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type", employee.departamentID);
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", employee.placeOfOrigin);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country", employee.placeOfOrigin);
             return View(employee);
         }
 
@@ -77,9 +77,9 @@ namespace hotel.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1", employee.cityID);
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1", employee.cityID);
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type", employee.departamentID);
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", employee.placeOfOrigin);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country", employee.placeOfOrigin);
             return View(employee);
         }
 
@@ -96,9 +96,9 @@ namespace hotel.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.cityID = new SelectList(db.City, "cityID", "city1", employee.cityID);
+            ViewBag.cityID = new SelectList(db.City.OrderBy(s => s.city1), "cityID", "city1", employee.cityID);
             ViewBag.departamentID = new SelectList(db.Departament, "departamentID", "type", employee.departamentID);
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country", employee.placeOfOrigin);
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin.OrderBy(s => s.country), "placeOfOrigin1", "country", employee.placeOfOrigin);
             return View(employee);
         }
 
