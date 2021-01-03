@@ -897,6 +897,7 @@
     <EntitySet Name="reporte4" EntityType="proyecto_hotelModel.reporte4" />
     <EntitySet Name="reporte5" EntityType="proyecto_hotelModel.reporte5" />
     <EntitySet Name="reporte6" EntityType="proyecto_hotelModel.reporte6" />
+    <FunctionImport Name="tipo_compra" ReturnType="Collection(proyecto_hotelModel.tipo_compra_Result1)" />
   </EntityContainer>
   <Association Name="FK_Employee_PlaceOfOrigin">
     <End Type="proyecto_hotelModel.PlaceOfOrigin" Role="PlaceOfOrigin" Multiplicity="1" />
@@ -1002,4 +1003,12 @@
     <Property Name="Departamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="cantidad" Type="Int32" />
   </EntityType>
+  <ComplexType Name="tipo_compra_Result">
+    <Property Type="String" Name="reservationMethod" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="Column1" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="tipo_compra_Result1">
+    <Property Type="String" Name="metodo" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="conteo" Nullable="true" />
+  </ComplexType>
 </Schema>

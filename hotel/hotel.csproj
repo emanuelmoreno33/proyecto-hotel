@@ -303,6 +303,12 @@
     <Compile Include="Models\sysdiagrams.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tipo_compra_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tipo_compra_Result1.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TypeOfBonification.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>

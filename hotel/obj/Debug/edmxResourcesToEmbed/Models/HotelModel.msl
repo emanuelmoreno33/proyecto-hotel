@@ -361,5 +361,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="tipo_compra" FunctionName="proyecto_hotelModel.Store.tipo_compra">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.tipo_compra_Result1">
+          <ScalarProperty Name="metodo" ColumnName="metodo" />
+          <ScalarProperty Name="conteo" ColumnName="conteo" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

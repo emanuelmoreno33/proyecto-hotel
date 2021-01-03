@@ -23,8 +23,23 @@ namespace hotel.Controllers
 
         public ActionResult Grafico()
         {
-            var reservation = db.Reservation.Include(r => r.ReservedFrom).GroupBy(e => e.ReservedFrom.reservationMethod);
-            return View(reservation.ToList());
+            return View();
+        }
+
+        public JsonResult jsonarmado()
+        {
+            var resultado = db.tipo_compra();
+
+            List<tipo_compra_Result1> lista = new List<tipo_compra_Result1>();
+            foreach (var t in resultado)
+            {
+                lista.Add(t);
+            }
+            var listafinal = new List<tipo_compra_Result1>();
+            listafinal = lista.ToList();
+
+                return Json(new {JsonList = listafinal
+                }, JsonRequestBehavior.AllowGet);
         }
 
         // GET: Reservations/Details/5

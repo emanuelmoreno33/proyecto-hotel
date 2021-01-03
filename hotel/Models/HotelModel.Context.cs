@@ -17,6 +17,9 @@ using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 
+using System.Data.Entity.Core.Objects;
+using System.Linq;
+
 
 public partial class proyecto_hotelEntities : DbContext
 {
@@ -101,6 +104,13 @@ public partial class proyecto_hotelEntities : DbContext
     public virtual DbSet<reporte5> reporte5 { get; set; }
 
     public virtual DbSet<reporte6> reporte6 { get; set; }
+
+
+    public virtual ObjectResult<tipo_compra_Result1> tipo_compra()
+    {
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<tipo_compra_Result1>("tipo_compra");
+    }
 
 }
 

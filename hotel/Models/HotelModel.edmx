@@ -774,6 +774,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="tipo_compra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="proyecto_hotelModelStoreContainer">
           <EntitySet Name="AmenityComplaint" EntityType="Self.AmenityComplaint" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AmenityReview" EntityType="Self.AmenityReview" Schema="dbo" store:Type="Tables" />
@@ -1896,6 +1897,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <EntitySet Name="reporte4" EntityType="proyecto_hotelModel.reporte4" />
           <EntitySet Name="reporte5" EntityType="proyecto_hotelModel.reporte5" />
           <EntitySet Name="reporte6" EntityType="proyecto_hotelModel.reporte6" />
+          <FunctionImport Name="tipo_compra" ReturnType="Collection(proyecto_hotelModel.tipo_compra_Result1)" />
         </EntityContainer>
         <Association Name="FK_Employee_PlaceOfOrigin">
           <End Type="proyecto_hotelModel.PlaceOfOrigin" Role="PlaceOfOrigin" Multiplicity="1" />
@@ -2001,6 +2003,14 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <Property Name="Departamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="cantidad" Type="Int32" />
         </EntityType>
+        <ComplexType Name="tipo_compra_Result">
+          <Property Type="String" Name="reservationMethod" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Column1" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="tipo_compra_Result1">
+          <Property Type="String" Name="metodo" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="conteo" Nullable="true" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2367,6 +2377,14 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="tipo_compra" FunctionName="proyecto_hotelModel.Store.tipo_compra">
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.tipo_compra_Result1">
+                <ScalarProperty Name="metodo" ColumnName="metodo" />
+                <ScalarProperty Name="conteo" ColumnName="conteo" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

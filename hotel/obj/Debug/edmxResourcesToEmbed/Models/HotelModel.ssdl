@@ -769,6 +769,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="tipo_compra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="proyecto_hotelModelStoreContainer">
     <EntitySet Name="AmenityComplaint" EntityType="Self.AmenityComplaint" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AmenityReview" EntityType="Self.AmenityReview" Schema="dbo" store:Type="Tables" />
