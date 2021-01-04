@@ -17,7 +17,7 @@ namespace hotel.Controllers
         // GET: Invoices
         public ActionResult Index()
         {
-            var invoice = db.Invoice.Include(i => i.Guest).Include(i => i.Reservation);
+            var invoice = db.Invoice.Include(i => i.Reservation);
             return View(invoice.ToList());
         }
 
@@ -58,7 +58,7 @@ namespace hotel.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.guestID = new SelectList(db.Guest, "guestID", "name", invoice.guestID);
+            ViewBag.guestID = new SelectList(db.Guest, "guestID", "name");
             ViewBag.reservationID = new SelectList(db.Reservation, "reservationID", "reservationID", invoice.reservationID);
             return View(invoice);
         }
@@ -75,7 +75,7 @@ namespace hotel.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.guestID = new SelectList(db.Guest, "guestID", "name", invoice.guestID);
+            ViewBag.guestID = new SelectList(db.Guest, "guestID", "name");
             ViewBag.reservationID = new SelectList(db.Reservation, "reservationID", "reservationID", invoice.reservationID);
             return View(invoice);
         }
@@ -93,7 +93,7 @@ namespace hotel.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.guestID = new SelectList(db.Guest, "guestID", "name", invoice.guestID);
+            ViewBag.guestID = new SelectList(db.Guest, "guestID", "name");
             ViewBag.reservationID = new SelectList(db.Reservation, "reservationID", "reservationID", invoice.reservationID);
             return View(invoice);
         }

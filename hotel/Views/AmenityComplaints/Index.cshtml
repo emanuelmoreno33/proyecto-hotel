@@ -7,12 +7,15 @@
 <h2>Quejas de comodidades.</h2>
 
 <p>
-    @Html.ActionLink("Ingrear Nueva Queja", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            #Comodidad:
+            ID de la Comodidad:
+        </th>
+        <th>
+            Comodidad:
         </th>
         <th>
             Comentario:
@@ -30,15 +33,17 @@
                 @Html.DisplayFor(modelItem => item.RoomAmenity.amenityID)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.RoomAmenity.Service.name)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.comment)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.dateComplaint)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.complaintID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.complaintID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.complaintID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.complaintID })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.complaintID })'">Eliminar</button>
             </td>
         </tr>
     }

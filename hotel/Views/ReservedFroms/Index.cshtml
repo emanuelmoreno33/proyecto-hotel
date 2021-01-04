@@ -7,14 +7,13 @@
 <h2>Opciones para reservar</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Metodo", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
         <th>
             Opción de reservación:
         </th>
-        <th></th>
     </tr>
 
     @foreach (var option in Model)
@@ -22,11 +21,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modeloption => option.reservationMethod)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = option.reservedFromID }) |
-                @Html.ActionLink("Details", "Details", new { id = option.reservedFromID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = option.reservedFromID })
             </td>
         </tr>
     }

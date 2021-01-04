@@ -1,20 +1,18 @@
 ﻿@model IEnumerable<hotel.Models.ServiceType>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tipo de Servicios";
 }
 
 <h2>Tipo de Servicios</h2>
 
 <p>
-    @Html.ActionLink("Nuevo tipo de Servicio", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
             Tipo de servicio:
         </th>
-        <th></th>
     </tr>
 
     @foreach (var serviceType in Model)
@@ -22,11 +20,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelserviceType => serviceType.serviceType1)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = serviceType.serviceTypeID }) |
-                @Html.ActionLink("Details", "Details", new { id = serviceType.serviceTypeID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = serviceType.serviceTypeID })
             </td>
         </tr>
     }

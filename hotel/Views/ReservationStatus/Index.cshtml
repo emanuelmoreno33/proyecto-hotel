@@ -1,20 +1,19 @@
 ﻿@model IEnumerable<hotel.Models.ReservationStatus>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Estado de reservación";
 }
 
 <h2>Estado de reservación</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Estado", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
         <th>
             Estado:
         </th>
-        <th></th>
     </tr>
 
     @foreach (var status in Model)
@@ -22,11 +21,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelstatus => status.status)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = status.reservationStatusID }) |
-                @Html.ActionLink("Details", "Details", new { id = status.reservationStatusID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = status.reservationStatusID })
             </td>
         </tr>
     }

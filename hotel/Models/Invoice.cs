@@ -22,8 +22,6 @@ public partial class Invoice
 
     public int reservationID { get; set; }
 
-    public int guestID { get; set; }
-
     public System.DateTime dateTime { get; set; }
 
     public decimal subtotal { get; set; }
@@ -35,8 +33,6 @@ public partial class Invoice
     public decimal totalDue { get; set; }
 
 
-
-    public virtual Guest Guest { get; set; }
 
     public virtual Reservation Reservation { get; set; }
 

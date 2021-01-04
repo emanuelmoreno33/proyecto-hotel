@@ -21,6 +21,7 @@ namespace hotel.Controllers
             return View(reservation.ToList());
         }
 
+
         public ActionResult Grafico()
         {
             return View();

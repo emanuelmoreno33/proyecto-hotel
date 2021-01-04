@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.ReservationReview
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Agregar calificacion reservación";
 }
 
-<h2>Create</h2>
+    <h2>Agregar calificacion reservacion</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,59 +12,48 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>ReservationReview</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.reviewID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.reviewID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.reviewID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+       
 
         <div class="form-group">
-            @Html.LabelFor(model => model.reviewRoom, htmlAttributes: new { @class = "control-label col-md-2" })
+            
             <div class="col-md-10">
-                @Html.EditorFor(model => model.reviewRoom, new { htmlAttributes = new { @class = "form-control" } })
+                <label>Calificación</label>
+                @Html.EditorFor(model => model.reviewRoom, new { htmlAttributes = new { @class = "form-control", @min = 0, @max=5 } })
                 @Html.ValidationMessageFor(model => model.reviewRoom, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dateReview, htmlAttributes: new { @class = "control-label col-md-2" })
+           
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dateReview, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.dateReview, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.reservationID, "reservationID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
+                <label>ID de reservación</label>
                 @Html.DropDownList("reservationID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.reservationID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.departamentID, "departamentID", htmlAttributes: new { @class = "control-label col-md-2" })
+            
             <div class="col-md-10">
+                <label>Departamento</label>
                 @Html.DropDownList("departamentID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.departamentID, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div class=" col-md-10">
+                <input type="submit" value="Agregar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
+
 </div>
 
 @section Scripts {

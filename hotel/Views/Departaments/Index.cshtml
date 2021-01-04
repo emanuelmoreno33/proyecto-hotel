@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.Departament>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Departamentos";
 }
 
-<h2>Departementos</h2>
+<h2>Departamentos</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Departamento", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -26,12 +26,19 @@
             @Html.DisplayFor(modeldepartment => department.type)
         </td>
         <td>
-            @Html.DisplayFor(modeldepartment => department.admin)
+            @{if (department.admin == "1")
+                {
+                    <img src="~/Content/img/si.png" alt="Sample Photo" width="20" />
+                }
+                else
+                {
+                    <img src="~/Content/img/no.png" alt="Sample Photo" width="20" />
+                }
+            }
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=department.departamentID }) |
-            @Html.ActionLink("Details", "Details", new { id=department.departamentID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=department.departamentID })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = department.departamentID })'">Editar</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = department.departamentID })'">Eliminar</button>
         </td>
     </tr>
 }

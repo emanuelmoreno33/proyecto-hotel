@@ -90,7 +90,6 @@
     <Property Name="cityID" Type="Int32" />
     <NavigationProperty Name="City" Relationship="Self.FK_Guest_City" FromRole="Guest" ToRole="City" />
     <NavigationProperty Name="PlaceOfOrigin1" Relationship="Self.FK_Guest_PlaceOfOrigin" FromRole="Guest" ToRole="PlaceOfOrigin" />
-    <NavigationProperty Name="Invoice" Relationship="Self.FK_Invoice_Guest" FromRole="Guest" ToRole="Invoice" />
     <NavigationProperty Name="Reservation" Relationship="Self.FK_Reservation_Guest" FromRole="Guest" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="GuestCompanion">
@@ -111,13 +110,11 @@
     </Key>
     <Property Name="invoiceID" Type="Int32" Nullable="false" />
     <Property Name="reservationID" Type="Int32" Nullable="false" />
-    <Property Name="guestID" Type="Int32" Nullable="false" />
     <Property Name="dateTime" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="subtotal" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="discount" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="tax" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="totalDue" Type="Decimal" Precision="14" Scale="2" Nullable="false" />
-    <NavigationProperty Name="Guest" Relationship="Self.FK_Invoice_Guest" FromRole="Invoice" ToRole="Guest" />
     <NavigationProperty Name="Reservation" Relationship="Self.FK_Invoice_Reservation" FromRole="Invoice" ToRole="Reservation" />
   </EntityType>
   <EntityType Name="PlaceOfOrigin">
@@ -481,18 +478,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Invoice_Guest">
-    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
-    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Guest">
-        <PropertyRef Name="guestID" />
-      </Principal>
-      <Dependent Role="Invoice">
-        <PropertyRef Name="guestID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_Reservation_Guest">
     <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
     <End Role="Reservation" Type="Self.Reservation" Multiplicity="*" />
@@ -797,10 +782,6 @@
     <AssociationSet Name="FK_Guest_PlaceOfOrigin" Association="Self.FK_Guest_PlaceOfOrigin">
       <End Role="PlaceOfOrigin" EntitySet="PlaceOfOrigin" />
       <End Role="Guest" EntitySet="Guest" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Invoice_Guest" Association="Self.FK_Invoice_Guest">
-      <End Role="Guest" EntitySet="Guest" />
-      <End Role="Invoice" EntitySet="Invoice" />
     </AssociationSet>
     <AssociationSet Name="FK_Reservation_Guest" Association="Self.FK_Reservation_Guest">
       <End Role="Guest" EntitySet="Guest" />

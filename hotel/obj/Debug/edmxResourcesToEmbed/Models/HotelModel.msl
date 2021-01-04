@@ -99,7 +99,6 @@
         <MappingFragment StoreEntitySet="Invoice">
           <ScalarProperty Name="invoiceID" ColumnName="invoiceID" />
           <ScalarProperty Name="reservationID" ColumnName="reservationID" />
-          <ScalarProperty Name="guestID" ColumnName="guestID" />
           <ScalarProperty Name="dateTime" ColumnName="dateTime" />
           <ScalarProperty Name="subtotal" ColumnName="subtotal" />
           <ScalarProperty Name="discount" ColumnName="discount" />

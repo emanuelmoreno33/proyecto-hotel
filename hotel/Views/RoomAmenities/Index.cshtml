@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.RoomAmenity>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Amenidades Registradas";
 }
 
 <h2>Comodidades a la habitación</h2>
 
 <p>
-    @Html.ActionLink("Nueva Comodidad", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -36,9 +36,9 @@
                 @Html.DisplayFor(modelamenity => amenity.Service.name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = amenity.amenityID }) |
-                @Html.ActionLink("Details", "Details", new { id = amenity.amenityID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = amenity.amenityID })
+
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = amenity.amenityID })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = amenity.amenityID })'">Eliminar</button>
             </td>
         </tr>
     }

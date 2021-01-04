@@ -15,13 +15,7 @@
         <h4>Invoice</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.invoiceID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.invoiceID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.invoiceID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
 
         <div class="form-group">
             @Html.LabelFor(model => model.reservationID, "reservationID", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -31,13 +25,6 @@
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.guestID, "guestID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("guestID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.guestID, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             @Html.LabelFor(model => model.dateTime, htmlAttributes: new { @class = "control-label col-md-2" })

@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.AmenityReview
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Agregar calificacion a amenidad";
 }
 
-<h2>Create</h2>
+    <h2>Agregar calificacion a amenidad</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,35 +12,28 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>AmenityReview</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.reviewID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.reviewID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.reviewID, "", new { @class = "text-danger" })
-            </div>
-        </div>
+
 
         <div class="form-group">
-            @Html.LabelFor(model => model.reviewAmenity, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Calificación:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.reviewAmenity, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.reviewAmenity, new { htmlAttributes = new { @class = "form-control", @min=0, @max=5 } })
                 @Html.ValidationMessageFor(model => model.reviewAmenity, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dataReview, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Fecha de calificación:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dataReview, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.dataReview, new { htmlAttributes = new { @class = "form-control", @type= "date" } })
                 @Html.ValidationMessageFor(model => model.dataReview, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.amenityID, "amenityID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">ID del registro de amenidad:</label>
             <div class="col-md-10">
                 @Html.DropDownList("amenityID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.amenityID, "", new { @class = "text-danger" })
@@ -49,14 +42,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Agregar" class="btn btn-primary" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

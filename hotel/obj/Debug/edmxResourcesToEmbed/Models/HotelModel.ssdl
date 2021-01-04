@@ -91,7 +91,6 @@
     </Key>
     <Property Name="invoiceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="reservationID" Type="int" Nullable="false" />
-    <Property Name="guestID" Type="int" Nullable="false" />
     <Property Name="dateTime" Type="date" Nullable="false" />
     <Property Name="subtotal" Type="decimal" Precision="14" Scale="2" Nullable="false" />
     <Property Name="discount" Type="decimal" Precision="14" Scale="2" Nullable="false" />
@@ -478,18 +477,6 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
       </Principal>
       <Dependent Role="GuestCompanion">
         <PropertyRef Name="reservationID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Invoice_Guest">
-    <End Role="Guest" Type="Self.Guest" Multiplicity="1" />
-    <End Role="Invoice" Type="Self.Invoice" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Guest">
-        <PropertyRef Name="guestID" />
-      </Principal>
-      <Dependent Role="Invoice">
-        <PropertyRef Name="guestID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -893,10 +880,6 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
     <AssociationSet Name="FK_GuestCompanion_Reservation" Association="Self.FK_GuestCompanion_Reservation">
       <End Role="Reservation" EntitySet="Reservation" />
       <End Role="GuestCompanion" EntitySet="GuestCompanion" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Invoice_Guest" Association="Self.FK_Invoice_Guest">
-      <End Role="Guest" EntitySet="Guest" />
-      <End Role="Invoice" EntitySet="Invoice" />
     </AssociationSet>
     <AssociationSet Name="FK_Invoice_Reservation" Association="Self.FK_Invoice_Reservation">
       <End Role="Reservation" EntitySet="Reservation" />

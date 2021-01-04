@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.ReservationComplaint>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Quejas y sugerencias de reservación";
 }
 
-<h2>Index</h2>
+<h2>Quejas y sugerencias de reservación</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>

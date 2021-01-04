@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.Promo>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Promociones";
 }
 
 <h2>Promociones</h2>
 
 <p>
-    @Html.ActionLink("Nueva Promoción", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -42,9 +42,9 @@
                 @promo.endDate.ToString("dd 'de' MMMM 'del' yyyy")
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = promo.promoID }) |
-                @Html.ActionLink("Details", "Details", new { id = promo.promoID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = promo.promoID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = promo.promoID })'">Editar</button>
+                
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = promo.promoID })'">Eliminar</button>
             </td>
         </tr>
     }

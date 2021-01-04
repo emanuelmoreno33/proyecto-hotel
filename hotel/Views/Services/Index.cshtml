@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.Service>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Amenidades";
 }
 
 <h2>Servicios</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Servicio", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -36,9 +36,8 @@
                 @Html.DisplayFor(modelservice => service.ServiceType.serviceType1)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = service.serviceID }) |
-                @Html.ActionLink("Details", "Details", new { id = service.serviceID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = service.serviceID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id =  service.serviceID })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id =  service.serviceID })'">Eliminar</button>
             </td>
         </tr>
     }

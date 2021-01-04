@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.RoomPromo>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Promociones por cuarto";
 }
 
 <h2>Promoción de habitación</h2>
 
 <p>
-    @Html.ActionLink("Nueva Promoción", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -36,9 +36,9 @@
                 @Html.DisplayFor(modelpromo => promo.RoomType.typeName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = promo.roomPromoID }) |
-                @Html.ActionLink("Details", "Details", new { id = promo.roomPromoID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = promo.roomPromoID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = promo.roomPromoID })'">Editar</button>
+              
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = promo.roomPromoID })'">Eliminar</button>
             </td>
         </tr>
     }

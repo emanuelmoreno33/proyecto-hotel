@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.TypeOfBonification>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Tipo de bonificaciones";
 }
 
 <h2>Tipo de bonificaciones</h2>
 
 <p>
-    @Html.ActionLink("Nuevo tipod e bonificación", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -30,9 +30,8 @@
                 @Html.DisplayFor(modelbonusType => bonusType.bonus)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = bonusType.typeOfBonificationID }) |
-                @Html.ActionLink("Details", "Details", new { id = bonusType.typeOfBonificationID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = bonusType.typeOfBonificationID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = bonusType.typeOfBonificationID })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = bonusType.typeOfBonificationID })'">Eliminar</button>
             </td>
         </tr>
     }

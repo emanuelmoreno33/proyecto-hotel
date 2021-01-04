@@ -1,21 +1,21 @@
 ﻿@model IEnumerable<hotel.Models.AmenityReview>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Calificación de amenidades";
 }
 
 <h2>Reseña de comodidates</h2>
 
 <p>
-    @Html.ActionLink("Nueva reseña", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            Comodidad:
+            Calificación:
         </th>
         <th>
-            Reseña:
+            Fecha de calificación:
         </th>
         <th>
             ID de Comodidad:
@@ -33,12 +33,11 @@
                 @Html.DisplayFor(modelItem => item.dataReview)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RoomAmenity.amenityID)
+                @Html.DisplayFor(modelItem => item.RoomAmenity.Service.name)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.reviewID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.reviewID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.reviewID })
+            <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.reviewID })'">Editar</button>
+            <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = item.reviewID })'">Eliminar</button>
             </td>
         </tr>
     }

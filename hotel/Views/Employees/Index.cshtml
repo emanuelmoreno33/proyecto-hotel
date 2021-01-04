@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<hotel.Models.Employee>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Empleados";
 }
 
 <h2>Empleados</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Empleado", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -67,9 +67,9 @@
             </td>
 
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = employee.employeeID }) |
-                @Html.ActionLink("Details", "Details", new { id = employee.employeeID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = employee.employeeID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = employee.employeeID })'">Editar</button>
+                <button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = employee.employeeID })'">Detalles</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = employee.employeeID })'">Eliminar</button>
             </td>
         </tr>
     }

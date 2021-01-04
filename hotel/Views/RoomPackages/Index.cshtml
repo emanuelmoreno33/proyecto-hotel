@@ -1,27 +1,27 @@
 ﻿@model IEnumerable<hotel.Models.RoomPackage>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Paquetes de habitacinoes";
 }
 
 <h2>Paquetes de habitacinoes</h2>
 
 <p>
-    @Html.ActionLink("Nuevo Paquete", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.namePackage)
+            Paquete:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.price)
+           Precio:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.frequency)
+            Frecuencia:
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.RoomType.typeName)
+           Tipo de habitación:
         </th>
         <th></th>
     </tr>
@@ -42,9 +42,8 @@
                 @Html.DisplayFor(modelpackage => package.RoomType.typeName)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = package.roomPackageID }) |
-                @Html.ActionLink("Details", "Details", new { id = package.roomPackageID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = package.roomPackageID })
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = package.roomPackageID })'">Editar</button>
+                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = package.roomPackageID })'">Eliminar</button>
             </td>
         </tr>
     }

@@ -22,8 +22,6 @@ public partial class Guest
     public Guest()
     {
 
-        this.Invoice = new HashSet<Invoice>();
-
         this.Reservation = new HashSet<Reservation>();
 
     }
@@ -58,10 +56,6 @@ public partial class Guest
     public virtual City City { get; set; }
 
     public virtual PlaceOfOrigin PlaceOfOrigin1 { get; set; }
-
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-
-    public virtual ICollection<Invoice> Invoice { get; set; }
 
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
 

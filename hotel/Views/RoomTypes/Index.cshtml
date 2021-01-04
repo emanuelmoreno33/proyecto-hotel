@@ -7,7 +7,7 @@
 <h2>Tipo de habitación</h2>
 
 <p>
-    @Html.ActionLink("Nueva habitación", "Create")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
 </p>
 <table class="table">
     <tr>
@@ -17,6 +17,10 @@
         <th>
             Precio:
         </th>
+        <th>
+            Capacidad maxima:
+        </th>
+
         <th></th>
     </tr>
 
@@ -30,9 +34,10 @@
                 @Html.DisplayFor(modelroomType => roomType.price)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = roomType.roomTypeID }) |
-                @Html.ActionLink("Details", "Details", new { id = roomType.roomTypeID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = roomType.roomTypeID })
+                @Html.DisplayFor(modelroomType => roomType.capacity)
+            </td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id =  roomType.roomTypeID})'">Editar precio</button>
             </td>
         </tr>
     }
