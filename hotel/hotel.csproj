@@ -583,6 +583,7 @@
     <Content Include="Views\ReservationComplaints\Edit.cshtml" />
     <Content Include="Views\ReservationComplaints\Index.cshtml" />
     <Content Include="Views\Reservations\Grafico.cshtml" />
+    <Content Include="Views\Home\Logout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
