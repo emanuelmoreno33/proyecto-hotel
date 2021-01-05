@@ -7,12 +7,30 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using hotel.Models;
+using System.Web.Security;
 
 namespace hotel.Controllers
 {
     public class ReservationsController : Controller
     {
         private proyecto_hotelEntities db = new proyecto_hotelEntities();
+
+        private string obtenerusuario()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            int emp_id = int.Parse(ticket.Name);
+            var empleado = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.username).FirstOrDefault();
+            return empleado.ToString();
+        }
+        private int obtenerid()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            int emp_id = int.Parse(ticket.Name);
+            var empleado = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.employeeID).FirstOrDefault();
+            return empleado;
+        }
 
         // GET: Reservations
         public ActionResult Index()
@@ -69,7 +87,10 @@ namespace hotel.Controllers
             ViewBag.reservationID = new SelectList(db.ReservationComplaint, "reservationID", "comment");
             ViewBag.roomPackageID = new SelectList(db.RoomPackage, "roomPackageID", "namePackage");
             ViewBag.roomPromoID = new SelectList(db.RoomPromo, "roomPromoID", "roomPromoID");
+            ViewBag.Message = obtenerusuario();
+
             return View();
+
         }
 
         // POST: Reservations/Create
@@ -77,10 +98,11 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "reservationID,guestID,roomID,startDate,endDate,reservationStatusID,reservedFromID,employeeID,roomPackageID,roomPromoID")] Reservation reservation)
+        public ActionResult Create([Bind(Include = "reservationID,guestID,roomID,startDate,endDate,reservationStatusID,reservedFromID,roomPackageID,roomPromoID")] Reservation reservation)
         {
             if (ModelState.IsValid)
             {
+                reservation.employeeID = obtenerid();
                 db.Reservation.Add(reservation);
                 db.SaveChanges();
                 return RedirectToAction("Index");

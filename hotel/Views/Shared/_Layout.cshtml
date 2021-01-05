@@ -26,14 +26,6 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
                     <li class="dropdown">
-                        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Paises <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Lista de Paises", "Index", "PlaceOfOrigins")</li>
-                            <li>@Html.ActionLink("Lista de Estados", "Index", "States")</li>
-                            <li>@Html.ActionLink("Lista de Ciudades", "Index", "Cities")</li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Clientes <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li>@Html.ActionLink("Reservacion", "Index", "Reservations")</li>
@@ -75,6 +67,9 @@
                             <li>@Html.ActionLink("Tipo de servicio", "Index", "ServiceTypes")</li>
                             <li>@Html.ActionLink("Estatus de reservación", "Index", "ReservationStatus")</li>
                             <li>@Html.ActionLink("Tipo de reservacion", "Index", "ReservedFroms")</li>
+                            <li>@Html.ActionLink("Paises", "Index", "PlaceOfOrigins")</li>
+                            <li>@Html.ActionLink("Estados de Mexico", "Index", "States")</li>
+                            <li>@Html.ActionLink("Ciudades", "Index", "Cities")</li>
                         </ul>
                     </li>
                     <li class="dropdown">

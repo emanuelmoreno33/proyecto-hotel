@@ -29,7 +29,7 @@ namespace hotel.Controllers
                 if (user > 0)
                 {
                     Session["UserID"] = user;
-                    FormsAuthentication.SetAuthCookie(Convert.ToString(10), true);
+                    FormsAuthentication.SetAuthCookie(Convert.ToString(Session["UserID"]), true);
                     return Redirect("~/Home");
                 }
 
