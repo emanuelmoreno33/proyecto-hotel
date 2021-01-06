@@ -7,6 +7,7 @@ using System.Web.Security;
 using System.Data.Entity;
 using hotel.Models;
 
+
 namespace hotel.Controllers
 {
     public class HomeController : Controller
@@ -19,9 +20,11 @@ namespace hotel.Controllers
             int emp_id = int.Parse(ticket.Name);
             var empleado = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.username).FirstOrDefault();
             ViewBag.Message = empleado;
-            var admin =  db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
+            var admin = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
             var val_Admin = int.Parse(admin);
             ViewBag.admin = val_Admin;
+            //AuthModel auth = new AuthModel();
+           // ViewBag.admin = auth.admin();
 
 
             return View();

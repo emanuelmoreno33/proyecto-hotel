@@ -30,6 +30,7 @@
           <Property Name="bonificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="employeeID" Type="int" Nullable="false" />
           <Property Name="typeOfBonificationID" Type="int" Nullable="false" />
+          <Property Name="date" Type="datetime" Nullable="false" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -312,7 +313,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte3' no tiene defini
             <PropertyRef Name="endDate" />
           </Key>
           <Property Name="promoName" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="Expr2" Type="int" />
+          <Property Name="conteo" Type="int" />
           <Property Name="startDate" Type="datetime" Nullable="false" />
           <Property Name="endDate" Type="datetime" Nullable="false" />
         </EntityType>
@@ -814,7 +815,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <EntitySet Name="reporte3" EntityType="Self.reporte3" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [reporte3].[promoName] AS [promoName], 
-    [reporte3].[Expr2] AS [Expr2], 
+    [reporte3].[conteo] AS [conteo], 
     [reporte3].[startDate] AS [startDate], 
     [reporte3].[endDate] AS [endDate]
     FROM [dbo].[reporte3] AS [reporte3]</DefiningQuery>
@@ -1012,6 +1013,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <Property Name="typeOfBonificationID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Employee" Relationship="Self.FK_Bonification_Employee" FromRole="Bonification" ToRole="Employee" />
           <NavigationProperty Name="TypeOfBonification" Relationship="Self.FK_Bonification_TypeOfBonification" FromRole="Bonification" ToRole="TypeOfBonification" />
+          <Property Name="date" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
         <EntityType Name="City">
           <Key>
@@ -1932,9 +1934,9 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
             <PropertyRef Name="endDate" />
           </Key>
           <Property Name="promoName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Expr2" Type="Int32" />
           <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="conteo" Type="Int32" />
         </EntityType>
         <EntityType Name="reporte4">
           <Key>
@@ -2004,6 +2006,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <EntitySetMapping Name="Bonification">
             <EntityTypeMapping TypeName="proyecto_hotelModel.Bonification">
               <MappingFragment StoreEntitySet="Bonification">
+                <ScalarProperty Name="date" ColumnName="date" />
                 <ScalarProperty Name="bonificationID" ColumnName="bonificationID" />
                 <ScalarProperty Name="employeeID" ColumnName="employeeID" />
                 <ScalarProperty Name="typeOfBonificationID" ColumnName="typeOfBonificationID" />
@@ -2304,9 +2307,9 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <EntitySetMapping Name="reporte3">
             <EntityTypeMapping TypeName="proyecto_hotelModel.reporte3">
               <MappingFragment StoreEntitySet="reporte3">
+                <ScalarProperty Name="conteo" ColumnName="conteo" />
                 <ScalarProperty Name="endDate" ColumnName="endDate" />
                 <ScalarProperty Name="startDate" ColumnName="startDate" />
-                <ScalarProperty Name="Expr2" ColumnName="Expr2" />
                 <ScalarProperty Name="promoName" ColumnName="promoName" />
               </MappingFragment>
             </EntityTypeMapping>

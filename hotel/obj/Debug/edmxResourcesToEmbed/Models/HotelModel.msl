@@ -24,6 +24,7 @@
     <EntitySetMapping Name="Bonification">
       <EntityTypeMapping TypeName="proyecto_hotelModel.Bonification">
         <MappingFragment StoreEntitySet="Bonification">
+          <ScalarProperty Name="date" ColumnName="date" />
           <ScalarProperty Name="bonificationID" ColumnName="bonificationID" />
           <ScalarProperty Name="employeeID" ColumnName="employeeID" />
           <ScalarProperty Name="typeOfBonificationID" ColumnName="typeOfBonificationID" />
@@ -324,9 +325,9 @@
     <EntitySetMapping Name="reporte3">
       <EntityTypeMapping TypeName="proyecto_hotelModel.reporte3">
         <MappingFragment StoreEntitySet="reporte3">
+          <ScalarProperty Name="conteo" ColumnName="conteo" />
           <ScalarProperty Name="endDate" ColumnName="endDate" />
           <ScalarProperty Name="startDate" ColumnName="startDate" />
-          <ScalarProperty Name="Expr2" ColumnName="Expr2" />
           <ScalarProperty Name="promoName" ColumnName="promoName" />
         </MappingFragment>
       </EntityTypeMapping>

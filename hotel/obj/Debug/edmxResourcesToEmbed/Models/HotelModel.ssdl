@@ -25,6 +25,7 @@
     <Property Name="bonificationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="employeeID" Type="int" Nullable="false" />
     <Property Name="typeOfBonificationID" Type="int" Nullable="false" />
+    <Property Name="date" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="City">
     <Key>
@@ -307,7 +308,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte3' no tiene defini
       <PropertyRef Name="endDate" />
     </Key>
     <Property Name="promoName" Type="varchar" MaxLength="50" Nullable="false" />
-    <Property Name="Expr2" Type="int" />
+    <Property Name="conteo" Type="int" />
     <Property Name="startDate" Type="datetime" Nullable="false" />
     <Property Name="endDate" Type="datetime" Nullable="false" />
   </EntityType>
@@ -809,7 +810,7 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
     <EntitySet Name="reporte3" EntityType="Self.reporte3" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [reporte3].[promoName] AS [promoName], 
-    [reporte3].[Expr2] AS [Expr2], 
+    [reporte3].[conteo] AS [conteo], 
     [reporte3].[startDate] AS [startDate], 
     [reporte3].[endDate] AS [endDate]
     FROM [dbo].[reporte3] AS [reporte3]</DefiningQuery>

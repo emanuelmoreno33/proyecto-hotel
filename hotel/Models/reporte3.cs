@@ -20,11 +20,11 @@ public partial class reporte3
 
     public string promoName { get; set; }
 
-    public Nullable<int> Expr2 { get; set; }
-
     public System.DateTime startDate { get; set; }
 
     public System.DateTime endDate { get; set; }
+
+    public Nullable<int> conteo { get; set; }
 
 }
 

@@ -6,7 +6,6 @@
 
 <br />
 <h2>Cantidad de reservaciones</h2>
-<br />
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <div id="chart_div"></div>
 
@@ -45,9 +44,10 @@
                     //Draw pie chart command with data and chart options
                     chart.draw(data,
                         {
-                            title: "Google pie Chart in ASP.NET MVC",
                             position: "top",
                             fontsize: "14px",
+                            width: 1000,
+                            height: 400,
                         });
 
                 },

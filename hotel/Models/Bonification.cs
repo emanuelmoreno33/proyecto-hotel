@@ -24,6 +24,8 @@ public partial class Bonification
 
     public int typeOfBonificationID { get; set; }
 
+    public System.DateTime date { get; set; }
+
 
 
     public virtual Employee Employee { get; set; }

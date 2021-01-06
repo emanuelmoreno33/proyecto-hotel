@@ -192,6 +192,7 @@
     <Compile Include="Models\AmenityReview.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\Bonification.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>

@@ -17,22 +17,28 @@
         <th>
             Tipo de bonificación:
         </th>
+        <th>
+            Fecha de emision:
+        </th>
         <th></th>
     </tr>
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Employee.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeOfBonification.typeOfBonificationID)
-            </td>
-            <td>
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.bonificationID })'">Editar</button>
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Employee.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TypeOfBonification.typeOfBonificationID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+    </td>
+    <td>
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.bonificationID })'">Editar</button>
+    </td>
+</tr>
     }
 
 </table>

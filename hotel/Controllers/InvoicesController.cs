@@ -49,10 +49,11 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "invoiceID,reservationID,guestID,dateTime,subtotal,discount,tax,totalDue")] Invoice invoice)
+        public ActionResult Create([Bind(Include = "invoiceID,dateTime,subtotal,discount,tax,totalDue")] Invoice invoice)
         {
             if (ModelState.IsValid)
             {
+                invoice.dateTime = DateTime.Now;
                 db.Invoice.Add(invoice);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -85,7 +86,7 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "invoiceID,reservationID,guestID,dateTime,subtotal,discount,tax,totalDue")] Invoice invoice)
+        public ActionResult Edit([Bind(Include = "invoiceID,dateTime,subtotal,discount,tax,totalDue")] Invoice invoice)
         {
             if (ModelState.IsValid)
             {
