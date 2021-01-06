@@ -18,7 +18,7 @@
         <div class="form-group">
             
             <div class="col-md-10">
-                <label>Promoción</label>
+                <label>Promoción:</label>
                 @Html.DropDownList("promoID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.promoID, "", new { @class = "text-danger" })
             </div>
@@ -27,7 +27,7 @@
         <div class="form-group">
             
             <div class="col-md-10">
-                <label>Tipo de habitación</label>
+                <label>Tipo de habitación:</label>
                 @Html.DropDownList("roomTypeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomTypeID, "", new { @class = "text-danger" })
             </div>
@@ -36,8 +36,8 @@
         <div class="form-group">
             
             <div class="col-md-10">
-                <label>Descuento (ingrese el porcentaje)</label>
-                @Html.EditorFor(model => model.discount, new { htmlAttributes = new { @class = "form-control", @type = "number", @max = 100, @min = 0 } })
+                <label>Descuento (ingrese el porcentaje):</label>
+                @Html.EditorFor(model => model.discount, new { htmlAttributes = new { @class = "form-control", @type = "number", @max = 100, @min = 0,@placeholder="20% es 20" } })
                 @Html.ValidationMessageFor(model => model.discount, "", new { @class = "text-danger" })
             </div>
         </div>

@@ -39,7 +39,7 @@ namespace hotel.Controllers
         // GET: AmenityComplaints/Create
         public ActionResult Create()
         {
-            ViewBag.amenityID = new SelectList(db.RoomAmenity, "amenityID", "amenityID");
+            ViewBag.amenityID = new SelectList(db.RoomAmenity, "amenityID","amenityID");
             return View();
         }
 
@@ -48,10 +48,11 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "complaintID,comment,dateComplaint,amenityID")] AmenityComplaint amenityComplaint)
+        public ActionResult Create([Bind(Include = "complaintID,comment,amenityID")] AmenityComplaint amenityComplaint)
         {
             if (ModelState.IsValid)
             {
+                amenityComplaint.dateComplaint = DateTime.Now;
                 db.AmenityComplaint.Add(amenityComplaint);
                 db.SaveChanges();
                 return RedirectToAction("Index");

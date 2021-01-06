@@ -1,17 +1,16 @@
 ﻿@model hotel.Models.Employee
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles del empleado";
 }
 
-<h2>Details</h2>
+    <h2>Detalles del empleado</h2>
 
 <div>
-    <h4>Employee</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.name)
+            Nombre(s):
         </dt>
 
         <dd>
@@ -19,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.lastName)
+            Apellido(s):
         </dt>
 
         <dd>
@@ -27,15 +26,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DOB)
+            Fecha de nacimiento:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DOB)
+            @Model.DOB.ToString("dd 'de' MMMM 'del' yyyy")
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.salary)
+            Salario:
         </dt>
 
         <dd>
@@ -43,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.username)
+            Usuario:
         </dt>
 
         <dd>
@@ -51,23 +50,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.password)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.password)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.City.city1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.City.city1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Departament.type)
+           Departamento:
         </dt>
 
         <dd>
@@ -75,16 +58,32 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.PlaceOfOrigin1.country)
+            Pais de nacimiento:
         </dt>
 
         <dd>
             @Html.DisplayFor(model => model.PlaceOfOrigin1.country)
         </dd>
 
+        @if (Model.cityID != null)
+        {
+            <dt>
+                Estado:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City.State.state1)
+            </dd>
+            <dt>
+                Ciudad:
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City.city1)
+            </dd>
+        }
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.employeeID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </p>

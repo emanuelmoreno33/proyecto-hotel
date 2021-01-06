@@ -27,7 +27,7 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelamenity => amenity.date)
+                @amenity.date.ToString("dd 'de' MMMM 'del' yyyy a la hh:mm tt")
             </td>
             <td>
                 @Html.DisplayFor(modelamenity => amenity.Reservation.reservationID)

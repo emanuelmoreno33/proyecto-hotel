@@ -1,17 +1,16 @@
 ﻿@model hotel.Models.GuestCompanion
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles del acompañante";
 }
 
-<h2>Details</h2>
+<h2>Detalles</h2>
 
 <div>
-    <h4>GuestCompanion</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.name)
+            Nombre(s):
         </dt>
 
         <dd>
@@ -19,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.lastName)
+            Apellidos:
         </dt>
 
         <dd>
@@ -27,15 +26,15 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.DOB)
+            Fecha de nacimiento:
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.DOB)
+            @Model.DOB.ToString("dd 'de' MMMM 'del' yyyy")
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+           Correo electronico:
         </dt>
 
         <dd>
@@ -43,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Reservation.reservationID)
+            ID de reservación:
         </dt>
 
         <dd>
@@ -53,6 +52,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.companionID }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </p>

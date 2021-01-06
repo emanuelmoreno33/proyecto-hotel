@@ -17,6 +17,7 @@ namespace hotel.Controllers
 
         private string obtenerusuario()
         {
+
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
             FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
             int emp_id = int.Parse(ticket.Name);

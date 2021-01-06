@@ -49,10 +49,11 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "amenityID,reservationID,serviceID,date")] RoomAmenity roomAmenity)
+        public ActionResult Create([Bind(Include = "amenityID,reservationID,serviceID")] RoomAmenity roomAmenity)
         {
             if (ModelState.IsValid)
             {
+                roomAmenity.date = DateTime.Now;
                 db.RoomAmenity.Add(roomAmenity);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -19,7 +19,10 @@ namespace hotel.Controllers
             int emp_id = int.Parse(ticket.Name);
             var empleado = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.username).FirstOrDefault();
             ViewBag.Message = empleado;
-            
+            var admin =  db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
+            var val_Admin = int.Parse(admin);
+            ViewBag.admin = val_Admin;
+
 
             return View();
         }
@@ -58,6 +61,7 @@ namespace hotel.Controllers
             Response.Cache.SetCacheability(HttpCacheability.NoCache);
             Response.Cache.SetNoStore();
 
+            ViewBag.admin = null;
 
             // Redirect to the Home Page (that should be intercepted and redirected to the Login Page first)
             return RedirectToAction("Index", "Login");

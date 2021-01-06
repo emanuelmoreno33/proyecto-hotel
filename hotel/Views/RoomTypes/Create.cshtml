@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.RoomType
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Agregar tipo de cuarto";
 }
 
-<h2>Create</h2>
+<h2>Agregar tipo de cuarto</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,12 +12,11 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>RoomType</h4>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">
-        @Html.LabelFor(model => model.typeName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <label class="col-md-2 control-label">Tipo de cuarto:</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.typeName, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.typeName, "", new { @class = "text-danger" })
@@ -25,7 +24,7 @@
     </div>
 
     <div class="form-group">
-        @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
+        <label class="col-md-2 control-label">Precio:</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
@@ -33,7 +32,7 @@
     </div>
 
     <div class="form-group">
-        Capacidad maxima
+        <label class="col-md-2 control-label">Capacidad maxima:</label>
         <div class="col-md-10">
             @Html.EditorFor(model => model.capacity, new { htmlAttributes = new { @class = "form-control" } })
             @Html.ValidationMessageFor(model => model.capacity, "", new { @class = "text-danger" })
@@ -42,14 +41,14 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Agregar" class="btn btn-default" />
         </div>
     </div>
 </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

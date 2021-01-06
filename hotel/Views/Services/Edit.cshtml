@@ -1,7 +1,7 @@
 ﻿@model hotel.Models.Service
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar amenidad";
 }
 
 <h2>Edit</h2>
@@ -18,7 +18,7 @@
         @Html.HiddenFor(model => model.serviceID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.serviceTypeID, "serviceTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Tipo de amenidad:</label>
             <div class="col-md-10">
                 @Html.DropDownList("serviceTypeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.serviceTypeID, "", new { @class = "text-danger" })
@@ -26,15 +26,15 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Amenidad:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control",@readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Precio:</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
@@ -43,14 +43,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Actualizar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

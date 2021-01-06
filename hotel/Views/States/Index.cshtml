@@ -14,7 +14,7 @@
         <th>
             Estado de la Republica Mexicana:
         </th>
-        <th></th>
+
     </tr>
 
     @foreach (var state in Model)
@@ -22,10 +22,6 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelstate => state.state1)
-            </td>
-            <td>
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = state.stateID })'">Editar</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = state.stateID })'">Eliminar</button>
             </td>
         </tr>
     }

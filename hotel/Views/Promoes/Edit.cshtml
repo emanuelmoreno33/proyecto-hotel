@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.Promo
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar promoción";
 }
 
-<h2>Edit</h2>
+<h2>Editar promoción</h2>
 
 
 @using (Html.BeginForm())
@@ -12,13 +12,12 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Promo</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.promoID)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.promoName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Nombre de la promoción:</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.promoName, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.promoName, "", new { @class = "text-danger" })
@@ -26,7 +25,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Descripción:</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
@@ -34,31 +33,31 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.startDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Fecha de inicio:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.startDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.startDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.startDate })
                 @Html.ValidationMessageFor(model => model.startDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.endDate, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Fecha de termino:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.endDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.endDate, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.endDate })
                 @Html.ValidationMessageFor(model => model.endDate, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Editar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

@@ -55,6 +55,8 @@
                             <li>@Html.ActionLink("Quejas y sugerencias", "Index", "AmenityComplaints")</li>
                         </ul>
                     </li>
+                    @if (ViewBag.admin == 1)
+                    {
                     <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Administrador <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
@@ -72,6 +74,7 @@
                             <li>@Html.ActionLink("Ciudades", "Index", "Cities")</li>
                         </ul>
                     </li>
+                    }
                     <li class="dropdown">
                         <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Consultas <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">

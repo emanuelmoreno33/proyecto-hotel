@@ -45,7 +45,7 @@
           
             <div class="col-md-10">
                 <label>Fecha de Nacimiento</label>
-                @Html.EditorFor(model => model.DOB, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.DOB, "{0:yyyy-MM-dd}", new { @class = "form-control", @type = "date", @value = Model.DOB })
                 @Html.ValidationMessageFor(model => model.DOB, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -98,7 +98,7 @@
        
             <div class="col-md-10">
                 <label>Telefono de casa</label>
-                @Html.EditorFor(model => model.housePhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.housePhone, new { htmlAttributes = new { @class = "form-control", @type = "tel", @maxlength = 13, @minlength = 10} })
                 @Html.ValidationMessageFor(model => model.housePhone, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -106,7 +106,7 @@
         <div class="form-group">
             <div class="col-md-10">
                 <label>Telefono celular</label>
-                @Html.EditorFor(model => model.cellPhone, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.TextBoxFor(model => model.cellPhone,new { @class = "form-control", @type = "tel", @maxlength = 13, @minlength = 10 })
                 @Html.ValidationMessageFor(model => model.cellPhone, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -115,7 +115,7 @@
             
             <div class="col-md-10">
                 <label>Correo electronico</label>
-                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control",@type="email" } })
                 @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -124,7 +124,7 @@
             
             <div class="col-md-10">
                 <label>RFC</label>
-                @Html.EditorFor(model => model.RFC, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.RFC, new { htmlAttributes = new { @class = "form-control", @maxlength = 13,@minlength =12 } })
                 @Html.ValidationMessageFor(model => model.RFC, "", new { @class = "text-danger" })
             </div>
         </div>

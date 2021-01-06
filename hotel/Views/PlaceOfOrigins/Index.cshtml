@@ -17,7 +17,7 @@
         <th>
             Nombre del pais:
         </th>
-        <th>Acciones</th>
+
     </tr>
 
     @foreach (var origin in Model)
@@ -29,10 +29,7 @@
             <td>
                 @Html.DisplayFor(modelorigin => origin.country)
             </td>
-            <td>
-                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = origin.placeOfOrigin1 })'">Editar</button>
-                <button type="button" class="btn btn-danger" onclick="location.href='@Url.Action( "Delete", new { id = origin.placeOfOrigin1 })'">Eliminar</button>
-            </td>
+
         </tr>
     }
 </table>
