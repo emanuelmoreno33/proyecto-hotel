@@ -11,6 +11,7 @@ using System.Web.Security;
 
 namespace hotel.Controllers
 {
+    [Authorize]
     public class ReservationsController : Controller
     {
         private proyecto_hotelEntities db = new proyecto_hotelEntities();

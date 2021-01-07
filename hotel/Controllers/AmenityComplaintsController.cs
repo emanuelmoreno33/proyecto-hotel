@@ -10,6 +10,7 @@ using hotel.Models;
 
 namespace hotel.Controllers
 {
+    [Authorize]
     public class AmenityComplaintsController : Controller
     {
         private proyecto_hotelEntities db = new proyecto_hotelEntities();
