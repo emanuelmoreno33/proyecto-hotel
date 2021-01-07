@@ -8,16 +8,34 @@ using System.Web.Security;
 
 namespace hotel.Controllers
 {
-    public class AuthModel: ActionResult
+    public class AuthModel: Controller
     {
         private proyecto_hotelEntities db = new proyecto_hotelEntities();
-        public override void ExecuteResult(ControllerContext context)
+        public string nombre_admin()
         {
-            //HttpCookie authCookie = request.Cookies[FormsAuthentication.FormsCookieName];
-            //FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
-            //nt emp_id = int.Parse(ticket.Name);
-            //var admin = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
-            //var val_Admin = int.Parse(admin);
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            int emp_id = int.Parse(ticket.Name);
+            var empleado = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.username).FirstOrDefault();
+            return empleado;
+            
+        }
+        public int es_admin()
+        {
+            HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
+            FormsAuthenticationTicket ticket = FormsAuthentication.Decrypt(authCookie.Value);
+            int emp_id = int.Parse(ticket.Name);
+            var admin = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
+            var val_Admin = int.Parse(admin);
+            return val_Admin;
+        }
+        public void cargar(int emp_id)
+        {
+            var empleado = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.username).FirstOrDefault();
+            ViewBag.Message = empleado;
+            var admin = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
+            var val_Admin = int.Parse(admin);
+            ViewBag.admin = val_Admin;
         }
     }
 }

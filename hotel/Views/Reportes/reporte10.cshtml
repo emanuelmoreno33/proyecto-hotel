@@ -1,0 +1,51 @@
+﻿@model IEnumerable<hotel.Models.busqueda_reporte10_Result>
+
+@{
+    ViewBag.Title = "Reporte 10";
+}
+
+    <h2>
+        Reporte de quejas registradas en base a un rango de fechas dado y clasificado por el departamento al que fue aplicada la queja.
+    </h2>
+<br />
+@using (Html.BeginForm("reporte10", "Reportes", FormMethod.Post))
+{
+    <fieldset>
+        @Html.Label("fromDate", "Inicio:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="fromDate" name="fromDate" type="date" value="">
+        @Html.Label("toDate", "Fin:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="toDate" name="toDate" type="date" value="">
+        <input type="submit" value="Aplicar" class="btn btn-primary" />
+    </fieldset>
+}
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Elemento:
+        </th>
+        <th>
+            Precio:
+        </th>
+        <th>
+            Fecha de redacción:
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.comment)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.type)
+    </td>
+    <td>
+       @item.dateComplaint.ToString("dd 'de' MMMM 'del' yyyy") 
+    </td>
+</tr>
+    }
+
+</table>

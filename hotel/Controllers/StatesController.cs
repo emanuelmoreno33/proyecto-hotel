@@ -39,7 +39,7 @@ namespace hotel.Controllers
         // GET: States/Create
         public ActionResult Create()
         {
-            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country");
+            ViewBag.placeOfOrigin = new SelectList(db.PlaceOfOrigin, "placeOfOrigin1", "country",142);
             return View();
         }
 
@@ -48,10 +48,11 @@ namespace hotel.Controllers
         // más detalles, vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "state1,placeOfOrigin")] State state)
+        public ActionResult Create([Bind(Include = "state1")] State state)
         {
             if (ModelState.IsValid)
             {
+                state.placeOfOrigin = "MEX";
                 db.State.Add(state);
                 db.SaveChanges();
                 return RedirectToAction("Index");

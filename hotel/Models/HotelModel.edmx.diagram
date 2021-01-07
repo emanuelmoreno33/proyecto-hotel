@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0fc89774093f405ba165f973f5fdab56" Name="Diagram1" ZoomLevel="66">
+      <Diagram DiagramId="0fc89774093f405ba165f973f5fdab56" Name="Diagram1" ZoomLevel="86">
         <EntityTypeShape EntityType="proyecto_hotelModel.AmenityComplaint" Width="1.5" PointX="15.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="proyecto_hotelModel.AmenityReview" Width="1.5" PointX="15.75" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="proyecto_hotelModel.Bonification" Width="1.5" PointX="5.25" PointY="11.125" IsExpanded="true" />
@@ -74,6 +74,10 @@
         <EntityTypeShape EntityType="proyecto_hotelModel.reporte4" Width="1.5" PointX="16.375" PointY="11.75" />
         <EntityTypeShape EntityType="proyecto_hotelModel.reporte5" Width="1.5" PointX="16.375" PointY="14.75" />
         <EntityTypeShape EntityType="proyecto_hotelModel.reporte6" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.consulta11" Width="1.5" PointX="16.75" PointY="17.75" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.consulta12" Width="1.5" PointX="0.75" PointY="18.75" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.consulta8" Width="1.5" PointX="18.75" PointY="3.75" />
+        <EntityTypeShape EntityType="proyecto_hotelModel.DetallesFactura" Width="1.5" PointX="18.375" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,16 +1,19 @@
 ﻿@model IEnumerable<hotel.Models.Invoice>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Facturas";
 }
 
 <h2>Facturas</h2>
 
-<p>
-    @Html.ActionLink("Nueva Factura", "Create")
-</p>
 <table class="table">
     <tr>
+        <th>
+            ID de reservación:
+        </th>
+        <th>
+            Nombre del cliente:
+        </th>
         <th>
             Fecha:
         </th>
@@ -26,44 +29,34 @@
         <th>
             Total:
         </th>
-        <th>
-            Nombre del cliente:
-        </th>
-        <th>
-            ID de reservación:
-        </th>
         <th></th>
     </tr>
 
     @foreach (var invoice in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.dateTime)
-            </td>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.subtotal)
-            </td>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.discount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.tax)
-            </td>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.totalDue)
-            </td>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.Reservation.Guest.name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelinvoice => invoice.Reservation.reservationID)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = invoice.invoiceID }) |
-                @Html.ActionLink("Details", "Details", new { id = invoice.invoiceID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = invoice.invoiceID })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.Reservation.reservationID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.Reservation.Guest.name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.dateTime)
+    </td>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.subtotal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.discount)
+    </td>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.tax)
+    </td>
+    <td>
+        @Html.DisplayFor(modelinvoice => invoice.totalDue)
+    </td>
+    <td><button type="button" class="btn btn-info" onclick="location.href='@Url.Action( "Details", new { id = invoice.invoiceID })'">Detalles</button></td>
+</tr>
     }
 </table>

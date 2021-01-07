@@ -1,0 +1,45 @@
+﻿@model IEnumerable<hotel.Models.busqueda_reporte11_Result>
+
+@{
+    ViewBag.Title = "Reporte 11";
+}
+
+    <h2>
+        Reporte de número de huéspedes registrados y clasificados por el medio de registro (Internet, Teléfono, Presencial) y muestre las ganancias obtenidas en base a rango de fechas dado.
+    </h2>
+<br />
+@using (Html.BeginForm("reporte11", "Reportes", FormMethod.Post))
+{
+    <fieldset>
+        @Html.Label("fromDate", "Inicio:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="fromDate" name="fromDate" type="date" value="">
+        @Html.Label("toDate", "Fin:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="toDate" name="toDate" type="date" value="">
+        <input type="submit" value="Aplicar" class="btn btn-primary" />
+    </fieldset>
+}
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Metodo de reservación:
+        </th>
+        <th>
+            Ganancia:
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.reservationMethod)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ganancia)
+            </td>
+        </tr>
+    }
+
+</table>

@@ -29,6 +29,20 @@ namespace hotel.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Invoice invoice = db.Invoice.Find(id);
+            var id_reservation = invoice.reservationID;
+
+            var cant_huespedes = db.consulta2.Where(x => x.reservationID == id_reservation).Select(x => x.companion).FirstOrDefault();
+            ViewBag.cant_huesped = cant_huespedes;
+
+            var resultado = db.DetallesFactura.Where(x => x.reservationID == id_reservation).ToList();
+            List<DetallesFactura> detalles = new List<DetallesFactura>();
+            foreach (var t in resultado)
+            {
+                detalles.Add(t);
+            }
+            var listafinal = new List<DetallesFactura>();
+            listafinal = detalles.ToList();
+            ViewBag.conceptos = listafinal;
             if (invoice == null)
             {
                 return HttpNotFound();

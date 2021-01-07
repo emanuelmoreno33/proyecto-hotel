@@ -8,6 +8,11 @@
 
 <div class="justify-content-center">
     <h1>Bienvenido @ViewBag.Message</h1>
+    @if(ViewBag.admin == 1)
+    { 
+        <h4>Tienes permisos de administrador, para acceder a ellos solo puedes por esta ventana.</h4>
+    }
+    
 </div>
 <div class="row">
 

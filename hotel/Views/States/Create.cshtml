@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.State
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Agregar estado mexicano";
 }
 
-<h2>Create</h2>
+<h2>Agregar estado mexicano</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,36 +12,28 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>State</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
         <div class="form-group">
-            @Html.LabelFor(model => model.state1, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Nombre del estado:</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.state1, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.state1, "", new { @class = "text-danger" })
             </div>
         </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.placeOfOrigin, "placeOfOrigin", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("placeOfOrigin", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.placeOfOrigin, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Agregar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<hotel.Models.busqueda_reporte7_Result>
+
+@{
+    ViewBag.Title = "Reporte 7";
+}
+
+    <h2>
+        Reporte de los empleados de mostrador con mayor bono obtenido por el registro de los
+        huéspedes en base a una fecha determinada.
+    </h2>
+<br />
+@using (Html.BeginForm("reporte7", "Reportes", FormMethod.Post))
+{
+    <fieldset>
+        @Html.Label("fromDate", "Inicio:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="fromDate" name="fromDate" type="date" value="">
+        @Html.Label("toDate", "Fin:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="toDate" name="toDate" type="date" value="">
+        <input type="submit" value="Apply" class="btn btn-primary" />
+    </fieldset>
+}
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            Tipo de bonificacion:
+        </th>
+        <th>
+            ID del empleado:
+        </th>
+        <th>
+            Fecha de creación:
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.typeOfBonificationID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.employeeID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+    </td>
+</tr>
+    }
+
+</table>

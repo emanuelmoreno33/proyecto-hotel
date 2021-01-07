@@ -17,7 +17,7 @@ namespace hotel.Controllers
         // GET: consulta1
         public ActionResult Index()
         {
-            return View(db.consulta2.ToList());
+            return View(db.consulta1.ToList());
         }
 
         // GET: consulta1/Details/5

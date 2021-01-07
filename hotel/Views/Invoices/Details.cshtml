@@ -1,74 +1,89 @@
 ﻿@model hotel.Models.Invoice
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Factura";
 }
 
-<h2>Details</h2>
+<h2>Factura</h2>
 
-<div>
-    <h4>Invoice</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.dateTime)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.dateTime)
-        </dd>
+<table class="table table-bordered border-primary">
+    <tr>
+        <td colspan="3">Nombre: @Model.Reservation.Guest.name @Model.Reservation.Guest.lastName</td>
+        <td colspan="3">Fecha de nacimiento: @Model.Reservation.Guest.DOB.ToString("dd 'de' MMMM 'del' yyyy")</td>
+    </tr>
+    <tr>
+        <td colspan="2">RFC: @Model.Reservation.Guest.RFC</td>
+        <td colspan="2">Dirección: @Model.Reservation.Guest.address</td>
+        <td colspan="2">
+            Lugar de nacimiento:
+            @if (Model.Reservation.Guest.cityID != null)
+            {
+                <div> @Model.Reservation.Guest.City.city1,@Model.Reservation.Guest.City.State.state1</div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.subtotal)
-        </dt>
+            }
+            @Model.Reservation.Guest.PlaceOfOrigin1.country
 
-        <dd>
-            @Html.DisplayFor(model => model.subtotal)
-        </dd>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">Telefono de casa: @Model.Reservation.Guest.housePhone</td>
+        <td colspan="2">Telefono celular: @Model.Reservation.Guest.cellPhone</td>
+        <td colspan="2">Correo electronico: @Model.Reservation.Guest.email</td>
+    </tr>
+    <tr>
+        <td colspan="6"> Fecha de creación de factura: @Model.dateTime.ToString("dd 'de' MMMM 'del' yyyy")</td>
+    </tr>
+</table>
+<br />
+<h3>Habitación</h3>
+<table class="table table-bordered border-primary">
+    <tr>
+        <td colspan="2">Número de habitación: @Model.Reservation.Room.roomNumber</td>
+        <td colspan="2">Tipo de habitación: @Model.Reservation.Room.RoomType.typeName</td>
+        <td colspan="2">Cantidad de huespedes: @ViewBag.cant_huesped</td>
+    </tr>
+    <tr>
+        <td colspan="3">Fecha de llegada: @Model.Reservation.startDate.ToString("dd 'de' MMMM 'del' yyyy")</td>
+        <td colspan="3">Fecha de ida: @Model.Reservation.endDate.ToString("dd 'de' MMMM 'del' yyyy")</td>
+    </tr>
+</table>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.discount)
-        </dt>
+<br />
+<h3>Conceptos</h3>
+<table class="table table-bordered border-primary">
+    <thead>
+        <tr>
+            <th>Concepto</th>
+            <th>Importe</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var valor_concepto in ViewBag.conceptos)
+        {
+        <tr>
+        <td>@valor_concepto.concepto</td>
+        <td>@valor_concepto.importe</td>
+        </tr>
+        }
+    </tbody>
+</table>
+<table  class="table table-bordered border-primary">
+    <tr>
+        <td>Subtotal</td>
+        <td>@Model.subtotal</td>
+    </tr>
+    <tr>
+        <td>Descuento:</td>
+        <td>@Model.discount</td>
+    </tr>
+    <tr>
+        <td>Impuesto:</td>
+        <td>@Model.tax</td>
+    </tr>
+    <tr>
+        <td>Final:</td>
+        <td>@Model.totalDue</td>
+    </tr>
+</table>
 
-        <dd>
-            @Html.DisplayFor(model => model.discount)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.tax)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.tax)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.totalDue)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.totalDue)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Guest.name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Guest.name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Reservation.reservationID)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Reservation.reservationID)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.invoiceID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

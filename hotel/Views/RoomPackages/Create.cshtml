@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.RoomPackage
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Crear paquete de habitación";
 }
 
-<h2>Create</h2>
+    <h2>Crear paquete de habitación</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,35 +12,27 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>RoomPackage</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.roomPackageID, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.roomPackageID, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.roomPackageID, "", new { @class = "text-danger" })
-            </div>
+
+    <div class="form-group">
+        <label class="col-md-2 control-label">Nombre del paquete:</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.namePackage, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.namePackage, "", new { @class = "text-danger" })
         </div>
+    </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.namePackage, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Precio:</label>
             <div class="col-md-10">
-                @Html.EditorFor(model => model.namePackage, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.namePackage, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", @type="number", @min=0 } })
                 @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.roomTypeID, "roomTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Tipo de habitación:</label>
             <div class="col-md-10">
                 @Html.DropDownList("roomTypeID", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.roomTypeID, "", new { @class = "text-danger" })
@@ -50,14 +42,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Agregar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

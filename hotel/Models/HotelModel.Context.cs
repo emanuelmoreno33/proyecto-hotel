@@ -105,11 +105,172 @@ public partial class proyecto_hotelEntities : DbContext
 
     public virtual DbSet<reporte6> reporte6 { get; set; }
 
+    public virtual DbSet<consulta11> consulta11 { get; set; }
+
+    public virtual DbSet<consulta12> consulta12 { get; set; }
+
+    public virtual DbSet<consulta8> consulta8 { get; set; }
+
+    public virtual DbSet<DetallesFactura> DetallesFactura { get; set; }
+
 
     public virtual ObjectResult<tipo_compra_Result1> tipo_compra()
     {
 
         return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<tipo_compra_Result1>("tipo_compra");
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte10_Result> busqueda_reporte10(Nullable<System.DateTime> inicio, Nullable<System.DateTime> final)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finalParameter = final.HasValue ?
+            new ObjectParameter("final", final) :
+            new ObjectParameter("final", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte10_Result>("busqueda_reporte10", inicioParameter, finalParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte11_Result> busqueda_reporte11(Nullable<System.DateTime> inicio, Nullable<System.DateTime> fin)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finParameter = fin.HasValue ?
+            new ObjectParameter("fin", fin) :
+            new ObjectParameter("fin", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte11_Result>("busqueda_reporte11", inicioParameter, finParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte12_Result> busqueda_reporte12(Nullable<System.DateTime> inicio, Nullable<System.DateTime> fin)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finParameter = fin.HasValue ?
+            new ObjectParameter("fin", fin) :
+            new ObjectParameter("fin", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte12_Result>("busqueda_reporte12", inicioParameter, finParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte3_Result> busqueda_reporte3(Nullable<System.DateTime> inicio, Nullable<System.DateTime> final)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finalParameter = final.HasValue ?
+            new ObjectParameter("final", final) :
+            new ObjectParameter("final", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte3_Result>("busqueda_reporte3", inicioParameter, finalParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte4_Result> busqueda_reporte4(Nullable<System.DateTime> inicio, Nullable<System.DateTime> fin)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finParameter = fin.HasValue ?
+            new ObjectParameter("fin", fin) :
+            new ObjectParameter("fin", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte4_Result>("busqueda_reporte4", inicioParameter, finParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte5_Result> busqueda_reporte5(Nullable<System.DateTime> inicio, Nullable<System.DateTime> final)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finalParameter = final.HasValue ?
+            new ObjectParameter("final", final) :
+            new ObjectParameter("final", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte5_Result>("busqueda_reporte5", inicioParameter, finalParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte7_Result> busqueda_reporte7(Nullable<System.DateTime> inicio, Nullable<System.DateTime> final)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finalParameter = final.HasValue ?
+            new ObjectParameter("final", final) :
+            new ObjectParameter("final", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte7_Result>("busqueda_reporte7", inicioParameter, finalParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte8_Result> busqueda_reporte8(Nullable<System.DateTime> inicio, Nullable<System.DateTime> fin)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finParameter = fin.HasValue ?
+            new ObjectParameter("fin", fin) :
+            new ObjectParameter("fin", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte8_Result>("busqueda_reporte8", inicioParameter, finParameter);
+    }
+
+
+    public virtual ObjectResult<busqueda_reporte9_Result> busqueda_reporte9(Nullable<System.DateTime> inicio, Nullable<System.DateTime> fin)
+    {
+
+        var inicioParameter = inicio.HasValue ?
+            new ObjectParameter("inicio", inicio) :
+            new ObjectParameter("inicio", typeof(System.DateTime));
+
+
+        var finParameter = fin.HasValue ?
+            new ObjectParameter("fin", fin) :
+            new ObjectParameter("fin", typeof(System.DateTime));
+
+
+        return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<busqueda_reporte9_Result>("busqueda_reporte9", inicioParameter, finParameter);
     }
 
 }

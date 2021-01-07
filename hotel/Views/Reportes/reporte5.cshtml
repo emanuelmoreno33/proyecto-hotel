@@ -1,0 +1,57 @@
+﻿@model IEnumerable<hotel.Models.busqueda_reporte5_Result>
+
+@{
+    ViewBag.Title = "Reporte 5";
+}
+
+<h2>
+    Reporte de los registros con mayor tiempo de ocupación por un rango de fechas determinado.
+</h2>
+<br />
+@using (Html.BeginForm("reporte5", "Reportes", FormMethod.Post))
+{
+    <fieldset>
+        @Html.Label("fromDate", "Inicio:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="fromDate" name="fromDate" type="date" value="">
+        @Html.Label("toDate", "Fin:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="toDate" name="toDate" type="date" value="">
+        <input type="submit" value="Apply" class="btn btn-primary" />
+    </fieldset>
+}
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            ID de reservación
+        </th>
+        <th>
+            Dias hospedado
+        </th>
+        <th>
+            Dia de inicio:
+        </th>
+        <th>
+            Dia de fin:
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.reservationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diff)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.startDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.endDate)
+            </td>
+        </tr>
+    }
+
+</table>

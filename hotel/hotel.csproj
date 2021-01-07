@@ -167,6 +167,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PlaceOfOriginsController.cs" />
     <Compile Include="Controllers\PromoesController.cs" />
+    <Compile Include="Controllers\ReportesController.cs" />
     <Compile Include="Controllers\ReservationComplaintsController.cs" />
     <Compile Include="Controllers\ReservationReviewsController.cs" />
     <Compile Include="Controllers\ReservationsController.cs" />
@@ -196,16 +197,55 @@
     <Compile Include="Models\Bonification.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\busqueda_reporte10_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte11_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte12_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte3_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte4_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte5_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte7_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte8_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\busqueda_reporte9_Result.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\City.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\consulta1.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\consulta11.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\consulta12.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\consulta2.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\consulta8.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Departament.cs">
+      <DependentUpon>HotelModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DetallesFactura.cs">
       <DependentUpon>HotelModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Employee.cs">
@@ -585,6 +625,18 @@
     <Content Include="Views\ReservationComplaints\Index.cshtml" />
     <Content Include="Views\Reservations\Grafico.cshtml" />
     <Content Include="Views\Home\Logout.cshtml" />
+    <Content Include="Views\Reportes\reporte4.cshtml" />
+    <Content Include="Views\Reportes\reporte1.cshtml" />
+    <Content Include="Views\Reportes\reporte2.cshtml" />
+    <Content Include="Views\Reportes\reporte3.cshtml" />
+    <Content Include="Views\Reportes\reporte5.cshtml" />
+    <Content Include="Views\Reportes\reporte6.cshtml" />
+    <Content Include="Views\Reportes\reporte7.cshtml" />
+    <Content Include="Views\Reportes\reporte8.cshtml" />
+    <Content Include="Views\Reportes\reporte9.cshtml" />
+    <Content Include="Views\Reportes\reporte10.cshtml" />
+    <Content Include="Views\Reportes\reporte11.cshtml" />
+    <Content Include="Views\Reportes\reporte12.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

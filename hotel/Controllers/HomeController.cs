@@ -13,6 +13,8 @@ namespace hotel.Controllers
     public class HomeController : Controller
     {
         private proyecto_hotelEntities db = new proyecto_hotelEntities();
+        public AuthModel auth = new AuthModel();
+        
         public ActionResult Index()
         {
             HttpCookie authCookie = Request.Cookies[FormsAuthentication.FormsCookieName];
@@ -23,10 +25,7 @@ namespace hotel.Controllers
             var admin = db.Employee.Where(d => d.employeeID == emp_id).Select(x => x.Departament.admin).FirstOrDefault();
             var val_Admin = int.Parse(admin);
             ViewBag.admin = val_Admin;
-            //AuthModel auth = new AuthModel();
-           // ViewBag.admin = auth.admin();
-
-
+            auth.cargar(emp_id);
             return View();
         }
 

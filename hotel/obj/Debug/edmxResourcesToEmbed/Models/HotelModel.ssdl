@@ -277,6 +277,36 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta1' no tiene defin
     <Property Name="Expr1" Type="int" />
   </EntityType>
   <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta11' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="consulta11">
+    <Key>
+      <PropertyRef Name="startDate" />
+      <PropertyRef Name="endDate" />
+    </Key>
+    <Property Name="reservationMethod" Type="varchar" MaxLength="50" />
+    <Property Name="startDate" Type="datetime" Nullable="false" />
+    <Property Name="endDate" Type="datetime" Nullable="false" />
+    <Property Name="diferencia" Type="int" />
+    <Property Name="paquete" Type="varchar" MaxLength="50" />
+    <Property Name="precio_paquete" Type="decimal" Precision="14" Scale="2" />
+    <Property Name="typeName" Type="varchar" MaxLength="50" />
+    <Property Name="precio_cuarto" Type="decimal" Precision="14" Scale="2" />
+    <Property Name="promoName" Type="varchar" MaxLength="50" />
+    <Property Name="descuento" Type="float" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta12' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="consulta12">
+    <Key>
+      <PropertyRef Name="calificacion" />
+      <PropertyRef Name="departamento" />
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="calificacion" Type="int" Nullable="false" />
+    <Property Name="departamento" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="fecha" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta2' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
   <EntityType Name="consulta2">
     <Key>
@@ -286,6 +316,30 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta2' no tiene defin
     <Property Name="reservationID" Type="int" Nullable="false" />
     <Property Name="companion" Type="int" />
     <Property Name="startDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta8' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="consulta8">
+    <Key>
+      <PropertyRef Name="inicio" />
+      <PropertyRef Name="fin" />
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="inicio" Type="datetime" Nullable="false" />
+    <Property Name="fin" Type="datetime" Nullable="false" />
+    <Property Name="precio" Type="float" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.DetallesFactura' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="DetallesFactura">
+    <Key>
+      <PropertyRef Name="coneptoId" />
+    </Key>
+    <Property Name="coneptoId" Type="bigint" Nullable="false" />
+    <Property Name="reservationID" Type="int" Nullable="false" />
+    <Property Name="concepto" Type="varchar" MaxLength="59" />
+    <Property Name="importe" Type="decimal" Precision="25" Scale="2" />
   </EntityType>
   <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte10' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -757,6 +811,42 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="busqueda_reporte10" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="date" Mode="In" />
+    <Parameter Name="final" Type="date" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="fin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte12" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="fin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="final" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="fin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="final" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte7" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="final" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte8" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="datetime" Mode="In" />
+    <Parameter Name="fin" Type="datetime" Mode="In" />
+  </Function>
+  <Function Name="busqueda_reporte9" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="inicio" Type="date" Mode="In" />
+    <Parameter Name="fin" Type="date" Mode="In" />
+  </Function>
   <Function Name="tipo_compra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="proyecto_hotelModelStoreContainer">
     <EntitySet Name="AmenityComplaint" EntityType="Self.AmenityComplaint" Schema="dbo" store:Type="Tables" />
@@ -793,12 +883,49 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
     [consulta1].[Expr1] AS [Expr1]
     FROM [dbo].[consulta1] AS [consulta1]</DefiningQuery>
     </EntitySet>
+    <EntitySet Name="consulta11" EntityType="Self.consulta11" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [consulta11].[reservationMethod] AS [reservationMethod], 
+    [consulta11].[startDate] AS [startDate], 
+    [consulta11].[endDate] AS [endDate], 
+    [consulta11].[diferencia] AS [diferencia], 
+    [consulta11].[paquete] AS [paquete], 
+    [consulta11].[precio_paquete] AS [precio_paquete], 
+    [consulta11].[typeName] AS [typeName], 
+    [consulta11].[precio_cuarto] AS [precio_cuarto], 
+    [consulta11].[promoName] AS [promoName], 
+    [consulta11].[descuento] AS [descuento]
+    FROM [dbo].[consulta11] AS [consulta11]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="consulta12" EntityType="Self.consulta12" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [consulta12].[calificacion] AS [calificacion], 
+    [consulta12].[departamento] AS [departamento], 
+    [consulta12].[fecha] AS [fecha]
+    FROM [dbo].[consulta12] AS [consulta12]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="consulta2" EntityType="Self.consulta2" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [consulta2].[reservationID] AS [reservationID], 
     [consulta2].[companion] AS [companion], 
     [consulta2].[startDate] AS [startDate]
     FROM [dbo].[consulta2] AS [consulta2]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="consulta8" EntityType="Self.consulta8" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [consulta8].[inicio] AS [inicio], 
+    [consulta8].[fin] AS [fin], 
+    [consulta8].[precio] AS [precio], 
+    [consulta8].[nombre] AS [nombre]
+    FROM [dbo].[consulta8] AS [consulta8]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="DetallesFactura" EntityType="Self.DetallesFactura" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DetallesFactura].[coneptoId] AS [coneptoId], 
+    [DetallesFactura].[reservationID] AS [reservationID], 
+    [DetallesFactura].[concepto] AS [concepto], 
+    [DetallesFactura].[importe] AS [importe]
+    FROM [dbo].[DetallesFactura] AS [DetallesFactura]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="reporte10" EntityType="Self.reporte10" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

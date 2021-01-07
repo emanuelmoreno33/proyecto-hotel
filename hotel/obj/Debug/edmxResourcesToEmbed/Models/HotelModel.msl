@@ -369,5 +369,133 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="consulta11">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.consulta11">
+        <MappingFragment StoreEntitySet="consulta11">
+          <ScalarProperty Name="descuento" ColumnName="descuento" />
+          <ScalarProperty Name="promoName" ColumnName="promoName" />
+          <ScalarProperty Name="precio_cuarto" ColumnName="precio_cuarto" />
+          <ScalarProperty Name="typeName" ColumnName="typeName" />
+          <ScalarProperty Name="precio_paquete" ColumnName="precio_paquete" />
+          <ScalarProperty Name="paquete" ColumnName="paquete" />
+          <ScalarProperty Name="diferencia" ColumnName="diferencia" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="reservationMethod" ColumnName="reservationMethod" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consulta12">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.consulta12">
+        <MappingFragment StoreEntitySet="consulta12">
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="departamento" ColumnName="departamento" />
+          <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="consulta8">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.consulta8">
+        <MappingFragment StoreEntitySet="consulta8">
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="fin" ColumnName="fin" />
+          <ScalarProperty Name="inicio" ColumnName="inicio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte10" FunctionName="proyecto_hotelModel.Store.busqueda_reporte10">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte10_Result">
+          <ScalarProperty Name="dateComplaint" ColumnName="dateComplaint" />
+          <ScalarProperty Name="comment" ColumnName="comment" />
+          <ScalarProperty Name="type" ColumnName="type" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte11" FunctionName="proyecto_hotelModel.Store.busqueda_reporte11">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte11_Result">
+          <ScalarProperty Name="reservationMethod" ColumnName="reservationMethod" />
+          <ScalarProperty Name="ganancia" ColumnName="ganancia" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte12" FunctionName="proyecto_hotelModel.Store.busqueda_reporte12">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte12_Result">
+          <ScalarProperty Name="promedio" ColumnName="promedio" />
+          <ScalarProperty Name="departamento" ColumnName="departamento" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte3" FunctionName="proyecto_hotelModel.Store.busqueda_reporte3">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte3_Result">
+          <ScalarProperty Name="promoName" ColumnName="promoName" />
+          <ScalarProperty Name="conteo" ColumnName="conteo" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte4" FunctionName="proyecto_hotelModel.Store.busqueda_reporte4">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte4_Result">
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="diff" ColumnName="diff" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte5" FunctionName="proyecto_hotelModel.Store.busqueda_reporte5">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte5_Result">
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="diff" ColumnName="diff" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte7" FunctionName="proyecto_hotelModel.Store.busqueda_reporte7">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte7_Result">
+          <ScalarProperty Name="bonificationID" ColumnName="bonificationID" />
+          <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+          <ScalarProperty Name="typeOfBonificationID" ColumnName="typeOfBonificationID" />
+          <ScalarProperty Name="date" ColumnName="date" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte8" FunctionName="proyecto_hotelModel.Store.busqueda_reporte8">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte8_Result">
+          <ScalarProperty Name="inicio" ColumnName="inicio" />
+          <ScalarProperty Name="fin" ColumnName="fin" />
+          <ScalarProperty Name="precio" ColumnName="precio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="busqueda_reporte9" FunctionName="proyecto_hotelModel.Store.busqueda_reporte9">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte9_Result">
+          <ScalarProperty Name="ganancia" ColumnName="ganancia" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="DetallesFactura">
+      <EntityTypeMapping TypeName="proyecto_hotelModel.DetallesFactura">
+        <MappingFragment StoreEntitySet="DetallesFactura">
+          <ScalarProperty Name="coneptoId" ColumnName="coneptoId" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

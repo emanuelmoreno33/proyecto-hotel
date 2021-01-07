@@ -1,0 +1,49 @@
+﻿@model IEnumerable<hotel.Models.consulta2>
+
+@{
+    ViewBag.Title = "Reporte 2";
+}
+
+    <h2>Reporte de habitaciones ocupadas y número de huéspedes por fecha determinada</h2>
+<br />
+@using (Html.BeginForm("reporte2", "Reportes", FormMethod.Post))
+{
+    <fieldset>
+        @Html.Label("fromDate", "Inicio:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="fromDate" name="fromDate" type="date" value="">
+        @Html.Label("toDate", "Fin:", htmlAttributes: new { @class = "control-label col-md-2" })
+        <input class="form-control" id="toDate" name="toDate" type="date" value="">
+        <input type="submit" value="Aplicar" class="btn btn-primary"/>
+    </fieldset>
+}
+<br />
+
+<table class="table">
+    <tr>
+        <th>
+            ID de reservacion
+        </th>
+        <th>
+            Cantidad en huespedes
+        </th>
+        <th>
+            Fecha de llegada
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.reservationID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.companion)
+            </td>
+            <td>
+                @item.startDate.ToString("dd 'de' MMMM 'del' yyyy")
+            </td>
+        </tr>
+    }
+
+</table>

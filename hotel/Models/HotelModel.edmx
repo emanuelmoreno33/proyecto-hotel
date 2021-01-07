@@ -282,6 +282,36 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta1' no tiene defin
           <Property Name="Expr1" Type="int" />
         </EntityType>
         <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta11' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="consulta11">
+          <Key>
+            <PropertyRef Name="startDate" />
+            <PropertyRef Name="endDate" />
+          </Key>
+          <Property Name="reservationMethod" Type="varchar" MaxLength="50" />
+          <Property Name="startDate" Type="datetime" Nullable="false" />
+          <Property Name="endDate" Type="datetime" Nullable="false" />
+          <Property Name="diferencia" Type="int" />
+          <Property Name="paquete" Type="varchar" MaxLength="50" />
+          <Property Name="precio_paquete" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="typeName" Type="varchar" MaxLength="50" />
+          <Property Name="precio_cuarto" Type="decimal" Precision="14" Scale="2" />
+          <Property Name="promoName" Type="varchar" MaxLength="50" />
+          <Property Name="descuento" Type="float" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta12' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="consulta12">
+          <Key>
+            <PropertyRef Name="calificacion" />
+            <PropertyRef Name="departamento" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="calificacion" Type="int" Nullable="false" />
+          <Property Name="departamento" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="fecha" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta2' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="consulta2">
           <Key>
@@ -291,6 +321,30 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta2' no tiene defin
           <Property Name="reservationID" Type="int" Nullable="false" />
           <Property Name="companion" Type="int" />
           <Property Name="startDate" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.consulta8' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="consulta8">
+          <Key>
+            <PropertyRef Name="inicio" />
+            <PropertyRef Name="fin" />
+            <PropertyRef Name="nombre" />
+          </Key>
+          <Property Name="inicio" Type="datetime" Nullable="false" />
+          <Property Name="fin" Type="datetime" Nullable="false" />
+          <Property Name="precio" Type="float" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.DetallesFactura' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="DetallesFactura">
+          <Key>
+            <PropertyRef Name="coneptoId" />
+          </Key>
+          <Property Name="coneptoId" Type="bigint" Nullable="false" />
+          <Property Name="reservationID" Type="int" Nullable="false" />
+          <Property Name="concepto" Type="varchar" MaxLength="59" />
+          <Property Name="importe" Type="decimal" Precision="25" Scale="2" />
         </EntityType>
         <!--Errores durante la generación:
 advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte10' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
@@ -762,6 +816,42 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="busqueda_reporte10" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="date" Mode="In" />
+          <Parameter Name="final" Type="date" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte11" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="fin" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte12" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="fin" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte3" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="final" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="fin" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte5" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="final" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte7" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="final" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte8" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="datetime" Mode="In" />
+          <Parameter Name="fin" Type="datetime" Mode="In" />
+        </Function>
+        <Function Name="busqueda_reporte9" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="inicio" Type="date" Mode="In" />
+          <Parameter Name="fin" Type="date" Mode="In" />
+        </Function>
         <Function Name="tipo_compra" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <EntityContainer Name="proyecto_hotelModelStoreContainer">
           <EntitySet Name="AmenityComplaint" EntityType="Self.AmenityComplaint" Schema="dbo" store:Type="Tables" />
@@ -798,12 +888,49 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
     [consulta1].[Expr1] AS [Expr1]
     FROM [dbo].[consulta1] AS [consulta1]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="consulta11" EntityType="Self.consulta11" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [consulta11].[reservationMethod] AS [reservationMethod], 
+    [consulta11].[startDate] AS [startDate], 
+    [consulta11].[endDate] AS [endDate], 
+    [consulta11].[diferencia] AS [diferencia], 
+    [consulta11].[paquete] AS [paquete], 
+    [consulta11].[precio_paquete] AS [precio_paquete], 
+    [consulta11].[typeName] AS [typeName], 
+    [consulta11].[precio_cuarto] AS [precio_cuarto], 
+    [consulta11].[promoName] AS [promoName], 
+    [consulta11].[descuento] AS [descuento]
+    FROM [dbo].[consulta11] AS [consulta11]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="consulta12" EntityType="Self.consulta12" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [consulta12].[calificacion] AS [calificacion], 
+    [consulta12].[departamento] AS [departamento], 
+    [consulta12].[fecha] AS [fecha]
+    FROM [dbo].[consulta12] AS [consulta12]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="consulta2" EntityType="Self.consulta2" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [consulta2].[reservationID] AS [reservationID], 
     [consulta2].[companion] AS [companion], 
     [consulta2].[startDate] AS [startDate]
     FROM [dbo].[consulta2] AS [consulta2]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="consulta8" EntityType="Self.consulta8" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [consulta8].[inicio] AS [inicio], 
+    [consulta8].[fin] AS [fin], 
+    [consulta8].[precio] AS [precio], 
+    [consulta8].[nombre] AS [nombre]
+    FROM [dbo].[consulta8] AS [consulta8]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="DetallesFactura" EntityType="Self.DetallesFactura" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [DetallesFactura].[coneptoId] AS [coneptoId], 
+    [DetallesFactura].[reservationID] AS [reservationID], 
+    [DetallesFactura].[concepto] AS [concepto], 
+    [DetallesFactura].[importe] AS [importe]
+    FROM [dbo].[DetallesFactura] AS [DetallesFactura]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="reporte10" EntityType="Self.reporte10" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1864,6 +1991,46 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <EntitySet Name="reporte5" EntityType="proyecto_hotelModel.reporte5" />
           <EntitySet Name="reporte6" EntityType="proyecto_hotelModel.reporte6" />
           <FunctionImport Name="tipo_compra" ReturnType="Collection(proyecto_hotelModel.tipo_compra_Result1)" />
+          <EntitySet Name="consulta11" EntityType="proyecto_hotelModel.consulta11" />
+          <EntitySet Name="consulta12" EntityType="proyecto_hotelModel.consulta12" />
+          <EntitySet Name="consulta8" EntityType="proyecto_hotelModel.consulta8" />
+          <FunctionImport Name="busqueda_reporte10" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte10_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="final" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte11" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte11_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte12" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte12_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte3" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte3_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="final" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte4" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte4_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte5" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte5_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="final" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte7" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte7_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="final" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte8" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte8_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="busqueda_reporte9" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte9_Result)">
+            <Parameter Name="inicio" Mode="In" Type="DateTime" />
+            <Parameter Name="fin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <EntitySet Name="DetallesFactura" EntityType="proyecto_hotelModel.DetallesFactura" />
         </EntityContainer>
         <Association Name="FK_Employee_PlaceOfOrigin">
           <End Type="proyecto_hotelModel.PlaceOfOrigin" Role="PlaceOfOrigin" Multiplicity="1" />
@@ -1977,6 +2144,99 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
           <Property Type="String" Name="metodo" Nullable="false" MaxLength="50" />
           <Property Type="Int32" Name="conteo" Nullable="true" />
         </ComplexType>
+        <EntityType Name="consulta11">
+          <Key>
+            <PropertyRef Name="startDate" />
+            <PropertyRef Name="endDate" />
+          </Key>
+          <Property Name="reservationMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="diferencia" Type="Int32" />
+          <Property Name="paquete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precio_paquete" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="typeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="precio_cuarto" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="promoName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descuento" Type="Double" />
+        </EntityType>
+        <EntityType Name="consulta12">
+          <Key>
+            <PropertyRef Name="calificacion" />
+            <PropertyRef Name="departamento" />
+            <PropertyRef Name="fecha" />
+          </Key>
+          <Property Name="calificacion" Type="Int32" Nullable="false" />
+          <Property Name="departamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="consulta8">
+          <Key>
+            <PropertyRef Name="inicio" />
+            <PropertyRef Name="fin" />
+            <PropertyRef Name="nombre" />
+          </Key>
+          <Property Name="inicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="fin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="precio" Type="Double" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="busqueda_reporte10_Result">
+          <Property Type="DateTime" Name="dateComplaint" Nullable="false" Precision="23" />
+          <Property Type="String" Name="comment" Nullable="false" MaxLength="Max" />
+          <Property Type="String" Name="type" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte11_Result">
+          <Property Type="String" Name="reservationMethod" Nullable="true" MaxLength="50" />
+          <Property Type="Double" Name="ganancia" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte12_Result">
+          <Property Type="Int32" Name="promedio" Nullable="true" />
+          <Property Type="String" Name="departamento" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte3_Result">
+          <Property Type="String" Name="promoName" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="conteo" Nullable="true" />
+          <Property Type="DateTime" Name="startDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="endDate" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte4_Result">
+          <Property Type="Int32" Name="reservationID" Nullable="false" />
+          <Property Type="DateTime" Name="startDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="endDate" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="diff" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte5_Result">
+          <Property Type="Int32" Name="reservationID" Nullable="false" />
+          <Property Type="DateTime" Name="startDate" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="endDate" Nullable="false" Precision="23" />
+          <Property Type="Int32" Name="diff" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte7_Result">
+          <Property Type="Int32" Name="bonificationID" Nullable="false" />
+          <Property Type="Int32" Name="employeeID" Nullable="false" />
+          <Property Type="Int32" Name="typeOfBonificationID" Nullable="false" />
+          <Property Type="DateTime" Name="date" Nullable="false" Precision="23" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte8_Result">
+          <Property Type="DateTime" Name="inicio" Nullable="false" Precision="23" />
+          <Property Type="DateTime" Name="fin" Nullable="false" Precision="23" />
+          <Property Type="Double" Name="precio" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="busqueda_reporte9_Result">
+          <Property Type="Double" Name="ganancia" Nullable="true" />
+          <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <EntityType Name="DetallesFactura">
+          <Key>
+            <PropertyRef Name="coneptoId" />
+          </Key>
+          <Property Name="reservationID" Type="Int32" Nullable="false" />
+          <Property Name="concepto" Type="String" MaxLength="59" FixedLength="false" Unicode="false" />
+          <Property Name="importe" Type="Decimal" Precision="25" Scale="2" />
+          <Property Name="coneptoId" Type="Int64" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -2351,6 +2611,134 @@ advertencia 6002: La tabla o vista 'proyecto_hotel.dbo.reporte6' no tiene defini
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="consulta11">
+            <EntityTypeMapping TypeName="proyecto_hotelModel.consulta11">
+              <MappingFragment StoreEntitySet="consulta11">
+                <ScalarProperty Name="descuento" ColumnName="descuento" />
+                <ScalarProperty Name="promoName" ColumnName="promoName" />
+                <ScalarProperty Name="precio_cuarto" ColumnName="precio_cuarto" />
+                <ScalarProperty Name="typeName" ColumnName="typeName" />
+                <ScalarProperty Name="precio_paquete" ColumnName="precio_paquete" />
+                <ScalarProperty Name="paquete" ColumnName="paquete" />
+                <ScalarProperty Name="diferencia" ColumnName="diferencia" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="reservationMethod" ColumnName="reservationMethod" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consulta12">
+            <EntityTypeMapping TypeName="proyecto_hotelModel.consulta12">
+              <MappingFragment StoreEntitySet="consulta12">
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+                <ScalarProperty Name="calificacion" ColumnName="calificacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="consulta8">
+            <EntityTypeMapping TypeName="proyecto_hotelModel.consulta8">
+              <MappingFragment StoreEntitySet="consulta8">
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="fin" ColumnName="fin" />
+                <ScalarProperty Name="inicio" ColumnName="inicio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte10" FunctionName="proyecto_hotelModel.Store.busqueda_reporte10">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte10_Result">
+                <ScalarProperty Name="dateComplaint" ColumnName="dateComplaint" />
+                <ScalarProperty Name="comment" ColumnName="comment" />
+                <ScalarProperty Name="type" ColumnName="type" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte11" FunctionName="proyecto_hotelModel.Store.busqueda_reporte11">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte11_Result">
+                <ScalarProperty Name="reservationMethod" ColumnName="reservationMethod" />
+                <ScalarProperty Name="ganancia" ColumnName="ganancia" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte12" FunctionName="proyecto_hotelModel.Store.busqueda_reporte12">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte12_Result">
+                <ScalarProperty Name="promedio" ColumnName="promedio" />
+                <ScalarProperty Name="departamento" ColumnName="departamento" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte3" FunctionName="proyecto_hotelModel.Store.busqueda_reporte3">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte3_Result">
+                <ScalarProperty Name="promoName" ColumnName="promoName" />
+                <ScalarProperty Name="conteo" ColumnName="conteo" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte4" FunctionName="proyecto_hotelModel.Store.busqueda_reporte4">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte4_Result">
+                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="diff" ColumnName="diff" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte5" FunctionName="proyecto_hotelModel.Store.busqueda_reporte5">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte5_Result">
+                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+                <ScalarProperty Name="startDate" ColumnName="startDate" />
+                <ScalarProperty Name="endDate" ColumnName="endDate" />
+                <ScalarProperty Name="diff" ColumnName="diff" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte7" FunctionName="proyecto_hotelModel.Store.busqueda_reporte7">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte7_Result">
+                <ScalarProperty Name="bonificationID" ColumnName="bonificationID" />
+                <ScalarProperty Name="employeeID" ColumnName="employeeID" />
+                <ScalarProperty Name="typeOfBonificationID" ColumnName="typeOfBonificationID" />
+                <ScalarProperty Name="date" ColumnName="date" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte8" FunctionName="proyecto_hotelModel.Store.busqueda_reporte8">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte8_Result">
+                <ScalarProperty Name="inicio" ColumnName="inicio" />
+                <ScalarProperty Name="fin" ColumnName="fin" />
+                <ScalarProperty Name="precio" ColumnName="precio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="busqueda_reporte9" FunctionName="proyecto_hotelModel.Store.busqueda_reporte9">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="proyecto_hotelModel.busqueda_reporte9_Result">
+                <ScalarProperty Name="ganancia" ColumnName="ganancia" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="DetallesFactura">
+            <EntityTypeMapping TypeName="proyecto_hotelModel.DetallesFactura">
+              <MappingFragment StoreEntitySet="DetallesFactura">
+                <ScalarProperty Name="coneptoId" ColumnName="coneptoId" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="reservationID" ColumnName="reservationID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

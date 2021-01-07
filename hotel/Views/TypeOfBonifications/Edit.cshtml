@@ -1,10 +1,10 @@
 ﻿@model hotel.Models.TypeOfBonification
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar tipo de bono";
 }
 
-<h2>Edit</h2>
+    <h2>Editar tipo de bono</h2>
 
 
 @using (Html.BeginForm())
@@ -17,16 +17,16 @@
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.typeOfBonificationID)
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.daysLodging, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.daysLodging, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.daysLodging, "", new { @class = "text-danger" })
-            </div>
+    <div class="form-group">
+        <label class="col-md-2 control-label">Dias de hospedaje:</label>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.daysLodging, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.daysLodging, "", new { @class = "text-danger" })
         </div>
+    </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.bonus, htmlAttributes: new { @class = "control-label col-md-2" })
+            <label class="col-md-2 control-label">Bono:</label>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.bonus, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.bonus, "", new { @class = "text-danger" })
@@ -35,14 +35,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Guardar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Index")'">Regresar</button>
 </div>
 
 @section Scripts {

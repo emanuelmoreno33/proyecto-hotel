@@ -880,6 +880,46 @@
     <EntitySet Name="reporte5" EntityType="proyecto_hotelModel.reporte5" />
     <EntitySet Name="reporte6" EntityType="proyecto_hotelModel.reporte6" />
     <FunctionImport Name="tipo_compra" ReturnType="Collection(proyecto_hotelModel.tipo_compra_Result1)" />
+    <EntitySet Name="consulta11" EntityType="proyecto_hotelModel.consulta11" />
+    <EntitySet Name="consulta12" EntityType="proyecto_hotelModel.consulta12" />
+    <EntitySet Name="consulta8" EntityType="proyecto_hotelModel.consulta8" />
+    <FunctionImport Name="busqueda_reporte10" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte10_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="final" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte11" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte11_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte12" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte12_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte3" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte3_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="final" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte4" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte4_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte5" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte5_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="final" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte7" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte7_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="final" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte8" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte8_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="busqueda_reporte9" ReturnType="Collection(proyecto_hotelModel.busqueda_reporte9_Result)">
+      <Parameter Name="inicio" Mode="In" Type="DateTime" />
+      <Parameter Name="fin" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="DetallesFactura" EntityType="proyecto_hotelModel.DetallesFactura" />
   </EntityContainer>
   <Association Name="FK_Employee_PlaceOfOrigin">
     <End Type="proyecto_hotelModel.PlaceOfOrigin" Role="PlaceOfOrigin" Multiplicity="1" />
@@ -993,4 +1033,97 @@
     <Property Type="String" Name="metodo" Nullable="false" MaxLength="50" />
     <Property Type="Int32" Name="conteo" Nullable="true" />
   </ComplexType>
+  <EntityType Name="consulta11">
+    <Key>
+      <PropertyRef Name="startDate" />
+      <PropertyRef Name="endDate" />
+    </Key>
+    <Property Name="reservationMethod" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="startDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="diferencia" Type="Int32" />
+    <Property Name="paquete" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio_paquete" Type="Decimal" Precision="14" Scale="2" />
+    <Property Name="typeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="precio_cuarto" Type="Decimal" Precision="14" Scale="2" />
+    <Property Name="promoName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="descuento" Type="Double" />
+  </EntityType>
+  <EntityType Name="consulta12">
+    <Key>
+      <PropertyRef Name="calificacion" />
+      <PropertyRef Name="departamento" />
+      <PropertyRef Name="fecha" />
+    </Key>
+    <Property Name="calificacion" Type="Int32" Nullable="false" />
+    <Property Name="departamento" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="fecha" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="consulta8">
+    <Key>
+      <PropertyRef Name="inicio" />
+      <PropertyRef Name="fin" />
+      <PropertyRef Name="nombre" />
+    </Key>
+    <Property Name="inicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="fin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="precio" Type="Double" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <ComplexType Name="busqueda_reporte10_Result">
+    <Property Type="DateTime" Name="dateComplaint" Nullable="false" Precision="23" />
+    <Property Type="String" Name="comment" Nullable="false" MaxLength="Max" />
+    <Property Type="String" Name="type" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte11_Result">
+    <Property Type="String" Name="reservationMethod" Nullable="true" MaxLength="50" />
+    <Property Type="Double" Name="ganancia" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte12_Result">
+    <Property Type="Int32" Name="promedio" Nullable="true" />
+    <Property Type="String" Name="departamento" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte3_Result">
+    <Property Type="String" Name="promoName" Nullable="false" MaxLength="50" />
+    <Property Type="Int32" Name="conteo" Nullable="true" />
+    <Property Type="DateTime" Name="startDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="endDate" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte4_Result">
+    <Property Type="Int32" Name="reservationID" Nullable="false" />
+    <Property Type="DateTime" Name="startDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="endDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="diff" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte5_Result">
+    <Property Type="Int32" Name="reservationID" Nullable="false" />
+    <Property Type="DateTime" Name="startDate" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="endDate" Nullable="false" Precision="23" />
+    <Property Type="Int32" Name="diff" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte7_Result">
+    <Property Type="Int32" Name="bonificationID" Nullable="false" />
+    <Property Type="Int32" Name="employeeID" Nullable="false" />
+    <Property Type="Int32" Name="typeOfBonificationID" Nullable="false" />
+    <Property Type="DateTime" Name="date" Nullable="false" Precision="23" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte8_Result">
+    <Property Type="DateTime" Name="inicio" Nullable="false" Precision="23" />
+    <Property Type="DateTime" Name="fin" Nullable="false" Precision="23" />
+    <Property Type="Double" Name="precio" Nullable="true" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <ComplexType Name="busqueda_reporte9_Result">
+    <Property Type="Double" Name="ganancia" Nullable="true" />
+    <Property Type="String" Name="nombre" Nullable="false" MaxLength="50" />
+  </ComplexType>
+  <EntityType Name="DetallesFactura">
+    <Key>
+      <PropertyRef Name="coneptoId" />
+    </Key>
+    <Property Name="reservationID" Type="Int32" Nullable="false" />
+    <Property Name="concepto" Type="String" MaxLength="59" FixedLength="false" Unicode="false" />
+    <Property Name="importe" Type="Decimal" Precision="25" Scale="2" />
+    <Property Name="coneptoId" Type="Int64" Nullable="false" />
+  </EntityType>
 </Schema>

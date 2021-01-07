@@ -6,9 +6,7 @@
 
 <h2>Bonificaciones</h2>
 
-<p>
-    <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Create")'">Agregar</button>
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -20,7 +18,6 @@
         <th>
             Fecha de emision:
         </th>
-        <th></th>
     </tr>
 
     @foreach (var item in Model)
@@ -34,9 +31,6 @@
     </td>
     <td>
         @Html.DisplayFor(modelItem => item.date)
-    </td>
-    <td>
-        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action( "Edit", new { id = item.bonificationID })'">Editar</button>
     </td>
 </tr>
     }

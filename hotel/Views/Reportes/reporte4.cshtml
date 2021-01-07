@@ -1,0 +1,46 @@
+﻿@model IEnumerable<hotel.Models.reporte4>
+
+@{
+    ViewBag.Title = "Reporte 4";
+}
+
+    <h2>
+        Reporte del tipo de habitación con su descripción y números de habitaciones disponible del
+        hotel.
+    </h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Tipo de habitación:
+        </th>
+        <th>
+            Numero de cuarto:
+        </th>
+        <th>
+            Precio:
+        </th>
+        <th>
+            Capacidad:
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.typeName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.roomNumber)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.capacity)
+    </td>
+    </tr>
+    }
+
+</table>
